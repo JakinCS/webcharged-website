@@ -8,8 +8,8 @@ const { page } = Astro.props;
 
 ---
 
-<nav data-mobile-dropdown-parent class="flex justify-center bg-charcoal px-32 md:px-53 lg:px-59 py-20 lg:py-22">
-  <div class="grow-1 flex justify-between items-center max-w-1281">
+<header data-mobile-dropdown-parent class="flex justify-center bg-charcoal px-32 md:px-53 lg:px-59 py-20 lg:py-22">
+  <nav class="grow-1 flex justify-between items-center max-w-1281">
     <a href="/" class="w-200 md:w-227">
       <img fetchpriority="high" src="/images/webcharged-logo.svg" alt="Go to WebCharged Home" width="222" height="60"/>
     </a>
@@ -31,7 +31,7 @@ const { page } = Astro.props;
         <img src="/icons/hamburger-electric.svg" alt="Menu icon">
       </button>
     </div>
-  </div>
+  </nav>
   
   <div id="mobile-dropdown-menu" data-mobile-dropdown-menu class="mobile-dropdown flex flex-col absolute top-0 w-full h-full bg-parchment invisible 
   opacity-0 transition-all duration-150 ease-out [[data-open]_&]:visible [[data-open]_&]:opacity-100" aria-hidden="true" aria-label="navigation menu" aria-modal="true">
@@ -49,7 +49,7 @@ const { page } = Astro.props;
         </div>
       </div>
     </nav>
-    <div class="px-32 md:px-53 py-32 flex flex-col flex-grow-1 justify-between">
+    <nav class="px-32 md:px-53 py-32 flex flex-col flex-grow-1 justify-between">
       <ul class="flex flex-col gap-20">
         <li>
           <MobileMenuLink link="/">Home</MobileMenuLink>
@@ -70,8 +70,8 @@ const { page } = Astro.props;
       <div class="w-[fit-content] pt-32">
         <Button link="/contact-us" class="block md:hidden">Book a call</Button>
       </div>
-    </div>
+    </nav>
 
   </div>
-</nav>
+</header>
 
