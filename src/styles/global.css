@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/subset-AtkinsonHyperlegibleNext-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: url('/fonts/subset-AtkinsonHyperlegibleNext-Italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+  src: url('/fonts/subset-AtkinsonHyperlegibleNext-SemiBold.woff2') format('woff2');
+}
+
+@theme {
+  /* Colors */
+  --color-spark: #DB8300;
+  --color-spark-400: #C17400;
+  --color-electric: #FF9D0A;
+  --color-charcoal: #222F2F;
+  --color-blue: #324445;
+  --color-cable: #AA4A00;
+  --color-parchment: #FFF7EB;
+
+  /* Fonts — remember to load these via a <link> in your layout */
+  --font-sans: 'Atkinson Hyperlegible Next', sans-serif;
+
+  /* Spacing additions */
+  --spacing: 0.0625rem;
+
+  /* Typography */
+  --text-61: 3.8125rem;
+  --text-61--line-height: 120%;
+  --text-47: 2.9375rem;
+  --text-47--line-height: 120%;
+  --text-40: 2.5rem;
+  --text-40--line-height: 120%;
+  --text-36: 2.25rem;
+  --text-36--line-height: 120%;
+  --text-33: 2.0625rem;
+  --text-33--line-height: 120%;
+  --text-27: 1.6875rem;
+  --text-27--line-height: 120%;
+  --text-23: 1.4375rem;
+  --text-23--line-height: 120%;
+  --text-21: 1.3125rem;
+  --text-21--line-height: 150%;
+  --text-19: 1.1875rem;
+  --text-19--line-height: 150%;
+  --text-16: 1rem;
+  --text-16--line-height: 150%;
+
+  /* Radius */
+  --radius-md: 0.3125rem;
+
+  /* Breakpoints */
+  --breakpoint-md: 46.875rem;  /* 750px */
+  --breakpoint-lg: 71.875rem;  /* 1150px */
+  --breakpoint-xl: 87.5rem;   /* 1400px */
+
+}
+
+
+
+a {
+  transition: background .15s ease-out, color .15s ease-out;
+}
