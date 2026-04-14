@@ -19,11 +19,11 @@ const { page } = Astro.props;
           <MenuLink link="/" class="py-9" aria-current={page === "home" ? "page" : undefined}>Home</MenuLink>
         </li>
         <li>
-          <MenuLink link="/about-us" class="py-9" aria-current={page === "about" ? "page" : undefined}>About Us</MenuLink>
+          <MenuLink link="/about-us" class="py-9" aria-current={page === "about-us" ? "page" : undefined}>About Us</MenuLink>
         </li>
         <DropdownItem page={page}/>
         <li>
-          <MenuLink link="/contact-us" class="py-9" aria-current={page === "contact" ? "page" : undefined}>Contact Us</MenuLink>
+          <MenuLink link="/contact-us" class="py-9" aria-current={page === "contact-us" ? "page" : undefined}>Contact Us</MenuLink>
         </li>
       </ul>
       <Button link="/contact-us" class="hidden md:block">Book a call</Button>
