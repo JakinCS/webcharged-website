@@ -1,11 +1,70 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
-
-const pageTitle = "Homepage";
+import Button from "../components/Button.astro"
 ---
 
 <MainLayout title="WebCharged Web Solutions" page="home">
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{pageTitle}</h1>
+  <div class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
+    <div class="grow-1 flex flex-col gap-53 lg:gap-36 max-w-1281">
+      <div class="flex flex-col gap-20 lg:gap-36">
+        <h1 class="text-electric font-semibold text-28 md:text-33 lg:text-47 max-w-400 md:max-w-480 lg:max-w-672">Website design services built around your business</h1>
+        <p class="text-parchment text-19 lg:text-21 max-w-496 lg:max-w-576">Custom websites designed for small businesses that need to stand out online and convert visitors into customers.</p>
+      </div>
+      <Button smallerPadding={true} class="max-w-300" href="/project-planning-call">Start your project today</Button>
+    </div>
+    <div class="absolute -top-100 md:-top-147 lg:-top-181 right-0 pointer-events-none">
+      <picture class="block lightning-graphic">
+        <!-- Mobile: loads on screens 750px and under -->
+        <source
+          srcset="/images/yellow-lightning-bolt-360.webp"
+          media="(max-width: 750px)"
+          type="image/webp"
+          width="360"
+          height="676"
+        >
+        <!-- Desktop: default fallback -->
+        <img
+          src="/images/yellow-lightning-bolt.webp"
+          title="Decorative yellow lightning bolt" 
+          alt=""
+          width="615"
+          height="1152"
+          fetchpriority="high"
+          decoding="sync"
+        >
+      </picture>
+    </div>
   </div>
 </MainLayout>
+
+<style>
+  @media screen and (max-width: 750px) {
+    .lightning-graphic {
+      position: relative;
+      right: max(-222px, calc(-1 * (222px + (68.292px - 18.97vw))));
+      width: 22.5rem;
+    }
+  }
+  /* For Tablet Landscape */
+  @media screen and (min-width: 751px) and (max-width: 1150px) {
+    .lightning-graphic {
+      position: relative;
+      left: calc(160px + (150.2px - 20vw));
+      width: 27.4375rem;
+    }
+  }
+  /* For Laptop */
+  @media screen and (min-width: 1151px) and (max-width: 1400px) {
+    .lightning-graphic {
+      position: relative;
+      left: calc(306px + (763.6px - 66.4vw));
+    }
+  }
+  /* For Desktop */
+  @media screen and (min-width: 1401px) {
+    .lightning-graphic {
+      position: relative;
+      left: max(27px, calc(140px + (518.7px - 37.05vw)));
+    }
+  }
+</style>

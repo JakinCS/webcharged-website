@@ -49,6 +49,8 @@
   --text-36--line-height: 120%;
   --text-33: 2.0625rem;
   --text-33--line-height: 120%;
+  --text-28: 1.75rem;
+  --text-28--line-height: 120%;
   --text-27: 1.6875rem;
   --text-27--line-height: 120%;
   --text-23: 1.4375rem;
@@ -74,4 +76,8 @@
 
 a {
   transition: background .15s ease-out, color .15s ease-out;
+}
+
+.bg-blue-gradient {
+    background: radial-gradient(at bottom center, var(--color-blue) 0%, var(--color-charcoal) 69%)
 }
