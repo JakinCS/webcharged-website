@@ -3,6 +3,7 @@ import MenuLink from "./MenuLink.astro"
 import MobileMenuLink from "./MobileMenuLink.astro"
 import DropdownItem from "./DropdownItem.astro"
 import Button from "./Button.astro"
+import TextureOverlay from "./TextureOverlay.astro"
 
 const { page } = Astro.props;
 
@@ -26,14 +27,14 @@ const { page } = Astro.props;
           <MenuLink link="/contact-us" class="py-9" aria-current={page === "contact-us" ? "page" : undefined}>Contact Us</MenuLink>
         </li>
       </ul>
-      <Button link="/contact-us" class="hidden md:block">Book a call</Button>
+      <Button link="/project-planning-call" class="hidden md:block">Book a call</Button>
       <button data-mobile-dropdown-trigger class="block lg:hidden cursor-pointer" aria-controls="mobile-dropdown-menu" aria-expanded="false">
         <img src="/icons/hamburger-electric.svg" alt="Menu icon">
       </button>
     </div>
   </nav>
   
-  <div id="mobile-dropdown-menu" data-mobile-dropdown-menu class="mobile-dropdown flex flex-col absolute top-0 w-full h-full bg-parchment invisible 
+  <div id="mobile-dropdown-menu" data-mobile-dropdown-menu class="mobile-dropdown flex flex-col fixed z-200 top-0 w-full h-screen bg-parchment invisible 
   opacity-0 transition-all duration-150 ease-out [[data-open]_&]:visible [[data-open]_&]:opacity-100" aria-hidden="true" aria-label="navigation menu" aria-modal="true">
 
     <nav class="flex justify-center px-32 md:px-53 lg:px-59 pt-20 lg:pt-22">
@@ -42,7 +43,7 @@ const { page } = Astro.props;
           <img src="/images/webcharged-logo-black.svg" width="222" height="60" alt="Go to WebCharged Home" />
         </a>
         <div class="flex items-center gap-40">
-          <Button link="/contact-us" class="hidden md:block">Book a call</Button>
+          <Button link="/project-planning-call" class="hidden md:block">Book a call</Button>
           <button data-mobile-dropdown-close class="cursor-pointer" aria-controls="mobile-dropdown-menu" aria-expanded="false">
             <img src="/icons/close-black.svg" alt="Close icon">
           </button>
@@ -68,9 +69,11 @@ const { page } = Astro.props;
         </li>
       </ul>
       <div class="w-[fit-content] pt-32">
-        <Button link="/contact-us" class="block md:hidden">Book a call</Button>
+        <Button link="/project-planning-call" class="block md:hidden">Book a call</Button>
       </div>
     </nav>
+
+    <TextureOverlay />
 
   </div>
 </header>
