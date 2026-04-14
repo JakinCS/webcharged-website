@@ -1,0 +1,20 @@
+---
+import MenuLink from "./MenuLink.astro"
+
+const { page } = Astro.props;
+---
+
+<li data-dropdown class='relative group'>
+  <MenuLink id="header-menu-dropdown-link" data-dropdown-trigger link="#" class="py-9" aria-haspopup="true" aria-controls="header-menu-dropdown" aria-expanded="false">Our Services</MenuLink>
+
+  <div id="header-menu-dropdown" data-dropdown-menu class="absolute left-0 top-full pt-22 invisible opacity-0 group-hover:visible 
+  group-hover:opacity-100 transition-all duration-150 ease-out 
+  [[data-open]_&]:visible [[data-open]_&]:opacity-100" aria-hidden="true" aria-labelledby="header-menu-dropdown-link">
+
+    <ul class="flex flex-col gap-14 w-350 p-22 bg-blue rounded-md">
+      <MenuLink link="/custom-website-design" color="white"  aria-current={page === "custom-website-design" ? "page" : undefined}>Website Design & Development</MenuLink>
+      <MenuLink link="/website-support-plans" color="white" aria-current={page === "website-support-plans" ? "page" : undefined}>Website Support</MenuLink>
+    </ul>
+
+  </div>
+</li>

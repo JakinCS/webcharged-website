@@ -1,0 +1,7 @@
+---
+const { link,  class: className, ...rest } = Astro.props;
+---
+
+<a href={link} class={"footer-menu-link lg:text-21 font-semibold text-electric hover:text-spark focus:text-spark focus-visible:text-spark active:text-spark [&[aria-current='page']]:text-spark" + (className ? " " + className : "")} {...rest}>
+  <slot />
+</a>

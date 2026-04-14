@@ -1,0 +1,15 @@
+---
+const { link, color, class: className, ...rest } = Astro.props;
+---
+
+<a href={link} class={"menu-link text-21 font-semibold [&[aria-current='page']]:text-spark" + (color === "white" ? " text-parchment"  : " text-electric") + (className ? " " + className : "")} {...rest}>
+  <slot />
+</a>
+
+<style>
+  a {
+    &:hover, &:focus-visible, &:active {
+      color: var(--color-spark);
+    }
+  }
+</style>
