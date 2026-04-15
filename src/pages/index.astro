@@ -96,9 +96,9 @@ import Text from "../components/Text.astro"
   <section class="flex flex-col items-center px-32 md:px-53 py-53 md:py-95 bg-charcoal">
     <div class="grow-1 flex flex-col max-w-480 md:max-w-840 gap-53">
 
-      <div class="flex flex-col items-center gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
+      <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
         <div class="flex flex-col gap-32">
-          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center">Our web design service</h2>
+          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center md:text-start">Our web design service</h2>
           <div class="flex flex-col gap-14">
             <Text class="text-parchment">We follow a predefined formula to create websites that actually convert visitors into customers.</Text>
             <Text class="text-parchment">When people visit your website, your website will do a great job of persuading them to become customers.</Text>
@@ -142,9 +142,9 @@ import Text from "../components/Text.astro"
         </div>
       </div>
       <div class="w-full h-2 bg-parchment"></div>
-      <div class="flex flex-col items-center gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
+      <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
         <div class="flex flex-col gap-32">
-          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center">Maintenance and support</h2>
+          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center md:text-start">Maintenance and support</h2>
           <div class="flex flex-col gap-14">
             <Text class="text-parchment">
               We also provide website support for your website. 
@@ -166,7 +166,54 @@ import Text from "../components/Text.astro"
       </div>
       
     </div>
-     
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 lg:gap-59">
+    <div class="grow-1 flex flex-col items-center gap-32 md:gap-59 max-w-480 md:max-w-840 lg:max-w-1281">
+
+      <h2 class="text-23 md:text-28 lg:text-36 font-semibold text-blue text-center">How we make a website</h2>
+      <div class="flex flex-col gap-32 md:gap-53 lg:gap-36">
+        <div class="flex flex-col gap-12 md:gap-14">
+          <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
+            <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 1<span class="hidden md:inline">:</span></span>
+            <h3 class="text-19/[120%] md:text-23 lg:text-27 font-semibold text-blue">Gathering Information</h3>
+          </div>
+          <Text>
+            We begin by understanding your business better. What do you do? 
+            What makes you different? What are your goals? 
+            Answering these questions and gathering other important details 
+            is the foundation for a successful website project.
+          </Text>
+        </div>
+        <div class="flex flex-col gap-12 md:gap-14">
+          <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
+            <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 2<span class="hidden md:inline">:</span></span>
+            <h3 class="text-19/[120%] md:text-23 lg:text-27 font-semibold text-blue">Ideation and Creation</h3>
+          </div>
+          <Text>
+            We use the information we gathered from you to create designs that reflect your brand. 
+            We develop these designs into a user-friendly, 
+            working website that builds your customers’ confidence in your business.
+          </Text>
+        </div>
+        <div class="flex flex-col gap-12 md:gap-14">
+          <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
+            <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 3<span class="hidden md:inline">:</span></span>
+            <h3 class="text-19/[120%] md:text-23 lg:text-27 font-semibold text-blue">Launch and Beyond</h3>
+          </div>
+          <Text>
+            Your website is now complete! 
+            We hand over all designs and materials we created for your website. 
+            This phase marks the beginning of your business growth! 
+            We also provide 12 months of free support so your website stays perfect.
+          </Text>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="w-full max-w-296 md:max-w-fit">
+      <Button smallerPadding={true} class="w-full inline-block" href="/custom-website-design">View details and pricing</Button>
+    </div>
   </section>
 
 </MainLayout>
