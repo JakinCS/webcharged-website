@@ -2,7 +2,7 @@
 const { link, smallerPadding = false, class: className, ...rest } = Astro.props;
 ---
 
-<a href={link} class={"rounded-md bg-spark text-center text-charcoal text-19 lg:text-21 font-semibold lg:px-36 py-14 lg:py-9" + (smallerPadding ? ' px-20' : ' px-44') + (className ? " " + className : "")} {...rest}>
+<a href={link} class={"rounded-md bg-spark text-center text-charcoal text-19 lg:text-21 font-semibold lg:px-36 py-14 lg:py-9" + (smallerPadding ? ' px-20 md:px-44' : ' px-44') + (className ? " " + className : "")} {...rest}>
   <slot />
 </a>
 

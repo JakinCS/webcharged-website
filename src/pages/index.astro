@@ -1,16 +1,19 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
 import Button from "../components/Button.astro"
+import Text from "../components/Text.astro"
+
 ---
 
 <MainLayout title="WebCharged Web Solutions" page="home">
-  <div class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
+
+  <section class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
     <div class="grow-1 flex flex-col gap-53 lg:gap-36 max-w-1281">
       <div class="flex flex-col gap-20 lg:gap-36">
         <h1 class="text-electric font-semibold text-28 md:text-33 lg:text-47 max-w-400 md:max-w-480 lg:max-w-672">Website design services built around your business</h1>
         <p class="text-parchment text-19 lg:text-21 max-w-496 lg:max-w-576">Custom websites designed for small businesses that need to stand out online and convert visitors into customers.</p>
       </div>
-      <Button smallerPadding={true} class="max-w-300" href="/project-planning-call">Start your project today</Button>
+      <Button smallerPadding={true} class="max-w-300 md:max-w-fit" href="/project-planning-call">Start your project today</Button>
     </div>
     <div class="absolute -top-100 md:-top-147 lg:-top-181 right-0 pointer-events-none">
       <picture class="block lightning-graphic">
@@ -34,8 +37,66 @@ import Button from "../components/Button.astro"
         >
       </picture>
     </div>
-  </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 md:gap-59">
+    <div class="grow-1 flex flex-col items-center max-w-1281 gap-32 md:gap-59">
+      <h2 class="text-23 md:text-28 lg:text-36 text-blue text-center font-semibold">Why WebCharged?</h2>
+      <div class="flex flex-col gap-32 md:gap-36 max-w-480 md:max-w-1281">
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68">
+            <span class="text-spark text-[5rem]/[120%] font-semibold">1.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <h3 class="text-19/[120%] md:text-23 lg:text-27 text-blue font-semibold text-center md:text-start">You Are a Person, Not a Number</h3>
+            <Text>
+              We treat you like an individual person. 
+              We are committed to understanding your unique thought process and how you define success. 
+              This allows us to help you reach your goals.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68">
+            <span class="text-spark text-[5rem]/[120%] font-semibold">2.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <h3 class="text-19/[120%] md:text-23 lg:text-27 text-blue font-semibold text-center md:text-start">Honesty and Fairness</h3>
+            <Text>
+              If you don’t need the fanciest solution, we won’t make you think you need it. 
+              We will offer you the best solution to help you thrive, 
+              at prices that are reasonable for the value you receive.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68">
+            <span class="text-spark text-[5rem]/[120%] font-semibold">3.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <h3 class="text-19/[120%] md:text-23 lg:text-27 text-blue font-semibold text-center md:text-start">Reliability and Punctuality</h3>
+            <Text>
+              We’re punctual, and we meet deadlines. 
+              We provide reliable solutions to your web-related needs. 
+              For every web project, we first understand what you want. 
+              Then we commit to complete that dream.
+            </Text>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="w-full max-w-269 md:max-w-fit">
+      <Button smallerPadding={true} class="w-full inline-block" href="/about-us">Learn more about us</Button>
+    </div>
+  </section>
+
 </MainLayout>
+
+
 
 <style>
   @media screen and (max-width: 750px) {
