@@ -39,9 +39,9 @@ import Text from "../components/Text.astro"
     </div>
   </section>
   <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 md:gap-59">
-    <div class="grow-1 flex flex-col items-center max-w-1281 gap-32 md:gap-59">
+    <div class="grow-1 flex flex-col items-center max-w-480 md:max-w-1281 gap-32 md:gap-59">
       <h2 class="text-23 md:text-28 lg:text-36 text-blue text-center font-semibold">Why WebCharged?</h2>
-      <div class="flex flex-col gap-32 md:gap-36 max-w-480 md:max-w-1281">
+      <div class="flex flex-col gap-32 md:gap-36">
 
         <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
           <div class="shrink-0 md:w-68">
@@ -92,6 +92,81 @@ import Text from "../components/Text.astro"
     <div class="w-full max-w-269 md:max-w-fit">
       <Button smallerPadding={true} class="w-full inline-block" href="/about-us">Learn more about us</Button>
     </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 py-53 md:py-95 bg-charcoal">
+    <div class="grow-1 flex flex-col max-w-480 md:max-w-840 gap-53">
+
+      <div class="flex flex-col items-center gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
+        <div class="flex flex-col gap-32">
+          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center">Our web design service</h2>
+          <div class="flex flex-col gap-14">
+            <Text class="text-parchment">We follow a predefined formula to create websites that actually convert visitors into customers.</Text>
+            <Text class="text-parchment">When people visit your website, your website will do a great job of persuading them to become customers.</Text>
+            <Text class="text-parchment">This means more customers and more sales. And <span class="text-electric font-semibold">this means increased revenue</span>.</Text>
+          </div>
+          <Text class="text-parchment">You'll get a website that you will be proud of. And this includes:</Text>
+          <div class="flex flex-col gap-22 md:mt-21">
+
+            <div class="flex gap-9">
+              <div class="shrink-0 flex px-4">
+                <img class="h-24 md:h-32" src="/icons/brush-white.svg" alt="Brush icon">
+              </div>
+              <div class="flex flex-col gap-5 md:py-2 lg:py-0">
+                <h3 class="text-19/[120%] md:text-23 lg:text-27 text-parchment font-semibold">Custom design</h3>
+                <Text class="text-parchment">Stand out from your competitors with a high-quality, beautiful design.</Text>
+              </div>
+            </div>
+            <div class="flex gap-9">
+              <div class="shrink-0 flex px-4">
+                <img class="h-24 md:h-32" src="/icons/speed-white.svg" alt="Website speed icon">
+              </div>
+              <div class="flex flex-col gap-5 md:py-2 lg:py-0">
+                <h3 class="text-19/[120%] md:text-23 lg:text-27 text-parchment font-semibold">Fast load speeds</h3>
+                <Text class="text-parchment">Don’t scare visitors away with a slow-loading website. Instead, impress them.</Text>
+              </div>
+            </div>
+            <div class="flex gap-9">
+              <div class="shrink-0 flex px-4">
+                <img class="h-24 md:h-32" src="/icons/mobile-hand-white.svg" alt="Mobile phone icon">
+              </div>
+              <div class="flex flex-col gap-5 md:py-2 lg:py-0">
+                <h3 class="text-19/[120%] md:text-23 lg:text-27 text-parchment font-semibold">Mobile-friendliness</h3>
+                <Text class="text-parchment">Give visitors an excellent impression of your business. (Most visitors will use a phone)</Text>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="w-full max-w-320 md:max-w-fit">
+          <Button smallerPadding={true} class="w-full inline-block" href="/custom-website-design">Learn more</Button>
+        </div>
+      </div>
+      <div class="w-full h-2 bg-parchment"></div>
+      <div class="flex flex-col items-center gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
+        <div class="flex flex-col gap-32">
+          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center">Maintenance and support</h2>
+          <div class="flex flex-col gap-14">
+            <Text class="text-parchment">
+              We also provide website support for your website. 
+              This way you can rest easy knowing that your website is in good hands. 
+              We take care of any issues that arise with your website.
+            </Text>
+            <Text class="text-parchment">
+              We will update it for you whenever you need to make a change. 
+              Then you can be more efficient with your time, doing what you already do best. 
+            </Text>
+            <Text class="text-parchment">
+              You'll be confident that your website is performing just as good as ever.  
+            </Text>
+          </div>
+        </div>
+        <div class="w-full max-w-320 md:max-w-fit">
+          <Button smallerPadding={true} class="w-full inline-block" href="/website-support-plans">Get details</Button>
+        </div>
+      </div>
+      
+    </div>
+     
   </section>
 
 </MainLayout>
