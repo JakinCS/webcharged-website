@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro"
 import Button from "../components/Button.astro"
 import Text from "../components/Text.astro"
+import CTASection from "../components/CTASection.astro"
 
 ---
 
@@ -97,8 +98,8 @@ import Text from "../components/Text.astro"
     <div class="grow-1 flex flex-col max-w-480 md:max-w-840 gap-53">
 
       <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
-        <div class="flex flex-col gap-32">
-          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center md:text-start">Our web design service</h2>
+        <div class="flex flex-col items-center md:items-start gap-32">
+          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold">Our web design service</h2>
           <div class="flex flex-col gap-14">
             <Text class="text-parchment">We follow a predefined formula to create websites that actually convert visitors into customers.</Text>
             <Text class="text-parchment">When people visit your website, your website will do a great job of persuading them to become customers.</Text>
@@ -143,8 +144,8 @@ import Text from "../components/Text.astro"
       </div>
       <div class="w-full h-2 bg-parchment"></div>
       <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
-        <div class="flex flex-col gap-32">
-          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold text-center md:text-start">Maintenance and support</h2>
+        <div class="flex flex-col items-center md:items-start gap-32">
+          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold">Maintenance and support</h2>
           <div class="flex flex-col gap-14">
             <Text class="text-parchment">
               We also provide website support for your website. 
@@ -215,6 +216,15 @@ import Text from "../components/Text.astro"
       <Button smallerPadding={true} class="w-full inline-block" href="/custom-website-design">View details and pricing</Button>
     </div>
   </section>
+  <CTASection>
+    <div class="flex flex-col gap-20 lg:gap-22">
+      <h2 class="text-23 md:text-28 lg:text-36 font-semibold text-blue">Let's connect!</h2>
+      <Text>Got an idea or question? Feel free to reach out and we’ll get back to you!</Text>
+    </div>
+    <div class="w-full max-w-fit">
+      <Button smallerPadding={false} class="w-full inline-block" href="/contact-us">Reach out to us</Button>
+    </div>
+  </CTASection>
 
 </MainLayout>
 

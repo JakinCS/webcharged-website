@@ -17,7 +17,7 @@ const { title = "Astro Website", page } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-parchment text-charcoal min-h-screen relative flex flex-col">
+	<body class="bg-parchment text-charcoal min-h-screen relative flex flex-col overflow-x-hidden">
     <TextureOverlay />
     <Header page={page}></Header>
 		<main class="grow-1">
