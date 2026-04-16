@@ -1,7 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
 import Button from "../components/Button.astro"
-import Text from "../components/Text.astro"
+import Text from "../components/text/Text.astro"
+import H1 from "../components/text/H1.astro";
+import H2 from '../components/text/H2.astro';
+import H3 from '../components/text/H3.astro';
 import CTASection from "../components/CTASection.astro"
 
 ---
@@ -11,7 +14,7 @@ import CTASection from "../components/CTASection.astro"
   <section class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
     <div class="grow-1 flex flex-col gap-53 lg:gap-36 max-w-1281">
       <div class="flex flex-col gap-20 lg:gap-36">
-        <h1 class="text-electric font-semibold text-28 md:text-33 lg:text-47 max-w-400 md:max-w-480 lg:max-w-672">Website design services built around your business</h1>
+        <H1 class='max-w-400 md:max-w-480 lg:max-w-672'>Website design services built around your business</H1>
         <p class="text-parchment text-19 lg:text-21 max-w-496 lg:max-w-576">Custom websites designed for small businesses that need to stand out online and convert visitors into customers.</p>
       </div>
       <Button class="self-start" href="/project-planning-call">Start your project today</Button>
@@ -41,7 +44,7 @@ import CTASection from "../components/CTASection.astro"
   </section>
   <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 md:gap-59">
     <div class="grow-1 flex flex-col items-center max-w-480 md:max-w-1281 gap-32 md:gap-59">
-      <h2 class="text-23 md:text-28 lg:text-36 text-blue text-center font-semibold">Why WebCharged?</h2>
+      <H2 class="text-center">Why WebCharged?</H2>
       <div class="flex flex-col gap-32 md:gap-36">
 
         <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
@@ -49,7 +52,7 @@ import CTASection from "../components/CTASection.astro"
             <span class="text-spark text-[5rem]/[120%] font-semibold">1.</span>
           </div>
           <div class="flex flex-col gap-9">
-            <h3 class="text-19/[120%] md:text-23 lg:text-27 text-blue font-semibold text-center md:text-start">You Are a Person, Not a Number</h3>
+            <H3 class="text-center md:text-start">You Are a Person, Not a Number</H3>
             <Text>
               We treat you like an individual person. 
               We are committed to understanding your unique thought process and how you define success. 
@@ -63,7 +66,7 @@ import CTASection from "../components/CTASection.astro"
             <span class="text-spark text-[5rem]/[120%] font-semibold">2.</span>
           </div>
           <div class="flex flex-col gap-9">
-            <h3 class="text-19/[120%] md:text-23 lg:text-27 text-blue font-semibold text-center md:text-start">Honesty and Fairness</h3>
+            <H3 class="text-center md:text-start">Honesty and Fairness</H3>
             <Text>
               If you don’t need the fanciest solution, we won’t make you think you need it. 
               We will offer you the best solution to help you thrive, 
@@ -77,7 +80,7 @@ import CTASection from "../components/CTASection.astro"
             <span class="text-spark text-[5rem]/[120%] font-semibold">3.</span>
           </div>
           <div class="flex flex-col gap-9">
-            <h3 class="text-19/[120%] md:text-23 lg:text-27 text-blue font-semibold text-center md:text-start">Reliability and Punctuality</h3>
+            <H3 class="text-center md:text-start">Reliability and Punctuality</H3>
             <Text>
               We’re punctual, and we meet deadlines. 
               We provide reliable solutions to your web-related needs. 
@@ -98,7 +101,7 @@ import CTASection from "../components/CTASection.astro"
 
       <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
         <div class="flex flex-col items-center md:items-start gap-32">
-          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold">Our web design service</h2>
+          <H2 color="electric">Our web design service</H2>
           <div class="flex flex-col gap-14">
             <Text class="text-parchment">We follow a predefined formula to create websites that actually convert visitors into customers.</Text>
             <Text class="text-parchment">When people visit your website, your website will do a great job of persuading them to become customers.</Text>
@@ -112,7 +115,7 @@ import CTASection from "../components/CTASection.astro"
                 <img class="h-24 md:h-32" src="/icons/brush-white.svg" alt="Brush icon">
               </div>
               <div class="flex flex-col gap-5 md:py-2 lg:py-0">
-                <h3 class="text-19/[120%] md:text-23 lg:text-27 text-parchment font-semibold">Custom design</h3>
+                <H3 color="parchment">Custom design</H3>
                 <Text class="text-parchment">Stand out from your competitors with a high-quality, beautiful design.</Text>
               </div>
             </div>
@@ -121,7 +124,7 @@ import CTASection from "../components/CTASection.astro"
                 <img class="h-24 md:h-32" src="/icons/speed-white.svg" alt="Website speed icon">
               </div>
               <div class="flex flex-col gap-5 md:py-2 lg:py-0">
-                <h3 class="text-19/[120%] md:text-23 lg:text-27 text-parchment font-semibold">Fast load speeds</h3>
+                <H3 color="parchment">Fast load speeds</H3>
                 <Text class="text-parchment">Don’t scare visitors away with a slow-loading website. Instead, impress them.</Text>
               </div>
             </div>
@@ -130,7 +133,7 @@ import CTASection from "../components/CTASection.astro"
                 <img class="h-24 md:h-32" src="/icons/mobile-hand-white.svg" alt="Mobile phone icon">
               </div>
               <div class="flex flex-col gap-5 md:py-2 lg:py-0">
-                <h3 class="text-19/[120%] md:text-23 lg:text-27 text-parchment font-semibold">Mobile-friendliness</h3>
+                <H3 color="parchment">Mobile-friendliness</H3>
                 <Text class="text-parchment">Give visitors an excellent impression of your business. (Most visitors will use a phone)</Text>
               </div>
             </div>
@@ -143,7 +146,7 @@ import CTASection from "../components/CTASection.astro"
       <div class="w-full h-2 bg-parchment"></div>
       <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
         <div class="flex flex-col items-center md:items-start gap-32">
-          <h2 class="text-electric text-23 md:text-28 lg:text-36 font-semibold">Maintenance and support</h2>
+          <H2 color="electric">Maintenance and support</H2>
           <div class="flex flex-col gap-14">
             <Text class="text-parchment">
               We also provide website support for your website. 
@@ -168,12 +171,12 @@ import CTASection from "../components/CTASection.astro"
   <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 lg:gap-59">
     <div class="grow-1 flex flex-col items-center gap-32 md:gap-59 max-w-480 md:max-w-840 lg:max-w-1281">
 
-      <h2 class="text-23 md:text-28 lg:text-36 font-semibold text-blue text-center">How we make a website</h2>
+      <H2 class='text-center'>How we make a website</H2>
       <div class="flex flex-col gap-32 md:gap-53 lg:gap-36">
         <div class="flex flex-col gap-12 md:gap-14">
           <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
             <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 1<span class="hidden md:inline">:</span></span>
-            <h3 class="text-19/[120%] md:text-23 lg:text-27 font-semibold text-blue">Gathering Information</h3>
+            <H3>Gathering Information</H3>
           </div>
           <Text>
             We begin by understanding your business better. What do you do? 
@@ -185,7 +188,7 @@ import CTASection from "../components/CTASection.astro"
         <div class="flex flex-col gap-12 md:gap-14">
           <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
             <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 2<span class="hidden md:inline">:</span></span>
-            <h3 class="text-19/[120%] md:text-23 lg:text-27 font-semibold text-blue">Ideation and Creation</h3>
+            <H3>Ideation and Creation</H3>
           </div>
           <Text>
             We use the information we gathered from you to create designs that reflect your brand. 
@@ -196,7 +199,7 @@ import CTASection from "../components/CTASection.astro"
         <div class="flex flex-col gap-12 md:gap-14">
           <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
             <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 3<span class="hidden md:inline">:</span></span>
-            <h3 class="text-19/[120%] md:text-23 lg:text-27 font-semibold text-blue">Launch and Beyond</h3>
+            <H3>Launch and Beyond</H3>
           </div>
           <Text>
             Your website is now complete! 
@@ -214,7 +217,7 @@ import CTASection from "../components/CTASection.astro"
   </section>
   <CTASection>
     <div class="flex flex-col gap-20 lg:gap-22">
-      <h2 class="text-23 md:text-28 lg:text-36 font-semibold text-blue">Let's connect!</h2>
+      <H2>Let's connect!</H2>
       <Text>Got an idea or question? Feel free to reach out and we’ll get back to you!</Text>
     </div>
     <Button class="self-start" href="/contact-us">Reach out to us</Button>

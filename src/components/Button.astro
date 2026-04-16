@@ -4,7 +4,7 @@ const { alt=false, mobileWidth, link, smallerPadding = false, class: className, 
 
 const set1styles = (!className?.includes('hidden') ? 'inline-flex ' : "") + 'items-center justify-center max-w-[100%] box-border before:w-24 before:md:w-0 before:min-w-0 before:flex-grow-0 before:flex-shrink-9999 before:flex-basis-24 before:md:flex-basis-0 after:w-24 after:md:w-0 after:min-w-0 after:flex-grow-0 after:flex-shrink-9999 after:flex-basis-24 after:md:flex-basis-0';
 let set2styles;
-if (mobileWidth) set2styles = `w-full md:w-fit text-center max-w-${mobileWidth}`
+if (mobileWidth) set2styles = `w-full md:w-fit text-center max-w-${mobileWidth.toString()}`;
 
 ---
 
