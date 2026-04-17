@@ -21,6 +21,23 @@
   font-style: normal;
   src: url('/fonts/subset-AtkinsonHyperlegibleNext-SemiBold.woff2') format('woff2');
 }
+@font-face {
+  font-family: primary-fallback;
+  src: local("Arial");
+  size-adjust: 104.969411146315%;
+  ascent-override: 164.3358416%;
+  descent-override: 57.51754455%;
+  line-gap-override: 16.43358416%;
+}
+
+@font-face {
+  font-family: secondary-fallback-android;
+  src: local("Roboto");
+  size-adjust: 105.843338%;
+  ascent-override: 51.78947368421%;
+  descent-override: 63.2%;
+  line-gap-override: 100%;
+}
 
 @theme {
   /* Colors */
@@ -33,7 +50,7 @@
   --color-parchment: #FFF7EB;
 
   /* Fonts — remember to load these via a <link> in your layout */
-  --font-sans: 'Atkinson Hyperlegible Next', sans-serif;
+  --font-sans: 'Atkinson Hyperlegible Next', primary-fallback, secondary-fallback-android, sans-serif;
 
   /* Spacing additions */
   --spacing: 0.0625rem;
@@ -49,6 +66,8 @@
   --text-36--line-height: 120%;
   --text-33: 2.0625rem;
   --text-33--line-height: 120%;
+  --text-28: 1.75rem;
+  --text-28--line-height: 120%;
   --text-27: 1.6875rem;
   --text-27--line-height: 120%;
   --text-23: 1.4375rem;
@@ -74,4 +93,8 @@
 
 a {
   transition: background .15s ease-out, color .15s ease-out;
+}
+
+.bg-blue-gradient {
+    background: radial-gradient(at bottom center, var(--color-blue) 0%, var(--color-charcoal) 69%)
 }

@@ -1,7 +1,7 @@
 ---
 import MenuLink from "./MenuLink.astro"
 
-const { page } = Astro.props;
+const pageUrl = Astro.url.pathname;
 ---
 
 <li data-dropdown class='relative group'>
@@ -12,8 +12,8 @@ const { page } = Astro.props;
   [[data-open]_&]:visible [[data-open]_&]:opacity-100" aria-hidden="true" aria-labelledby="header-menu-dropdown-link">
 
     <ul class="flex flex-col gap-14 w-350 p-22 bg-blue rounded-md">
-      <MenuLink link="/custom-website-design" color="white"  aria-current={page === "custom-website-design" ? "page" : undefined}>Website Design & Development</MenuLink>
-      <MenuLink link="/website-support-plans" color="white" aria-current={page === "website-support-plans" ? "page" : undefined}>Website Support</MenuLink>
+      <MenuLink link="/custom-website-design" color="white"  aria-current={pageUrl === "/custom-website-design" ? "page" : undefined}>Website Design & Development</MenuLink>
+      <MenuLink link="/website-support-plans" color="white" aria-current={pageUrl === "/website-support-plans" ? "page" : undefined}>Website Support</MenuLink>
     </ul>
 
   </div>
