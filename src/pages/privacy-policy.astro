@@ -1,11 +1,13 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-const pageTitle = "Privacy Policy";
+const headContent = {
+  metaTitle: "Privacy Policy",
+}
 ---
 
-<MainLayout title="WebCharged Web Solutions" page="privacy-policy">
+<MainLayout headContent={headContent}>
   <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{pageTitle}</h1>
+    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
   </div>
 </MainLayout>

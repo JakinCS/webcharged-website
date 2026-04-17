@@ -2,7 +2,7 @@
 import Button from "./Button.astro"
 import FooterMenuLink from "./FooterMenuLink.astro"
 
-const { page } = Astro.props;
+const pageUrl = Astro.url.pathname;
 ---
 
 <footer>
@@ -32,19 +32,19 @@ const { page } = Astro.props;
 
       <nav class="flex flex-col xl:flex-row gap-22 md:gap-5 xl:gap-59">
         <div class="flex flex-col gap-5 xl:gap-9">
-          <FooterMenuLink aria-current={page === "home" ? "page" : undefined} link="/">Home</FooterMenuLink>
-          <FooterMenuLink aria-current={page === "about-us" ? "page" : undefined} link="/about-us">About Us</FooterMenuLink>
-          <FooterMenuLink aria-current={page === "contact-us" ? "page" : undefined} link="/contact-us">Contact Us</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/" ? "page" : undefined} link="/">Home</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/about-us" ? "page" : undefined} link="/about-us">About Us</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/contact-us" ? "page" : undefined} link="/contact-us">Contact Us</FooterMenuLink>
         </div>
         <div class="flex flex-col gap-5 xl:gap-9">
-          <FooterMenuLink aria-current={page === "custom-website-design" ? "page" : undefined} link="/custom-website-design">Website Design & Development</FooterMenuLink>
-          <FooterMenuLink aria-current={page === "website-support-plans" ? "page" : undefined} link="/website-support-plans">Website Support</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/custom-website-design" ? "page" : undefined} link="/custom-website-design">Website Design & Development</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/website-support-plans" ? "page" : undefined} link="/website-support-plans">Website Support</FooterMenuLink>
           <FooterMenuLink link="https://g.page/r/CXHisG7xbBjDEAE/review" target="_blank">Review Us</FooterMenuLink>
         </div>
         <div class="flex flex-col gap-5 xl:gap-9">
-          <FooterMenuLink aria-current={page === "frequently-asked-questions" ? "page" : undefined} link="/frequently-asked-questions">FAQ</FooterMenuLink>
-          <FooterMenuLink aria-current={page === "privacy-policy" ? "page" : undefined} link="/privacy-policy">Privacy Policy</FooterMenuLink>
-          <FooterMenuLink aria-current={page === "terms-and-conditions" ? "page" : undefined} link="/terms-and-conditions">Terms & Conditions</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/frequently-asked-questions" ? "page" : undefined} link="/frequently-asked-questions">FAQ</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/privacy-policy" ? "page" : undefined} link="/privacy-policy">Privacy Policy</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/terms-and-conditions" ? "page" : undefined} link="/terms-and-conditions">Terms & Conditions</FooterMenuLink>
         </div>
       </nav>
 

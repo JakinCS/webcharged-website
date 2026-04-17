@@ -7,9 +7,91 @@ import H2 from '../components/text/H2.astro';
 import H3 from '../components/text/H3.astro';
 import CTASection from "../components/CTASection.astro"
 
+
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "url": "https://webchargedsolutions.com",
+      "logo": "https://webchargedsolutions.com/wp-content/uploads/2025/10/Primary-Black.svg",
+      "telephone": "+1-928-235-2131",
+      "email": "hello@webchargedsolutions.com",
+	  "contactPoint": {
+		  "@type": "ContactPoint",
+		  "telephone": "+1-928-235-2131",
+		  "contactType": "customer service",
+		  "url": "https://webchargedsolutions.com/contact-us",
+		  "email": "hello@webchargedsolutions.com"
+		},
+      "description": "WebCharged provides custom website design for small businesses focused on converting visitors into customers, along with reliable website maintenance and support.",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "", 
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "postalCode": "85365",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
+          "closes": "15:00"
+        }
+      ],
+      "knowsAbout": [
+        "Web Design",
+        "Custom Website Development",
+        "Website Maintenance",
+        "Conversion Rate Optimization",
+        "Mobile-Friendly Design"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://webchargedsolutions.com/#website",
+      "url": "https://webchargedsolutions.com",
+      "name": "WebCharged Web Solutions",
+      "publisher": { "@id": "https://webchargedsolutions.com/#organization" }
+    },
+    {
+      "@type": "Service",
+      "name": "Custom Website Design",
+      "description": "Custom websites designed for small businesses that need to stand out online. Focuses on custom design, fast load speeds, and mobile-friendliness to increase revenue.",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "url": "https://webchargedsolutions.com/custom-website-design",
+      "areaServed": { "@type": "Place", "name": "Worldwide" }
+    },
+    {
+      "@type": "Service",
+      "name": "Maintenance and Support",
+      "description": "Professional website support and updates so you can rest easy knowing your website is in good hands and performing perfectly.",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "url": "https://webchargedsolutions.com/website-support-plans",
+      "areaServed": { "@type": "Place", "name": "Worldwide" }
+    }
+  ]
+}
+
+const headContent ={
+  metaTitle: "WebCharged Web Solutions - Website Design in Yuma",
+  metaDescription: "A web design and development company located in Yuma, AZ. We build custom websites for small businesses, websites built to convert.",
+  schemaMarkup,
+  socialMediaImagePath: '/images/social/Home-Facebook.jpg',
+  socialMediaImageDesc: 'WebCharged. Offering professional website design services for small businesses.',
+  twitterImagePath: '/images/social/Home-Twitter.jpg',
+}
+
 ---
 
-<MainLayout title="WebCharged Web Solutions" page="home">
+<MainLayout headContent={headContent}>
+  <link slot="head" rel="preload" as="image" href="/images/yellow-lightning-bolt.webp" imagesrcset="/images/yellow-lightning-bolt-360.webp 360w, /images/yellow-lightning-bolt.webp 615w" imagesizes="(max-width: 750px) 360px, 615px" type="image/webp"/>
 
   <section class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
     <div class="grow-1 flex flex-col gap-53 lg:gap-36 max-w-1281">
@@ -32,7 +114,6 @@ import CTASection from "../components/CTASection.astro"
         <!-- Desktop: default fallback -->
         <img
           src="/images/yellow-lightning-bolt.webp"
-          title="Decorative yellow lightning bolt" 
           alt=""
           width="615"
           height="1152"

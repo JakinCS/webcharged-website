@@ -21,6 +21,23 @@
   font-style: normal;
   src: url('/fonts/subset-AtkinsonHyperlegibleNext-SemiBold.woff2') format('woff2');
 }
+@font-face {
+  font-family: primary-fallback;
+  src: local("Arial");
+  size-adjust: 104.969411146315%;
+  ascent-override: 164.3358416%;
+  descent-override: 57.51754455%;
+  line-gap-override: 16.43358416%;
+}
+
+@font-face {
+  font-family: secondary-fallback-android;
+  src: local("Roboto");
+  size-adjust: 105.843338%;
+  ascent-override: 51.78947368421%;
+  descent-override: 63.2%;
+  line-gap-override: 100%;
+}
 
 @theme {
   /* Colors */
@@ -33,7 +50,7 @@
   --color-parchment: #FFF7EB;
 
   /* Fonts — remember to load these via a <link> in your layout */
-  --font-sans: 'Atkinson Hyperlegible Next', sans-serif;
+  --font-sans: 'Atkinson Hyperlegible Next', primary-fallback, secondary-fallback-android, sans-serif;
 
   /* Spacing additions */
   --spacing: 0.0625rem;
