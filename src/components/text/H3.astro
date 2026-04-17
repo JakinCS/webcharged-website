@@ -1,0 +1,12 @@
+---
+
+const { color, class: className, ...rest } = Astro.props;
+
+let colorStyle = color ? `text-${color} ` : "text-blue ";
+let styles = colorStyle + 'text-19/[120%] md:text-23 lg:text-27 font-semibold' + (className ? " " + className : "");
+
+---
+
+<h3 class={styles} {...rest}>
+  <slot />
+</h3>

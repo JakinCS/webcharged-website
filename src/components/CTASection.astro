@@ -1,0 +1,72 @@
+---
+  
+---
+
+<section class="relative flex flex-col items-center px-32 md:px-53 lg:px-59 py-53 md:py-85 lg:py-154 overflow-hidden">
+  <div class="flex flex-col w-full max-w-1281 pe-21 md:pe-170 lg:pe-190 gap-32 lg:gap-36">
+    <slot />
+  </div>
+  <div class="absolute gray-decorative-lightning -z-1 w-360 md:w-439 lg:w-615">
+    <img src="/images/black-lightning-bolt.svg" alt="Decorative black lightning bolt" width="615" height="1152">
+    <div class="lightning-blur1 absolute min-h-[50%] w-full left-0 bottom-0">      
+    </div>
+    <div class="lightning-blur2 absolute min-h-[50%] w-full left-0 bottom-0">      
+    </div>
+    <div class="lightning-blur3 absolute min-h-[50%] w-full left-0 bottom-0">      
+    </div>
+    <div class="lightning-blur4 absolute min-h-[50%] w-full left-0 bottom-0">      
+    </div>
+  </div>
+</section>
+
+<style>
+  .lightning-blur1 {
+    backdrop-filter: blur(2px);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, transparent 100%);
+  }
+
+  .lightning-blur2 {
+    backdrop-filter: blur(4px);
+    mask-image: linear-gradient(to bottom, transparent 20%, black 60%, transparent 100%);
+  }
+
+  .lightning-blur3 {
+    backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to bottom, transparent 60%, black 80%);
+  }
+
+  .lightning-blur4 {
+    backdrop-filter: blur(12px);
+    mask-image: linear-gradient(to bottom, transparent 80%, black 100%);
+  }
+
+
+  @media screen and (max-width: 750px) {
+    .gray-decorative-lightning {
+      right: max(-222px, calc(-1 * (222px + (68.292px - 18.97vw))));
+      bottom: calc((676px - 100%) / -2);
+    }
+  }
+  /* For Tablet Landscape */
+  @media screen and (min-width: 751px) and (max-width: 1150px) {
+    .gray-decorative-lightning {
+      right: calc(-1*(160px + (150.2px - 20vw)));
+      bottom: calc((822px - 100%) / -2);
+    }
+  }
+  /* For Laptop */
+  @media screen and (min-width: 1151px) and (max-width: 1400px) {
+    .gray-decorative-lightning {
+      right: calc(-1*(306px + (763.6px - 66.4vw)));
+      bottom: calc((1152px - 100%) / -2);
+    }
+  }
+  /* For Desktop */
+  @media screen and (min-width: 1401px) {
+    .gray-decorative-lightning {
+      right: min(-29px, calc(-1 * (140px + (518.7px - 37.05vw))));
+      bottom: calc((1152px - 100%) / -2);
+    }
+  }
+
+</style>

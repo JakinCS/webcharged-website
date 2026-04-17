@@ -1,11 +1,357 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro"
+import Button from "../components/Button.astro"
+import Text from "../components/text/Text.astro"
+import H1 from "../components/text/H1.astro";
+import H2 from '../components/text/H2.astro';
+import H3 from '../components/text/H3.astro';
+import CTASection from "../components/CTASection.astro"
 
-const pageTitle = "Homepage";
+
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "url": "https://webchargedsolutions.com",
+      "logo": "https://webchargedsolutions.com/wp-content/uploads/2025/10/Primary-Black.svg",
+      "telephone": "+1-928-235-2131",
+      "email": "hello@webchargedsolutions.com",
+	  "contactPoint": {
+		  "@type": "ContactPoint",
+		  "telephone": "+1-928-235-2131",
+		  "contactType": "customer service",
+		  "url": "https://webchargedsolutions.com/contact-us",
+		  "email": "hello@webchargedsolutions.com"
+		},
+      "description": "WebCharged provides custom website design for small businesses focused on converting visitors into customers, along with reliable website maintenance and support.",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "", 
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "postalCode": "85365",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
+          "closes": "15:00"
+        }
+      ],
+      "knowsAbout": [
+        "Web Design",
+        "Custom Website Development",
+        "Website Maintenance",
+        "Conversion Rate Optimization",
+        "Mobile-Friendly Design"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://webchargedsolutions.com/#website",
+      "url": "https://webchargedsolutions.com",
+      "name": "WebCharged Web Solutions",
+      "publisher": { "@id": "https://webchargedsolutions.com/#organization" }
+    },
+    {
+      "@type": "Service",
+      "name": "Custom Website Design",
+      "description": "Custom websites designed for small businesses that need to stand out online. Focuses on custom design, fast load speeds, and mobile-friendliness to increase revenue.",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "url": "https://webchargedsolutions.com/custom-website-design",
+      "areaServed": { "@type": "Place", "name": "Worldwide" }
+    },
+    {
+      "@type": "Service",
+      "name": "Maintenance and Support",
+      "description": "Professional website support and updates so you can rest easy knowing your website is in good hands and performing perfectly.",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "url": "https://webchargedsolutions.com/website-support-plans",
+      "areaServed": { "@type": "Place", "name": "Worldwide" }
+    }
+  ]
+}
+
+const headContent ={
+  metaTitle: "WebCharged Web Solutions - Website Design in Yuma",
+  metaDescription: "A web design and development company located in Yuma, AZ. We build custom websites for small businesses, websites built to convert.",
+  schemaMarkup,
+  socialMediaImagePath: '/images/social/Home-Facebook.jpg',
+  socialMediaImageDesc: 'WebCharged. Offering professional website design services for small businesses.',
+  twitterImagePath: '/images/social/Home-Twitter.jpg',
+}
+
 ---
 
-<MainLayout title="WebCharged Web Solutions" page="home">
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{pageTitle}</h1>
-  </div>
+<MainLayout headContent={headContent}>
+  <link slot="head" rel="preload" as="image" href="/images/yellow-lightning-bolt.webp" imagesrcset="/images/yellow-lightning-bolt-360.webp 360w, /images/yellow-lightning-bolt.webp 615w" imagesizes="(max-width: 750px) 360px, 615px" type="image/webp"/>
+
+  <section class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
+    <div class="grow-1 flex flex-col gap-53 lg:gap-36 max-w-1281">
+      <div class="flex flex-col gap-20 lg:gap-36">
+        <H1 class='max-w-400 md:max-w-480 lg:max-w-672'>Website design services built around your business</H1>
+        <p class="text-parchment text-19 lg:text-21 max-w-496 lg:max-w-576">Custom websites designed for small businesses that need to stand out online and convert visitors into customers.</p>
+      </div>
+      <Button class="self-start" href="/project-planning-call">Start your project today</Button>
+    </div>
+    <div class="absolute -top-100 md:-top-147 lg:-top-181 right-0 pointer-events-none">
+      <picture class="block lightning-graphic">
+        <!-- Mobile: loads on screens 750px and under -->
+        <source
+          srcset="/images/yellow-lightning-bolt-360.webp"
+          media="(max-width: 750px)"
+          type="image/webp"
+          width="360"
+          height="676"
+        >
+        <!-- Desktop: default fallback -->
+        <img
+          src="/images/yellow-lightning-bolt.webp"
+          alt=""
+          width="615"
+          height="1152"
+          fetchpriority="high"
+          decoding="sync"
+        >
+      </picture>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 md:gap-59">
+    <div class="grow-1 flex flex-col items-center max-w-480 md:max-w-1281 gap-32 md:gap-59">
+      <H2 class="text-center">Why WebCharged?</H2>
+      <div class="flex flex-col gap-32 md:gap-36">
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68">
+            <span class="text-spark text-[5rem]/[120%] font-semibold">1.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <H3 class="text-center md:text-start">You Are a Person, Not a Number</H3>
+            <Text>
+              We treat you like an individual person. 
+              We are committed to understanding your unique thought process and how you define success. 
+              This allows us to help you reach your goals.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68">
+            <span class="text-spark text-[5rem]/[120%] font-semibold">2.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <H3 class="text-center md:text-start">Honesty and Fairness</H3>
+            <Text>
+              If you don’t need the fanciest solution, we won’t make you think you need it. 
+              We will offer you the best solution to help you thrive, 
+              at prices that are reasonable for the value you receive.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68">
+            <span class="text-spark text-[5rem]/[120%] font-semibold">3.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <H3 class="text-center md:text-start">Reliability and Punctuality</H3>
+            <Text>
+              We’re punctual, and we meet deadlines. 
+              We provide reliable solutions to your web-related needs. 
+              For every web project, we first understand what you want. 
+              Then we commit to complete that dream.
+            </Text>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <Button href="/about-us">Learn more about us</Button>
+
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 py-53 md:py-95 bg-charcoal">
+    <div class="grow-1 flex flex-col max-w-480 md:max-w-840 gap-53">
+
+      <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
+        <div class="flex flex-col items-center md:items-start gap-32">
+          <H2 color="electric">Our web design service</H2>
+          <div class="flex flex-col gap-14">
+            <Text class="text-parchment">We follow a predefined formula to create websites that actually convert visitors into customers.</Text>
+            <Text class="text-parchment">When people visit your website, your website will do a great job of persuading them to become customers.</Text>
+            <Text class="text-parchment">This means more customers and more sales. And <span class="text-electric font-semibold">this means increased revenue</span>.</Text>
+          </div>
+          <Text class="text-parchment">You'll get a website that you will be proud of. And this includes:</Text>
+          <div class="flex flex-col gap-22 md:mt-21">
+
+            <div class="flex gap-9">
+              <div class="shrink-0 flex px-4">
+                <img class="h-24 md:h-32" src="/icons/brush-white.svg" alt="Brush icon">
+              </div>
+              <div class="flex flex-col gap-5 md:py-2 lg:py-0">
+                <H3 color="parchment">Custom design</H3>
+                <Text class="text-parchment">Stand out from your competitors with a high-quality, beautiful design.</Text>
+              </div>
+            </div>
+            <div class="flex gap-9">
+              <div class="shrink-0 flex px-4">
+                <img class="h-24 md:h-32" src="/icons/speed-white.svg" alt="Website speed icon">
+              </div>
+              <div class="flex flex-col gap-5 md:py-2 lg:py-0">
+                <H3 color="parchment">Fast load speeds</H3>
+                <Text class="text-parchment">Don’t scare visitors away with a slow-loading website. Instead, impress them.</Text>
+              </div>
+            </div>
+            <div class="flex gap-9">
+              <div class="shrink-0 flex px-4">
+                <img class="h-24 md:h-32" src="/icons/mobile-hand-white.svg" alt="Mobile phone icon">
+              </div>
+              <div class="flex flex-col gap-5 md:py-2 lg:py-0">
+                <H3 color="parchment">Mobile-friendliness</H3>
+                <Text class="text-parchment">Give visitors an excellent impression of your business. (Most visitors will use a phone)</Text>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <Button mobileWidth={320} href="/custom-website-design">Learn more</Button>
+
+      </div>
+      <div class="w-full h-2 bg-parchment"></div>
+      <div class="flex flex-col items-center md:items-start gap-53 rounded-md md:border-[1.5px] border-electric md:p-59">
+        <div class="flex flex-col items-center md:items-start gap-32">
+          <H2 color="electric">Maintenance and support</H2>
+          <div class="flex flex-col gap-14">
+            <Text class="text-parchment">
+              We also provide website support for your website. 
+              This way you can rest easy knowing that your website is in good hands. 
+              We take care of any issues that arise with your website.
+            </Text>
+            <Text class="text-parchment">
+              We will update it for you whenever you need to make a change. 
+              Then you can be more efficient with your time, doing what you already do best. 
+            </Text>
+            <Text class="text-parchment">
+              You'll be confident that your website is performing just as good as ever.  
+            </Text>
+          </div>
+        </div>
+        <Button mobileWidth={320} href="/website-support-plans">Get details</Button>
+
+      </div>
+      
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95 gap-53 lg:gap-59">
+    <div class="grow-1 flex flex-col items-center gap-32 md:gap-59 max-w-480 md:max-w-840 lg:max-w-1281">
+
+      <H2 class='text-center'>How we make a website</H2>
+      <div class="flex flex-col gap-32 md:gap-53 lg:gap-36">
+        <div class="flex flex-col gap-12 md:gap-14">
+          <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
+            <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 1<span class="hidden md:inline">:</span></span>
+            <H3>Gathering Information</H3>
+          </div>
+          <Text>
+            We begin by understanding your business better. What do you do? 
+            What makes you different? What are your goals? 
+            Answering these questions and gathering other important details 
+            is the foundation for a successful website project.
+          </Text>
+        </div>
+        <div class="flex flex-col gap-12 md:gap-14">
+          <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
+            <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 2<span class="hidden md:inline">:</span></span>
+            <H3>Ideation and Creation</H3>
+          </div>
+          <Text>
+            We use the information we gathered from you to create designs that reflect your brand. 
+            We develop these designs into a user-friendly, 
+            working website that builds your customers’ confidence in your business.
+          </Text>
+        </div>
+        <div class="flex flex-col gap-12 md:gap-14">
+          <div class="flex flex-col md:flex-row md:items-end gap-8 md:gap-21">
+            <span class="text-40 md:text-47/[90%] lg:text-47/[95%] text-spark font-semibold">Phase 3<span class="hidden md:inline">:</span></span>
+            <H3>Launch and Beyond</H3>
+          </div>
+          <Text>
+            Your website is now complete! 
+            We hand over all designs and materials we created for your website. 
+            This phase marks the beginning of your business growth! 
+            We also provide 12 months of free support so your website stays perfect.
+          </Text>
+        </div>
+      </div>
+      
+    </div>
+
+    <Button href="/custom-website-design">View details and pricing</Button>
+
+  </section>
+  <CTASection>
+    <div class="flex flex-col gap-20 lg:gap-22">
+      <H2>Let's connect!</H2>
+      <Text>Got an idea or question? Feel free to reach out and we’ll get back to you!</Text>
+    </div>
+    <Button class="self-start" href="/contact-us">Reach out to us</Button>
+  </CTASection>
+
 </MainLayout>
+
+
+<style>
+
+  @media screen and (max-width: 750px) {
+    .special-button {
+      max-width: 100%;
+    }
+    .special-button a {
+      width: 100%;
+      max-width: fit-content;
+      padding-inline: 44px;
+      white-space: nowrap;
+
+      &:hover, &:focus-visible, &:active {
+        background: var(--color-spark-400);
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .lightning-graphic {
+      position: relative;
+      right: max(-222px, calc(-1 * (222px + (68.292px - 18.97vw))));
+      width: 22.5rem;
+    }
+  }
+  /* For Tablet Landscape */
+  @media screen and (min-width: 751px) and (max-width: 1150px) {
+    .lightning-graphic {
+      position: relative;
+      left: calc(160px + (150.2px - 20vw));
+      width: 27.4375rem;
+    }
+  }
+  /* For Laptop */
+  @media screen and (min-width: 1151px) and (max-width: 1400px) {
+    .lightning-graphic {
+      position: relative;
+      left: calc(306px + (763.6px - 66.4vw));
+    }
+  }
+  /* For Desktop */
+  @media screen and (min-width: 1401px) {
+    .lightning-graphic {
+      position: relative;
+      left: max(27px, calc(140px + (518.7px - 37.05vw)));
+    }
+  }
+</style>
