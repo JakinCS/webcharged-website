@@ -1,14 +1,212 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import H3 from "../components/text/H3.astro";
+import Text from "../components/text/Text.astro";
+import CTASection from "../components/CTASection.astro";
 
-const headContent = {
-  metaTitle: "About Us",
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://webchargedsolutions.com/about-us/#webpage",
+      "url": "https://webchargedsolutions.com/about-us",
+      "name": "About WebCharged Web Solutions | Our Mission & Values",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Learn about WebCharged Web Solutions, a Yuma-based web agency, and our mission to provide honest, fair, and effective website design for small businesses.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/about-us/#breadcrumb" },
+      "mainEntity": { "@id": "https://webchargedsolutions.com/#jakinstahl" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/about-us/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://webchargedsolutions.com/#jakinstahl",
+      "name": "Jakin Stahl",
+      "jobTitle": "Owner, Web Designer, and Developer",
+      "description": "Jakin Stahl is the owner of WebCharged Web Solutions. His goal is to ensure every small business has an effective website that sells well rather than pushing customers away.",
+      "affiliation": { "@id": "https://webchargedsolutions.com/#organization" },
+      "worksFor": { "@id": "https://webchargedsolutions.com/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/jakinstahl/"
+      ],
+	  "knowsAbout": [
+        "Web Design",
+        "Web Development",
+        "Conversion Optimization",
+        "Small Business Growth"
+      ],
+      "image": "https://webchargedsolutions.com/wp-content/uploads/2026/02/headshot-owner-jakin-stahl.webp"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "founder": { "@id": "https://webchargedsolutions.com/#jakinstahl" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "slogan": "Grow your profits; Gain a partnership.",
+      "knowsLanguage": "en-US",
+      "keywords": "Honesty, Fairness, Reliability, Punctuality, Custom Web Design"
+    }
+  ]
+}
+
+const headContent ={
+  metaTitle: "About WebCharged | Yuma Web Agency for Small Businesses",
+  metaDescription: "We believe in honesty and fairness. We want to partner with small businesses to help them grow. Your success is our success.",
+  schemaMarkup,
 }
 
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-223 lg:py-249">
+    <div class="grow-1 flex flex-col gap-20 lg:gap-22 max-w-1281">
+      <H1>About WebCharged</H1>
+      <Text class="text-parchment max-w-440 md:max-w-530 lg:max-w-600">
+        We're a web agency based in Yuma, Arizona. 
+        Our mission is to give each small business a website that helps them succeed. 
+        And we work hard to reach that goal.
+      </Text>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-53 md:py-154">
+    <div class="grow-1 max-w-1281">
+      <p class="text-19 md:text-23/[150%] lg:text-27/[150%] font-semibold text-blue">
+        “We believe in <span class="text-spark">honesty</span> and <span class="text-spark">fairness.</span> 
+        If we think you don’t need the more expensive option, we’ll tell you that. 
+        <span class="text-spark">We won’t make you think that you need something you don’t.</span> 
+        We love to see you equipped with a powerful asset for your business’s growth, 
+        one that fits your needs.”
+      </p>
+    </div>
+  </section>
+  <section class="flex flex-col items-center bg-charcoal px-32 md:px-59 py-59 lg:py-95 gap-59">
+    <H2 color="electric">About the owner</H2>
+    <div class="grow-1 flex flex-col flex-wrap items-center md:items-start justify-center md:flex-row gap-59 max-w-296 md:max-w-810">
+      <div class="shrink-0 flex flex-col px-23 md:px-0">
+        <picture>
+          <source
+            media="(max-width: 750px)"
+            srcset="/images/headshot-owner-jakin-stahl-500x640.webp"
+            width="250"
+            height="320"
+          />
+          <img
+            src="/images/headshot-owner-jakin-stahl-674x918.webp"
+            alt="Headshot of the owner Jakin Stahl"
+            width="337"
+            height="459"
+            loading="lazy"
+            class="rounded-md"
+          />
+        </picture>
+        <div class="flex md:hidden flex-col px-20 md:px-22 py-14 gap-2 md:gap-5 bg-blue rounded-md -translate-23 -mb-23">
+          <H3 color="electric">Jakin Stahl</H3>
+          <p class="text-parchment md:text-19">Web designer and developer</p>
+        </div>
+      </div>
+      <div class="shrink-1 basis-414 flex flex-col gap-36">
+        <div class="hidden md:flex flex-col px-20 md:px-22 py-14 gap-2 md:gap-5 bg-blue rounded-md">
+          <H3 color="electric">Jakin Stahl</H3>
+          <p class="text-parchment md:text-19">Web designer and developer</p>
+        </div>
+        <div class="flex flex-col gap-14 p-22 rounded-md border-[1.5px] border-electric">
+          <h3 class="text-16 md:text-19 text-parchment font-semibold">Message from the owner</h3>
+          <div class="flex flex-col gap-9">
+            <p class="text-16 text-parchment">
+              “There are many great businesses selling amazing products or providing incredible services. 
+              But yet, people land on the website and choose not to go with them.
+            </p>
+            <p class="text-16 text-parchment">
+              “My goal is to change this. I believe every business should have a truly effective website. 
+              Instead of pushing potential customers away, their website should be one that <span class="text-electric font-semibold">sells really well</span>.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-53 md:py-95">
+    <div class="grow-1 flex flex-col items-center max-w-480 md:max-w-840 lg:max-w-1281 gap-32 md:gap-59">
+      <H2 class="text-center">Our core values</H2>
+      <div class="flex flex-col gap-32 md:gap-36">
+
+        <div class="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68 lg:w-118">
+            <span class="text-spark text-[5rem]/[120%] lg:text-[8.625rem]/[120%] font-semibold">1.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <H3 class="text-center md:text-start">We treat you like a person</H3>
+            <Text>
+              Other web designers might see you as a number and offer you generic solutions. 
+              We treat you like an individual person. 
+              We want to understand your unique goals and challenges so we can achieve the results you want.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68 lg:w-118">
+            <span class="text-spark text-[5rem]/[120%] lg:text-[8.625rem]/[120%] font-semibold">2.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <H3 class="text-center md:text-start">We are honest and fair</H3>
+            <Text>
+              We don’t want to sell you unnecessary services or try to make money by selling you the most expensive options. 
+              We will only suggest what you actually need with fair pricing based on the actual value of the service.
+            </Text>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-9 md:gap-36">
+          <div class="shrink-0 md:w-68 lg:w-118">
+            <span class="text-spark text-[5rem]/[120%] lg:text-[8.625rem]/[120%] font-semibold">3.</span>
+          </div>
+          <div class="flex flex-col gap-9">
+            <H3 class="text-center md:text-start">We work hard and diligently</H3>
+            <Text>
+              We complete each project to the best of our ability, treating your website like it’s our own. 
+              We never cut corners. Instead, we pay attention to details to ensure you get high-quality results.
+            </Text>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <CTASection>
+    <div class="flex flex-col gap-20 lg:gap-22">
+      <H2>Grow your profits and reputation quickly.</H2>
+      <Text>
+        Our <span class="font-semibold">custom website design services</span> help small businesses <span class="font-semibold">grow their profits</span> and 
+        <span class="font-semibold">get a website that they’re proud to own.</span>
+      </Text>
+    </div>
+    <Button class="self-start" href="/custom-website-design">See what we offer</Button>
+  </CTASection>
 </MainLayout>
