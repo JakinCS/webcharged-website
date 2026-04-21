@@ -91,7 +91,7 @@ const headContent ={
 ---
 
 <MainLayout headContent={headContent}>
-  <link slot="head" rel="preload" as="image" href="/images/yellow-lightning-bolt.webp" imagesrcset="/images/yellow-lightning-bolt-360.webp 360w, /images/yellow-lightning-bolt.webp 615w" imagesizes="(max-width: 750px) 360px, 615px" type="image/webp"/>
+  <link slot="head" rel="preload" as="image" href="/images/yellow-lightning-bolt.png" imagesrcset="/images/yellow-lightning-bolt-360.png 360w, /images/yellow-lightning-bolt.png 615w" imagesizes="(max-width: 750px) 360px, 615px" type="image/png"/>
 
   <section class="relative flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-249">
     <div class="grow-1 flex flex-col gap-53 lg:gap-36 max-w-1281">
@@ -105,15 +105,15 @@ const headContent ={
       <picture class="block lightning-graphic">
         <!-- Mobile: loads on screens 750px and under -->
         <source
-          srcset="/images/yellow-lightning-bolt-360.webp"
+          srcset="/images/yellow-lightning-bolt-360.png"
           media="(max-width: 750px)"
-          type="image/webp"
+          type="image/png"
           width="360"
-          height="676"
+          height="674"
         >
         <!-- Desktop: default fallback -->
         <img
-          src="/images/yellow-lightning-bolt.webp"
+          src="/images/yellow-lightning-bolt.png"
           alt=""
           width="615"
           height="1152"
@@ -193,7 +193,7 @@ const headContent ={
 
             <div class="flex gap-9">
               <div class="shrink-0 flex px-4">
-                <img class="h-24 md:h-32" src="/icons/brush-white.svg" alt="Brush icon">
+                <img class="h-24 md:h-32" src="/icons/brush-white.svg" alt="Brush icon" width="24" height="24">
               </div>
               <div class="flex flex-col gap-5 md:py-2 lg:py-0">
                 <H3 color="parchment">Custom design</H3>
@@ -202,7 +202,7 @@ const headContent ={
             </div>
             <div class="flex gap-9">
               <div class="shrink-0 flex px-4">
-                <img class="h-24 md:h-32" src="/icons/speed-white.svg" alt="Website speed icon">
+                <img class="h-24 md:h-32" src="/icons/speed-white.svg" alt="Website speed icon" width="24" height="24">
               </div>
               <div class="flex flex-col gap-5 md:py-2 lg:py-0">
                 <H3 color="parchment">Fast load speeds</H3>
@@ -211,7 +211,7 @@ const headContent ={
             </div>
             <div class="flex gap-9">
               <div class="shrink-0 flex px-4">
-                <img class="h-24 md:h-32" src="/icons/mobile-hand-white.svg" alt="Mobile phone icon">
+                <img class="h-24 md:h-32" src="/icons/mobile-hand-white.svg" alt="Mobile phone icon" width="24" height="24">
               </div>
               <div class="flex flex-col gap-5 md:py-2 lg:py-0">
                 <H3 color="parchment">Mobile-friendliness</H3>
@@ -221,7 +221,7 @@ const headContent ={
 
           </div>
         </div>
-        <Button mobileWidth={320} href="/custom-website-design">Learn more</Button>
+        <Button mobileWidth={320} href="/custom-website-design">See what's included</Button>
 
       </div>
       <div class="w-full h-2 bg-parchment"></div>

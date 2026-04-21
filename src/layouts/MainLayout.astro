@@ -23,7 +23,7 @@ const twitterImageURL = new URL(twitterImagePath, Astro.site);
 ---
 
 
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 	<head>
 		<meta charset="utf-8" />
 
@@ -67,7 +67,9 @@ const twitterImageURL = new URL(twitterImagePath, Astro.site);
 			<slot />
 		</main>
     <Footer />
-    <script src="/scripts/dropdown.js" is:inline />
-    <script src="/scripts/mobile-dropdown.js" is:inline />
+		<script>
+			import '../scripts/dropdown.js';
+			import '../scripts/mobile-dropdown.js';
+		</script>
 	</body>
 </html>
