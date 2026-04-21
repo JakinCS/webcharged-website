@@ -5,9 +5,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
+const SITE_URL = process.env.CF_PAGES_URL || 'https://webchargedsolutions.com';
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://webchargedsolutions.com',
+  site: SITE_URL,
 
   vite: {
     plugins: [tailwindcss()]
