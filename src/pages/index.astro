@@ -221,7 +221,7 @@ const headContent ={
 
           </div>
         </div>
-        <Button mobileWidth={320} href="/custom-website-design">See what's included</Button>
+        <Button fixedWidth={{isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md'}} href="/custom-website-design">See what's included</Button>
 
       </div>
       <div class="w-full h-2 bg-parchment"></div>
@@ -243,7 +243,7 @@ const headContent ={
             </Text>
           </div>
         </div>
-        <Button mobileWidth={320} href="/website-support-plans">Get details</Button>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md' }} href="/website-support-plans">Get details</Button>
 
       </div>
       
@@ -308,23 +308,6 @@ const headContent ={
 
 
 <style>
-
-  @media screen and (max-width: 750px) {
-    .special-button {
-      max-width: 100%;
-    }
-    .special-button a {
-      width: 100%;
-      max-width: fit-content;
-      padding-inline: 44px;
-      white-space: nowrap;
-
-      &:hover, &:focus-visible, &:active {
-        background: var(--color-spark-400);
-      }
-    }
-  }
-
   @media screen and (max-width: 750px) {
     .lightning-graphic {
       position: relative;

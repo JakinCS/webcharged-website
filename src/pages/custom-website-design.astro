@@ -1,13 +1,737 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro"
+import Button from "../components/Button.astro"
+import Text from "../components/text/Text.astro"
+import H1 from "../components/text/H1.astro";
+import H2 from '../components/text/H2.astro';
+import H3 from '../components/text/H3.astro';
+import ServiceDetailsToggle from "../components/ServiceDetailsToggle.astro";
+import FAQ from '../components/FAQ.astro';
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://webchargedsolutions.com/custom-website-design/#webpage",
+      "url": "https://webchargedsolutions.com/custom-website-design",
+      "name": "Custom Website Design for Small Businesses | WebCharged Web Solutions",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Get a custom website that increases your revenue through a higher visitor-to-customer conversion rate. Based in Yuma, AZ.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/custom-website-design/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/custom-website-design/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Custom Website Design"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://webchargedsolutions.com/custom-website-design/#service",
+      "name": "Custom Website Design",
+      "serviceType": "Web Design and Development",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "areaServed": { "@type": "Place", "name": "Worldwide" },
+      "description": "A professional website built for maximum conversions focusing on content, mobile-friendliness, speed, and captivating design.",
+      "offers": {
+        "@type": "Offer",
+        "price": "2995.00",
+        "priceCurrency": "USD",
+        "url": "https://webchargedsolutions.com/custom-website-design",
+        "description": "Custom website design package including copywriting, photo assistance, and 12 months of support.",
+        "availability": "https://schema.org/InStock"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Custom Website Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Copywriting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile-Friendly Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speed Optimization" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Analytics Setup" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "12 Months Post-Launch Support" } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://webchargedsolutions.com/#jakinstahl",
+      "name": "Jakin Stahl",
+      "jobTitle": "Owner, Designer, and Developer",
+      "worksFor": { "@id": "https://webchargedsolutions.com/#organization" },
+      "image": "https://webchargedsolutions.com/wp-content/uploads/2026/02/headshot-owner-jakin-stahl.webp"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://webchargedsolutions.com/custom-website-design/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For an average project, the timeline is 1-2 weeks for planning, 6-8 weeks for production, and 1 week for wrap-up and launch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you need from me to get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All you need to do is schedule a project planning call. We handle the rest, including content and photo assistance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I change my mind?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a zero-risk guarantee. You can cancel before the project starts for a 100% refund, or before development begins if the mockup is unsatisfactory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What forms of payment do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept credit cards and bank transfers."
+          }
+        }
+      ]
+    }
+  ]
+}
 
 const headContent = {
-  metaTitle: "Custom Website Design",
+  metaTitle: "Custom website design - Increase your revenue today",
+  metaDescription: 'Web design service for small businesses based in Yuma, AZ. A simple process to build a successful website that increases your profits.',
+  schemaMarkup,
+  socialMediaImagePath: '/images/social/Website-Design-Facebook.jpg',
+  socialMediaImageDesc: "WebCharged. We provide custom website design that grows your small business.",
+  twitterImagePath: '/images/social/Website-Design-Twitter.jpg',
 }
+
+const FAQs = [
+  {
+    title: "How long does it take to build a website?",
+    content: [
+      "The time it takes to build a website varies on the size and scope of the project.\
+       For an average website project you might expect the timeline to look like this:",
+      "Planning phase: 1 – 2 weeks<br>Production phase: 6 – 8 weeks<br>Wrap up and launch: 1 week"       
+    ]
+  },
+  {
+    title: "What do you need from me to get started?",
+    content: [
+      "All you need to do is schedule a project planning call. This is the first step. After that, we work on collecting from you all the information we need to complete the project."       
+    ]
+  },
+  {
+    title: "What forms of payment do you accept?",
+    content: [
+      "We accept multiple payment methods. You can pay via credit card or bank transfer."       
+    ]
+  },
+  {
+    title: "What if I change my mind?",
+    content: [
+      "If you change your mind, you can cancel the project, and we’ll refund you 100% of your money. And if you dislike the website design, you can request a refund anytime before the website design is finalized."       
+    ]
+  },
+  {
+    title: "What happens if I make a late payment?",
+    content: [
+      "We understand that certain circumstances can cause late payments. So we give a 5 business day grace period to complete the payment. After that, we charge a $50 fee."       
+    ]
+  },
+]
+
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-154">
+    <div class="grow-1 flex flex-col gap-32 md:gap-36 max-w-1281">
+      <div class="flex flex-col gap-20 md:gap-36">
+        <div class="flex items-center gap-5">
+          <img class="w-20 md:w-24" src="/icons/pin-white.svg" alt="location pin" width="24" height="24">
+          <p class="text-16 md:text-21 text-parchment">Based in Yuma, AZ.</p>
+        </div>
+        <H1 class="max-w-400 md:max-w-500 lg:max-w-600">Custom Website Design for Small Businesses</H1>
+        <Text class="text-parchment max-w-350 md:max-w-400 lg:max-w-450">
+          Get a website that increases your revenue by having a higher website conversion rate.
+        </Text>
+      </div>
+      <Button link="#schedule-call-section" class='self-start'>Increase your profits today</Button>
+    </div>
+  </section>
+  <section class="flex justify-center lg:px-95 overflow-hidden">
+    <div class="grow-1 flex flex-col lg:flex-row gap-20 md:gap-38 lg:gap-54 max-w-1281">
+
+      <div class="lg:basis-486 lg:grow-1 flex flex-col gap-20 md:gap-36 px-32 md:px-95 lg:px-0 pb-32 pt-53 md:pb-53 md:pt-95 lg:py-95 bg-blue">
+        <H2 color="parchment">Lots of effort, <span class="text-electric">not enough</span> results</H2>
+        <div class="flex flex-col gap-22">
+          <Text class="text-parchment">
+            This happens a lot. You’ve got a website, and you’ve invested time and money into it. 
+            You expect the website to really help you increase your revenue, but it doesn’t meet your expectations. 
+          </Text>
+          <Text class="text-parchment">
+            You have a great business. 
+            People love working with you or buying your products. 
+            So you expect your website to attract new customers and clients.
+          </Text>
+          <Text class="text-parchment">
+            But it doesn’t. 
+            Worse yet, it might even dissuade potential customers instead of persuade them. 
+          </Text>
+        </div>
+      </div>
+
+      <div>
+        <div class="triangle-separator absolute w-0 h-0 -z-1 
+        -translate-y-20 md:-translate-y-38 lg:-translate-y-0 lg:-translate-x-54 
+        border-t-40 md:border-t-76 lg:border-t-800 xl:border-t-700 
+        border-s-[100vw] lg:border-s-0 lg:border-e-108 border-[transparent] border-t-blue"></div>
+        <div class="beginning-block absolute w-1000 h-1000 bg-blue -translate-x-1300 -z-1 hidden md:block"></div>
+      </div>
+
+      <div class="lg:basis-615 lg:grow-1 flex flex-col gap-20 md:gap-36 px-32 md:px-95 lg:px-0 lg:ps-36 pt-32 pb-53 md:pt-53 md:pb-95 lg:py-95">
+        <H2>A good website <span class="text-spark">increases your revenue</span></H2>
+        <div class="flex flex-col gap-22">
+          <Text>
+            Having a great business is the foundation for a successful website. 
+            But when the website doesn’t convert, it’s the website’s problem, not the business itself.
+          </Text>
+          <Text>
+            If you build a website the right way, you will see these results:
+          </Text>
+          <div class="flex flex-col gap-14">
+            <div class="flex gap-18 ps-18">
+              <div class="pt-8 md:pt-11 lg:pt-12">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="4" cy="4" r="4" fill="#222F2F"/>
+                </svg>
+              </div>
+              <Text>You will stop repelling potential clients or customers.</Text>
+            </div>
+            <div class="flex gap-18 ps-18">
+              <div class="pt-8 md:pt-11 lg:pt-12">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="4" cy="4" r="4" fill="#222F2F"/>
+                </svg>
+              </div>
+              <Text>The conversion rates for your primary pages will increase.</Text>
+            </div>
+            <div class="flex gap-18 ps-18">
+              <div class="pt-8 md:pt-11 lg:pt-12">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="4" cy="4" r="4" fill="#222F2F"/>
+                </svg>
+              </div>
+              <Text>You will receive more business. And <span class="text-spark font-semibold">this means increased revenue</span>.</Text>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="flex flex-col items-center bg-charcoal px-32 md:px-59 py-53 lg:py-95 gap-36">
+    <H2 color="electric text-center">The formula for maximum conversions</H2>
+    <Text class="text-parchment">A professional website, one that turns visitors in customers well, is created by focusing on these four things:</Text>
+    <div class="grow-1 flex flex-col items-center md:items-start justify-center md:flex-row gap-59 max-w-559 md:max-w-630 lg:max-w-1281 lg:w-full">
+      <div class="flex flex-col gap-36 lg:gap-0 lg:w-full">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-one-electric.svg" alt="Number one" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Content</H3> 
+            <Text class="text-parchment">
+              Good copy convinces. The right photos engage. 
+              Using effective CTAs makes people more likely to take action. 
+            </Text>
+            <Text class="text-parchment">
+              Your website content is the #1 important thing to get right. 
+              Without it, visitors leave your website unconvinced.
+            </Text>
+          </div>
+        </div>
+        <div class="lg:self-end flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630 lg:-mt-10 xl:-mt-70">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-two-electric.svg" alt="Number two" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Mobile-friendliness</H3> 
+            <Text class="text-parchment">
+              Roughly 50% of website visitors use their phones. 
+              These visitors expect your website work perfectly on their device. 
+              If not, they are very likely to go somewhere else. 
+            </Text>
+            <Text class="text-parchment">
+              Having a non-mobile-friendly website gives them a negative impression of your business.
+            </Text>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630 lg:-mt-10 xl:-mt-70">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-three-electric.svg" alt="Number three" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Fast load speeds</H3> 
+            <Text class="text-parchment">
+              People will leave your website if it loads too slowly. 
+              It annoys them. They lose patience. 
+            </Text>
+            <Text class="text-parchment">
+              On the other hand, if your website is faster than average, it shows that it is <i>high-quality</i>. 
+              And people will notice and think well of your business.
+            </Text>
+          </div>
+        </div>
+        <div class="lg:self-end flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630 lg:-mt-10 xl:-mt-70">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-four-electric.svg" alt="Number four" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Captivating design</H3> 
+            <Text class="text-parchment">
+              Your website’s design is the first thing that visitors notice. 
+              It either captivates them or pushes them away.  
+            </Text>
+            <Text class="text-parchment">
+              The design is a reflection of your business. 
+              When the design is good, you become more trustable.
+            </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center xl:px-95">
+    <div class="grow-1 flex flex-col lg:flex-row items-center py-22 lg:py-0 max-w-623 md:max-w-751 lg:max-w-1400 xl:max-w-1210">
+      <div class="relative lg:basis-645 xl:basis-550 px-22 lg:ps-95 xl:ps-0 pb-22">
+        <picture>
+          <source
+            media="(min-width: 1150px)"
+            srcset="/images/headshot-owner-jakin-stahl-528x784.webp"
+            width="528"
+            height="784"
+          />
+          <img
+            src="/images/headshot-owner-jakin-stahl-632x691.webp"
+            alt="Headshot of the owner Jakin Stahl"
+            width="416"
+            height="455"
+            loading="lazy"
+            class="rounded-md w-316 md:w-416 lg:w-528 h-345 md:h-auto object-cover object-center"
+          />
+        </picture>
+        <div class="absolute right-0 bottom-0 flex flex-row items-center gap-30 md:gap-36 bg-blue px-22 py-14 rounded-md">
+          <div class="flex flex-col">
+            <p class="text-16 md:text-23/[150%] lg:text-27/[150%] font-semibold text-parchment">Jakin Stahl</p>
+            <p class="text-12 md:text-16 text-parchment">Owner, Designer and Developer</p>
+          </div>
+          <img class="w-34 md:w-56" src="/images/webcharged-icon-white.svg" alt="WebCharged icon" width="55" height="65">
+        </div>
+      </div>
+      <div class="lg:basis-754 xl:basis-660 flex flex-col gap-59 px-32 md:px-53 lg:px-59 xl:pe-0 py-59">
+        <div class="flex flex-col gap-36">
+          <H2>Wesite design done for you</H2>
+          <div class="flex flex-col gap-20">
+            <Text>
+              Are you tired of investing all your time into your website? 
+              Let us do the website design for you. 
+              Then you can focus on doing what you do best. 
+            </Text>
+            <Text>
+              Here is what you’ll get:
+            </Text>
+          </div>
+          <div class="flex flex-col gap-36">
+            <div class="flex flex-col p-9 ps-36 gap-8 border-s-8 border-charcoal rounded-md">
+              <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-blue">Effective website content</h3>
+              <Text>
+                We will work together with you to create effective, high-converting content.
+              </Text>
+            </div>
+            <div class="flex flex-col p-9 ps-36 gap-8 border-s-8 border-charcoal rounded-md">
+              <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-blue">High-quality, engaging designs</h3>
+              <Text>
+                You will have a custom design that fits your company. 
+                Your design will start captivating visitors, making them want to keep browsing on your website.
+              </Text>
+            </div>
+            <div class="flex flex-col p-9 ps-36 gap-8 border-s-8 border-charcoal rounded-md">
+              <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-blue">Professional website development</h3>
+              <Text>
+                Your website will be built to be fast. 
+                It will works on all device screen sizes (mobile-friendly).
+              </Text>
+            </div>
+          </div>
+
+        </div>
+        <Button class="self-center lg:self-start" link="#schedule-call-section">Get started</Button>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-59 bg-blue gap-36">
+    <H2 color="parchment">A new website with <span class="text-electric">little effort</span></H2>
+    <div class="grow-1 flex flex-col gap-22 max-w-559 md:max-w-617">
+      <Text class="text-parchment">
+        When you sign up for our website design service, you can get a new website <span class='text-electric font-semibold'>easy</span>.
+      </Text>
+      <div class="flex flex-col gap-14">
+        <div class="flex gap-18 ps-18">
+          <div class="pt-8 md:pt-11 lg:pt-12">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4" cy="4" r="4" fill="#FFF7EB"/>
+            </svg>
+          </div>
+          <Text class='text-parchment'>We don’t make you write the content.</Text>
+        </div>
+        <div class="flex gap-18 ps-18">
+          <div class="pt-8 md:pt-11 lg:pt-12">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4" cy="4" r="4" fill="#FFF7EB"/>
+            </svg>
+          </div>
+          <Text class='text-parchment'>We take the responsibility of choosing the right photos. (either using yours or getting them ourselves)</Text>
+        </div>
+        <div class="flex gap-18 ps-18">
+          <div class="pt-8 md:pt-11 lg:pt-12">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4" cy="4" r="4" fill="#FFF7EB"/>
+            </svg>
+          </div>
+          <Text class='text-parchment'>We brainstorm how to put the content into an engaging design.</Text>
+        </div>
+      </div>
+      <Text class="text-parchment">
+        And for any small tasks you may need to complete, we will be there to help you.
+      </Text>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-59 gap-53 md:gap-59">
+    <H2 class="text-center">The game plan for your new website</H2>
+    <div class="relative grow-1 flex flex-col gap-53 md:gap-95 md:py-36 max-w-559 md:max-w-750 lg:max-w-960 xl:max-w-1145">
+      <div class='game-plan-line absolute -z-1 w-3 md:w-5 bg-spark translate-x-[1.59375rem] md:translate-x-[2.5625rem] lg:translate-x-[2.96875rem]'></div>
+      <div class="flex flex-row gap-20 md:gap-59">
+        <div class="shrink-0 flex items-center justify-center h-54 md:h-87 lg:h-100 w-54 md:w-87 lg:w-100 border-3 md:border-5 border-spark rounded-full bg-parchment">
+          <p class="number-in-circle text-21 md:text-40/[150%] lg:text-61/[150%] font-semibold text-spark">1</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <H3>Plan</H3>
+          <Text>
+            Join a meeting with us to get a plan for your website. 
+            We want to understand your goals and your business 
+            so we can get you the exact results you’re looking for.
+          </Text>
+        </div>
+      </div>
+      <div class="flex flex-row gap-20 md:gap-59">
+        <div class="shrink-0 flex items-center justify-center h-54 md:h-87 lg:h-100 w-54 md:w-87 lg:w-100 border-3 md:border-5 border-spark rounded-full bg-parchment">
+          <p class="number-in-circle text-21 md:text-40/[150%] lg:text-61/[150%] font-semibold text-spark">2</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <H3>Execute</H3>
+          <Text>
+            This is our part. We now put the plan into action. 
+            We carefully design and build your new website to have a higher conversion rate.
+          </Text>
+        </div>
+      </div>
+      <div class="flex flex-row gap-20 md:gap-59 bg-parchment">
+        <div class="shrink-0 flex items-center justify-center h-54 md:h-87 lg:h-100 w-54 md:w-87 lg:w-100 border-3 md:border-5 border-spark rounded-full">
+          <p class="number-in-circle text-21 md:text-40/[150%] lg:text-61/[150%] font-semibold text-spark">3</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <H3>Celebrate</H3>
+          <Text>
+            Your website is complete! Now it is time to celebrate this milestone, 
+            and you can now be proud of the website you have.
+          </Text>
+        </div>
+      </div>
+    </div>
+    <Button class="self-center" link="#schedule-call-section">Get started</Button>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 py-95 gap-95 bg-charcoal">
+    <div class="grow-1 flex flex-col items-center gap-59 lg:gap-95 max-w-559 lg:max-w-633">
+      <H2 class="text-center text-electric">Custom website design</H2>
+      <div class="flex flex-col items-center gap-59">
+        <div class="flex flex-col gap-20 md:gap-36 px-20 md:px-36 py-32 md:py-36 bg-blue border-2 border-electric rounded-md">
+          <p class="text-23 md:text-28 lg:text-36 text-parchment font-semibold text-center">$2995</p>
+          <div class="flex flex-col gap-14">
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Custom, engaging design</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  You get a custom-designed website, not a template. A design created to be engaging and appealing.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Designed to match your business</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  Your design will fit with your business. You don’t get a generic <i>one-design-fits-all</i> solution.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Copywriting</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  We do the copywriting for your website. No need for you to figure out how to word your website correctly.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Website photos assistance</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  We take charge of finding photos, whether it be your photos, stock photos or taking new ones.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Mobile-friendly website</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  Readable, usable and good-looking on small screen sizes.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Fast-loading website</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  Your website will load fast because we follow best practices for creating websites with speed.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-9">
+              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Analytics Setup</h3>
+                <p class="text-parchment text-16 lg:text-19">
+                  We add analytics to your website so you know how many visitors your website gets and which pages perform the best.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-287' }} link="#schedule-call-section">Get started</Button>
+      </div>
+      <div class="self-stretch toggle-group flex flex-col gap-20 md:gap-36">
+        <ServiceDetailsToggle title="Pricing Details">
+          <p>
+            Price may vary. We will only adjust the price if we need to. 
+            It may be that your project is extra complicated or you need a special feature or you need more pages than normal.
+          </p>
+          <p>
+            Price will be determined and set by us, and approved by you before the project starts.
+          </p>
+        </ServiceDetailsToggle>
+        <ServiceDetailsToggle title="Hosting and Privacy Policies">
+          <p>
+            Our website design service includes free hosting for 12 months. 
+            You also get free auto-updating privacy policies for 12 months.
+          </p>
+          <p>
+            After the initial 12 months, the cost is $25/month for the hosting and auto-updating policies.
+          </p>
+          <p>
+            (Both of these are also included in our support plans)
+          </p>
+        </ServiceDetailsToggle>
+      </div>      
+    </div>
+    <div class="flex flex-col gap-36 py-53 md:py-95 md:px-59 border-y-2 border-electric max-w-559 md:max-w-705">
+      <H2 class="text-center" color='electric'>Complete website support</H2>
+      <Text class='text-parchment'>
+        We provide you with <span class="font-semibold">unlimited (100%) support for 12 months</span> after the launch of your website. This means:
+      </Text>
+      <div class="flex flex-col gap-36">
+        <div class="flex flex-col gap-3 ps-36 border-s-5 border-parchment rounded-md">
+          <Text class="text-electric font-semibold">Answers for questions</Text>
+          <Text class="text-parchment">Have a question about your website? Just ask us.</Text>
+        </div>
+        <div class="flex flex-col gap-3 ps-36 border-s-5 border-parchment rounded-md">
+          <Text class="text-electric font-semibold">Fixes of website bugs</Text>
+          <Text class="text-parchment">If there is something wrong with your website, we will fix it.</Text>
+        </div>
+        <div class="flex flex-col gap-3 ps-36 border-s-5 border-parchment rounded-md">
+          <Text class="text-electric font-semibold">Content Updates</Text>
+          <Text class="text-parchment">When you need your website updated, just ask us. (This is only for regular content updates, not major redesigns)</Text>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-59">
+    <div class="grow-1 flex flex-col md:flex-row-reverse md:flex-wrap items-center justify-center gap-36 lg:gap-59 max-w-559 md:max-w-772 lg:max-w-1090">
+      <img class="shrink-0 w-200 lg:w-300" src="/icons/shield-spark.svg" alt="shield with checkmark icon" width="300" height="300">
+      <div class="md:basis-488 shrink-0 grow-1 flex flex-col items-center md:items-start gap-22">
+        <H2><span class="text-spark">Zero-risk</span> guarantee</H2>
+        <div class="flex flex-col gap-20">
+          <Text>If you wish to cancel before the project starts, we will give you a 100% refund.</Text>
+          <Text>
+            We aim to give you the best value. 
+            But if the initial website mockup is unsatisfactory, 
+            you can cancel the project before the development begins and get your money back.
+          </Text>
+        </div>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md' }} link="#schedule-call-section">Schedule a call</Button>
+      </div>
+    </div>
+  </section>
+  <section class="relative flex flex-col items-center px-32 md:px-53 lg:px-95 pt-53 pb-106 md:pt-59 md:pb-118 lg:pt-95 lg:pb-190 bg-charcoal overflow-hidden">
+    <div class="grow-1 flex flex-col gap-36 max-w-559 md:max-w-1210 w-full">
+      <div class="flex flex-col gap-22">
+        <H2 color="electric">We want to help you</H2>
+        <Text class="text-parchment max-w-400 md:max-w-500">
+          If you have any questions, don't hesitate to contact us. 
+          We are happy to answer any questions you have. 
+        </Text>
+        <Text class="text-parchment">
+          <span>Call us: </span> <br class="md:hidden">
+          <a href="tel:982-235-2121" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline">
+            928-235-2131
+          </a>
+        </Text>
+        <Text class="text-parchment">
+          <span>Email us: </span><br class="md:hidden">
+          <a href="mailto:hello@webchargedsolutions.com" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline">
+            hello@webchargedsolutions.com
+          </a>
+        </Text>
+      </div>
+      <Button link="/contact-us" fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-296', breakpoint: 'md' }}>Contact us now</Button>
+    </div>
+    <picture class="lightning-graphic absolute right-0 md:w-425 lg:w-615">
+      <!-- Mobile: loads on screens 750px and under -->
+      <source
+        srcset="/images/yellow-lightning-bolt-360.png"
+        media="(max-width: 750px)"
+        type="image/png"
+        width="360"
+        height="674"
+      >
+      <!-- Desktop: default fallback -->
+      <img
+        src="/images/yellow-lightning-bolt.png"
+        alt=""
+        width="615"
+        height="1152"
+        loading="lazy"
+      >
+    </picture>
+  </section>
+  <section class='flex flex-col items-center px-20 md:px-53 lg:px-95'>
+    <div class="grow-1 flex flex-col gap-20 md:gap-36 bg-blue px-20 md:px-59 py-32 md:py-59 rounded-md -translate-y-32 md:-translate-y-36 lg:-translate-y-59 w-full max-w-1210">
+      <H2 color='parchment'>Frequently asked questions</H2>
+      <div class="toggle-group flex flex-col">
+        {FAQs.map((faq) => (
+          <FAQ title={faq.title}>
+            {faq.content.map((block) => (
+              <p set:html={block} />
+            ))}
+          </FAQ>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-59">
+    <div class="grow-1 flex flex-col gap-36 max-w-559 md:max-w-1210">
+      <div class="flex flex-col md:flex-row-reverse items-center md:items-start gap-36">
+        <img class="rounded-md headshot-2-owner" src="/images/headshot-2-owner-jakin-stahl.webp" alt="Headshot of the owner Jakin Stahl" width="160" height="200">
+        <div class="flex flex-col gap-22 md:gap-36">
+          <H2>Schedule a call</H2>
+          <div class="flex flex-col gap-14">
+            <Text>
+              Ready to start your project? 
+              Begin by having a 30-minute call with me (Jakin). 
+              I want to understand your needs and figure out if it makes sense to work together.
+            </Text>
+            <Text>
+              No pressure. Zero commitment. Just a conversation.
+            </Text>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Cal inline embed code begins -->
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-project-planning-call"></div>
+        <script type="text/javascript">
+          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+          Cal("init", "project-planning-call", {origin:"https://app.cal.com"});
+
+          Cal.ns["project-planning-call"]("inline", {
+            elementOrSelector:"#my-cal-inline-project-planning-call",
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+            calLink: "jakinstahl/project-planning-call",
+          });
+
+          Cal.ns["project-planning-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#222F2F"},"dark":{"cal-brand":"#FFF7EB"}},"hideEventTypeDetails":true,"layout":"month_view"});
+        </script>
+        <!-- Cal inline embed code ends -->
+      </div>
+    </div>
+  </section>
+  <script>
+    import '../scripts/toggle-script.js';
+  </script>
 </MainLayout>
+
+<style>
+  @media screen and (width < 46.875rem) {
+    .game-plan-line {
+      height: 90%;
+    }
+    .lightning-graphic {
+      bottom: calc((42.125rem - 100%) / -2);
+      right: calc(-1 * (188px + (55.512px - 15.42vw)));
+    }
+  }
+  @media screen and (min-width: 46.875rem) {
+    .game-plan-line {
+      height: calc(90% - 4.5rem);
+    }
+  }
+  @media screen and (min-width: 46.875rem) and (width < 71.875rem) {
+    .lightning-graphic {
+      bottom: calc((49.75rem - 100%) / -2);
+      right: calc(-1 * (212px + (259.43px - 34.59vw)));
+    }
+    .headshot-2-owner {
+      width: calc(136.8px + (200.42px - 17.4436vw));
+    }
+  }
+  @media screen and (min-width: 71.875rem) and (width < 87.5rem) {
+    .lightning-graphic {
+      bottom: calc((72rem - 100%) / -2);
+      right: calc(-1*(264px + (572.7px - 49.8vw)));
+    }
+  }
+  @media screen and (min-width: 87.5rem) {
+    .lightning-graphic {
+      bottom: calc((72rem - 100%) / -2);
+      right: calc(-1 * (139px + (637.98px - 45.57vw)));
+    }
+  }
+  .number-in-circle {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+</style>

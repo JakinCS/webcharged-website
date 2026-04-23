@@ -1,0 +1,20 @@
+---
+
+const { title = "Lorem Ipsum" } = Astro.props
+
+---
+
+<details class="flex flex-col bg-blue rounded-md">
+  <summary class="flex lg:gap-5 px-22 py-14 cursor-pointer">
+    <svg class="[[open]_&]:hidden w-24 h-24 lg:w-30 lg:h-30 shrink-0" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB">
+      <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+    </svg>
+    <svg class="hidden [[open]_&]:block w-24 h-24 lg:w-30 lg:h-30 shrink-0" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB">
+      <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+    </svg>
+    <p class="text-16 lg:text-19 font-semibold text-parchment lg:py-1">{title}</p>
+  </summary>
+  <div class="flex flex-col ps-46 pe-22 lg:ps-57 -mt-5 pb-14 gap-20 text-parchment">
+    <slot />
+  </div>
+</details>

@@ -79,6 +79,9 @@
   --text-19--line-height: 150%;
   --text-16: 1rem;
   --text-16--line-height: 150%;
+  --text-12: .75rem;
+  --text-12--line-height: 150%;
+
 
   /* Radius */
   --radius-md: 0.3125rem;
