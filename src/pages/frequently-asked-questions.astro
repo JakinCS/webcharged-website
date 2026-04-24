@@ -1,13 +1,666 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import H3 from "../components/text/H3.astro";
+import FAQ from "../components/FAQ.astro";
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://webchargedsolutions.com/frequently-asked-questions/#webpage",
+      "url": "https://webchargedsolutions.com/frequently-asked-questions",
+      "name": "Frequently Asked Questions | WebCharged Web Solutions",
+      "description": "Comprehensive answers to common questions about website design, development, SEO, hosting, and support plans from WebCharged Web Solutions.",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/frequently-asked-questions/#breadcrumb" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For an average project: Planning (1–2 weeks), Production (6–8 weeks), and Launch (1 week)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own my website after it has been completed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, once paid for, you own all design files, content, code, and login credentials." }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We accept credit cards or bank transfers." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do you need from me to get started?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The first step is a project planning call. We collect business goals, target audience, and brand guidelines one week before the project starts." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I see what my website will look like before development begins?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide custom mockups and prototypes for your approval before coding starts." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my website work and look good on mobile phones and tablets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, all websites are built to be mobile-friendly and responsive for all screen sizes." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to write the content for my website, or do you provide it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We provide professional copywriting as part of our service, gathering the necessary details from you." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I don't have professional photos for my website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We help you via coaching, sourcing high-quality stock photos, or assisting in hiring a pro photographer." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my website be optimized for search engines (SEO)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We perform comprehensive on-page SEO so your site is ready for SEO success if you choose to invest in off-page SEO." }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast will my website load?",
+          "acceptedAnswer": { "@type": "Answer", "text": "While speeds vary, we use fast hosting and image optimization to ensure industry-standard performance." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where will my website be hosted?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We host on high-performance Hetzner servers. 1 year of hosting is included ($15/month thereafter)." }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of support do you provide after my website launches?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We provide 12 months of free support for bug fixes, minor updates, and questions." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I need work done beyond minor content updates?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Major updates and new features are available at a rate of $50/hour." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if something breaks on my website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We fix any issues at no charge for the first year. Post-year-one, we recommend our support plans." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I invest in a modern website for my business?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Professional design builds credibility in 0.05 seconds and can increase conversion rates by over 400%." }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes you different from other web design companies?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We offer a personal, local partnership in Yuma, AZ, with a pain-free process and custom-tailored solutions." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with my existing marketing team or other vendors?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we are happy to coordinate with your other specialists to ensure all efforts align." }
+        },
+        {
+          "@type": "Question",
+          "name": "What type of businesses do you work with?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We primarily serve small businesses across a wide range of industries." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with businesses outside of Yuma?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We work with clients anywhere via our fully online workflow." }
+        },
+        {
+          "@type": "Question",
+          "name": "Will you support a website that you didn't originally build?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we support outside websites for a one-time $200 startup fee." }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is your response time to content change requests?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We typically complete these requested changes in 1-2 business days. It can take longer depending on how much needs changing." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I need more support than what’s included in my plan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Additional support or new features are billed at $50/hour." }
+        },
+        {
+          "@type": "Question",
+          "name": "How often do you back up my website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Websites hosted with us are backed up daily." }
+        },
+        {
+          "@type": "Question",
+          "name": "What software updates do you include in the support plans?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We handle all WordPress core, theme, and plugin updates for security and performance." }
+        },
+        {
+          "@type": "Question",
+          "name": "What information is provided in your monthly reports?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Reports include traffic, performance, health metrics, and summaries of any changes or fixes made." }
+        },
+        {
+          "@type": "Question",
+          "name": "How will you communicate with me about website issues?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Urgent issues are communicated immediately; minor fixes are detailed in your monthly report." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I request specific updates or changes to my website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, making content modifications is a core part of our support plans." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my website need website maintenance?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Maintenance keeps your site fast and secure, preventing broken features and lost conversions." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if my website gets hacked?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We will restore your site from daily backups and implement necessary security measures immediately." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is website support really worth the cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, it provides peace of mind, ensures peak performance, and protects your business's online impact." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any long-term contracts required?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No, you can cancel your website support plan at any time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why might prices be higher depending on the website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Complexity, age, or a high number of plugins can increase the time required for proper maintenance." }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I'm not satisfied with the service?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We aim for 100% satisfaction and are always open to discussing issues to improve your experience." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/frequently-asked-questions/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "FAQ"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
+    }
+  ]
+}
 
 const headContent = {
-  metaTitle: "Frequently Asked Questions",
+  metaTitle: "Frequently Asked Questions (FAQ) - Webcharged Web Solutions",
+  metaDescription: 'Read the Frequently Asked Questions (FAQs) about our popular services including our Website Design and Development service and our Website Support service.',
+  schemaMarkup,
 }
+
+
+const generalServiceQuestions = [
+  {
+    title: "How long does it take to build a website?",
+    content: [
+      "The time it takes to build a website varies on the size and scope of the project.\
+       For an average website project you might expect the timeline to look like this:",
+      "Planning phase: 1 – 2 weeks<br>Production phase: 6 – 8 weeks<br>Wrap up and launch: 1 week"       
+    ]
+  },
+  {
+    title: "Do I own my website after it has been completed?",
+    content: [
+      "Yes, once we have finished your project and you’ve paid for it, you will completely own your website. \
+      This includes all design files, content and code (if applicable). \
+      We will transfer these assets to you along with login credentials."       
+    ]
+  },
+  {
+    title: "What forms of payment do you accept?",
+    content: [
+      "We accept payments via credit card or bank transfer."       
+    ]
+  },
+]
+const designDevelopmentProcess = [
+  {
+    title: "What do you need from me to get started?",
+    content: [
+      "All you need to do is schedule a project planning call. This is the first step. \
+      After that, we work on collecting from you all the information we need to complete the project."       
+    ]
+  },
+  {
+    title: "Will I see what my website will look like before development begins?",
+    content: [
+      "Yes you will! We make sure to get your approval in each stage in the process. \
+      We provide custom mockups and prototypes during the design phase. \
+      This allows you to approve the design before we begin development."       
+    ]
+  },
+  {
+    title: "Will my website work and look good on mobile phones and tablets?",
+    content: [
+      "Yes, we always build our websites to be mobile-friendly and responsive. \
+      No matter the size of the project, it will look great on tablets, and smartphones (and desktop screen sizes of course)."       
+    ]
+  },
+]
+const contentFeatures = [
+  {
+    title: "Do I need to write the content for my website, or do you provide it?",
+    content: [
+      "Yes, we will write the content of your website for you as part of our service. \
+      We will gather all the information and details we need from you to do our best job."       
+    ]
+  },
+  {
+    title: "What happens if I don't have professional photos for my website?",
+    content: [
+      "If you don’t have the right photos for your website, we will help you get them. \
+      This could mean coaching you on taking new ones, \
+      getting appropriate stock photos, or hiring a professional photographer if necessary."       
+    ]
+  },
+]
+const technicalSEOQuestions = [
+  {
+    title: "Will my website be optimized for search engines (SEO)?",
+    content: [
+      "SEO has two parts to it: on-page SEO and off-page SEO. We will do the majority of the on-page SEO for your website. \
+      This means your website will be fully prepared for success if you choose to invest in off-page SEO for your website."       
+    ]
+  },
+  {
+    title: "How fast will my website load?",
+    content: [
+      "We can’t guarantee a specific loading speed because it can vary. \
+      But we optimize all websites for speed as part of our standard service. \
+      Fast loading times are crucial since slow websites lead to lost customers. \
+      We will make sure that the images are optimized, and we use fast, reliable hosting."       
+    ]
+  },
+]
+const hostingSupport = [
+  {
+    title: "Where will my website be hosted?",
+    content: [
+      "We host our websites on Hetzner servers. Our website design service includes the hosting cost for 1 year. \
+      After the first year, the hosting is $15/month.<br>\
+      You can choose to provide your own hosting. But if you do, we can’t guarantee the same loading speed."       
+    ]
+  },
+  {
+    title: "What kind of support do you provide after my website launches?",
+    content: [
+      "We provide 12 months of free support after we are done with your website. \
+      This includes fixing any broken elements, making minor content updates, and answering questions about your website. \
+      We also offer ongoing website support plans for long-term maintenance and updates."       
+    ]
+  },
+  {
+    title: "What if I need work done beyond minor content updates?",
+    content: [
+      "We are available to help you with major updates for $50/hr. \
+      If you have an extensive content update or project, contact us."       
+    ]
+  },
+  {
+    title: "What happens if something breaks on my website?",
+    content: [
+      "For the first year after your website is completed, we will fix any issues at no charge. After that, we suggest \
+      signing up for one of our support plans to ensure your website stays updated and functional as your business grows."       
+    ]
+  },
+]
+const businessInvestmentQuestions = [
+  {
+    title: "Why should I invest in a modern website for my business?",
+    content: [
+      "Users form opinions about websites in just 0.05 seconds¹, \
+      and 75% of consumers judge company credibility based on website design². \
+      A professionally designed website can increase your \
+      visit-to-lead conversion rate by over 400% compared to poorly designed sites³.",
+      "<span class='text-12'>Forbes, 2024. Statistic retrieved from https://www.forbes.com/advisor/business/software/website-statistics/</span> <br> \
+      <span class='text-12'>SWEOR, 2023. Statistic retrieved from https://www.sweor.com/firstimpressions</span> <br> \
+      <span class='text-12'>SWEOR, 2023. Statistic retrieved from https://www.sweor.com/firstimpressions</span>"
+    ]
+  },
+  {
+    title: "What makes you different from other web design companies?",
+    content: [
+      "We're a local business based in Yuma, AZ, and we have a personal, \
+      friendly approach with a simple, pain-free process of making websites. \
+      We want to partner with you and provide custom solutions that are tailored to your actual needs, \
+      solutions that are made to help you grow. We want this to be a long-term partnership, too. \
+      We want to continually help you with your projects, \
+      provide ongoing support and train you on how to use your website."       
+    ]
+  },
+  {
+    title: "Can you work with my existing marketing team or other vendors?",
+    content: [
+      "Yes, we're happy to coordinate with your marketing professionals and work with your other specialists or partners. \
+      In fact, we prefer this so that all our efforts align and the best results are produced."       
+    ]
+  },
+  {
+    title: "What type of businesses do you work with?",
+    content: [
+      "We primarily work with small businesses. \
+      Nevertheless, we are able to work with a wide range of industries and businesses of all sizes. \
+      During our discovery phase, we'll learn about your specific industry needs and tailor our approach accordingly."       
+    ]
+  },
+  {
+    title: "Do you work with businesses outside of Yuma?",
+    content: [
+      "Absolutely! While we are based in Yuma, \
+      our business can work completely online, allowing us to work with clients from anywhere."       
+    ]
+  },
+]
+const sGeneralServiceQuestions = [
+  {
+    title: "Will you support a website that you didn't originally build?",
+    content: [
+      "Yes, we will support any website even if we didn’t build it. \
+      But we do require a $200 startup fee for websites that we didn't create. \
+      This is because it takes some extra time for us to familiarize ourselves with your website and business and perform and required setup."
+    ]
+  },
+  {
+    title: "How fast is your response time to website support requests?",
+    content: [
+      "The standard and professional support plans include unlimited content changes. \
+      We typically complete these requested changes in 1-2 business days. <br>\
+      The time it takes to complete bigger content changes varies depending on the size of the content change request."       
+    ]
+  },
+  {
+    title: "What happens if I need more support than what’s included in my plan?",
+    content: [
+      "For basic needs, you shouldn’t need to go above the allotted monthly support hours. But if so, we do additional work at $50/hour. \
+      If you have a more major content update or redesign or you want to add a new feature, we can do that at $50/hour, too."       
+    ]
+  },
+]
+const sTechnicalSecurityQuestions = [
+  {
+    title: "How often do you back up my website?",
+    content: [
+      "If you host with us (as included in our support plans), your website will be backed up daily. \
+      We set up daily backups through our hosting at Hetzner."
+    ]
+  },
+  {
+    title: "What software updates do you include in the support plans?",
+    content: [
+      "We will take care of any WordPress software updates and all theme and plugin updates. \
+      All updates are important to maintain security and keep the website up-to-date."       
+    ]
+  }
+]
+const sReportingCommunicationQuestions = [
+  {
+    title: "What information is provided in your monthly reports?",
+    content: [
+      "We will give you a detailed outline of the health of your website and \
+      tell you everything that we did for your website for that quarter/month. \
+      The reports include information on website traffic and performance. \
+      We will include details about any content changes that we made or any issues that arose that month. \
+      We will also suggest improvements to your website when applicable."
+    ]
+  },
+  {
+    title: "How will you communicate with me about website issues?",
+    content: [
+      "If there are any urgent website issues, we will tell you right away. \
+      We want to keep you informed about the important details because we are your partners.<br> \
+      You’ll receive information about any minor website issues and the fixes we implemented in our monthly/quarterly reports."       
+    ]
+  },
+  {
+    title: "Can I request specific updates or changes to my website?",
+    content: [
+      "Absolutely! This is one of the main purposes of our support plans. \
+      If there are content or design changes or other modifications you want, then let us know right away. <br> \
+      If there’s something bigger you want done, something that falls outside of a minor change, \
+      we can can assist you at our $50/hour rate. <br> \
+      Feel free to contact us for a custom quote if you have a bigger website update project."       
+    ]
+  },
+]
+const sBusinessValueQuestions = [
+  {
+    title: "Why does my website need website maintenance?",
+    content: [
+      "Your website requires software updates to stay fast and secure. \
+      If the website is not maintained, it can slow down, which directly impacts conversion rates. \
+      Websites can also develop broken features or get security vulnerabilities when not updated. \
+      None of these things provides a good experience for visitors."
+    ]
+  },
+  {
+    title: "What happens if my website gets hacked?",
+    content: [
+      "If that were to happen, we would start working on the situation as soon as we hear of it. \
+      We’ll restore your website from the daily backups that are made. \
+      We would also implement any other security measures as necessary."       
+    ]
+  },
+  {
+    title: "Is website support really worth the cost?",
+    content: [
+      "It depends on what your business considers important or valuable. <br> \
+      In our opinion, website support can be valuable for any small business. Firstly, it gives you a peace of mind. \
+      You can rest assured that your website is being taken care of. Secondly, we are there to answer questions and make changes for you. \
+      But most important, it ensures that your website is performing at its best, making the most impact it can. <br> \
+      Website support is important to us, too. We ourselves invest a lot of time and effort into our website."       
+    ]
+  },
+]
+const sPricingContractQuestions = [
+  {
+    title: "Are there any long-term contracts required?",
+    content: [
+      "We don’t require any long-term contracts for our website support plans. \
+      You can cancel your plan anytime. This allows your business to be flexible as your needs change."
+    ]
+  },
+  {
+    title: "Why might prices be higher depending the website?",
+    content: [
+      "Some websites may be older or more complex. They might have a lot more plugins than normal, too. \
+      These things add complication when we are doing website support. \
+      This means we would have to spend more time and charge more to support these websites."       
+    ]
+  },
+  {
+    title: "What if I'm not satisfied with the service?",
+    content: [
+      "Our goal is that you would be fully satisfied with our service. If you do have any concerns, though, please communicate with us. \
+      We are open to discuss any issues you might have in order to provide the best experience for you."       
+    ]
+  },
+]
+
+
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-138 md:py-223 lg:py-249">
+    <div class="grow-1 flex flex-col max-w-1281">
+      <H1>Frequently Asked Questions</H1>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-85 md:py-95">
+    <div class="grow-1 flex flex-col gap-59 md:gap-95 max-w-1281">
+      <H2 class="md:text-center">Website design and development</H2>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>General Service Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {generalServiceQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Design & Development Process</H3>
+        <div class="toggle-group flex flex-col">
+          {designDevelopmentProcess.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Content & Features</H3>
+        <div class="toggle-group flex flex-col">
+          {contentFeatures.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Technical & SEO Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {technicalSEOQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Hosting & Support</H3>
+        <div class="toggle-group flex flex-col">
+          {hostingSupport.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Business & Investment Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {businessInvestmentQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-85 md:py-95">
+    <div class="grow-1 flex flex-col gap-59 md:gap-95 max-w-1281">
+      <H2 class="md:text-center">Website support plans</H2>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>General Service Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {sGeneralServiceQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Technical & Security Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {sTechnicalSecurityQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Reporting & Communication Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {sReportingCommunicationQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Business Value Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {sBusinessValueQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+      <div class="flex flex-col gap-12 md:gap-14">
+        <H3>Pricing & Contract Questions</H3>
+        <div class="toggle-group flex flex-col">
+          {sPricingContractQuestions.map((faq) => (
+            <FAQ title={faq.title} >
+              {faq.content.map((block) => (
+                <p set:html={block} />
+              ))}
+            </FAQ>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    import '../scripts/toggle-script.js'
+  </script>
 </MainLayout>

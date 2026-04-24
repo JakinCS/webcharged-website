@@ -646,7 +646,7 @@ const FAQs = [
       <H2 color='parchment'>Frequently asked questions</H2>
       <div class="toggle-group flex flex-col">
         {FAQs.map((faq) => (
-          <FAQ title={faq.title}>
+          <FAQ title={faq.title} color='parchment'>
             {faq.content.map((block) => (
               <p set:html={block} />
             ))}
