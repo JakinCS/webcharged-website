@@ -4,7 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import TextureOverlay from '../components/TextureOverlay.astro';
 
-const { headContent = {} } = Astro.props;
+const { headContent = {}, headerButtonLink = '/project-planning-call' } = Astro.props;
 
 const { 
 	metaDescription,
@@ -23,7 +23,7 @@ const twitterImageURL = new URL(twitterImagePath, Astro.site);
 ---
 
 
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 	<head>
 		<meta charset="utf-8" />
 
@@ -62,12 +62,14 @@ const twitterImageURL = new URL(twitterImagePath, Astro.site);
 	</head>
 	<body class="bg-parchment text-charcoal min-h-screen relative flex flex-col overflow-x-hidden">
     <TextureOverlay />
-    <Header></Header>
+    <Header headerButtonLink={headerButtonLink}></Header>
 		<main class="grow-1">
 			<slot />
 		</main>
     <Footer />
-    <script src="/scripts/dropdown.js" is:inline />
-    <script src="/scripts/mobile-dropdown.js" is:inline />
+		<script>
+			import '../scripts/dropdown.js';
+			import '../scripts/mobile-dropdown.js';
+		</script>
 	</body>
 </html>
