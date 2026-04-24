@@ -1,15 +1,28 @@
 ---
+// @ts-nocheck
 
-const { alt=false, mobileWidth, link, smallerPadding = false, class: className, ...rest } = Astro.props;
+const { fixedWidth = {}, mobileWidth, link, class: className, ...rest } = Astro.props;
 
 const set1styles = (!className?.includes('hidden') ? 'inline-flex ' : "") + 'items-center justify-center max-w-[100%] box-border before:w-24 before:md:w-0 before:min-w-0 before:flex-grow-0 before:flex-shrink-9999 before:flex-basis-24 before:md:flex-basis-0 after:w-24 after:md:w-0 after:min-w-0 after:flex-grow-0 after:flex-shrink-9999 after:flex-basis-24 after:md:flex-basis-0';
+
+
+const breakpointWidthMap = {
+  'none': 'w-full',
+  'sm':   'w-full sm:w-fit',
+  'md':   'w-full md:w-fit',
+  'lg':   'w-full lg:w-fit',
+  'xl':   'w-full xl:w-fit'
+};
+
 let set2styles;
-if (mobileWidth) set2styles = `w-full md:w-fit text-center max-w-${mobileWidth.toString()}`;
+const { isFixed = false, maxWidthClass = 'max-w-300', breakpoint = 'none'} = fixedWidth;
+const widthStyles = breakpointWidthMap[breakpoint] ?? 'w-full'
+if (isFixed) set2styles = widthStyles + ' text-center ' + maxWidthClass;
 
 ---
 
-<a href={link} class={"px-20 md:px-44 lg:px-36 rounded-md bg-spark text-charcoal text-19 lg:text-21 font-semibold py-14 lg:py-9" + (mobileWidth ? " " + set2styles : " " + set1styles) + (className ? " " + className : "")} {...rest}>
-  {mobileWidth ? 
+<a href={link} class={"px-20 md:px-44 lg:px-36 rounded-md bg-spark text-charcoal text-19 lg:text-21 font-semibold py-14 lg:py-9" + (isFixed ? " " + set2styles : " " + set1styles) + (className ? " " + className : "")} {...rest}>
+  {isFixed ? 
     <slot />
   :
     <span class="shrink-1 text-center"><slot /></span>
