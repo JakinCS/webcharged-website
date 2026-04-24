@@ -1,0 +1,22 @@
+#embed-container.embed-container h2 {
+  color: #324445;
+  margin-top: 2.25rem;
+}
+#embed-container.embed-container h1 {
+  display: none;
+}
+#embed-container.embed-container .accordions, #embed-container.embed-container .accordions .accordion {
+  border: none;
+}
+#embed-container.embed-container ul {
+  list-style: initial;
+}
+#embed-container.embed-container ol {
+  list-style: decimal;
+}
+#embed-container.embed-container a {
+  text-decoration: underline;
+  &:hover, &:active, &:focus, &:focus-visible {
+    color: #DB8300;
+  }
+}
