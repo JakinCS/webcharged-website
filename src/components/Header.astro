@@ -7,6 +7,8 @@ import TextureOverlay from "./TextureOverlay.astro"
 
 const pageUrl = Astro.url.pathname;
 
+const {headerButtonLink = '/project-planning-call'} = Astro.props;
+
 ---
 
 <header data-mobile-dropdown-parent class="flex justify-center bg-charcoal px-32 md:px-53 lg:px-59 py-20 lg:py-22">
@@ -27,7 +29,7 @@ const pageUrl = Astro.url.pathname;
           <MenuLink link="/contact-us" class="py-9" aria-current={pageUrl === "/contact-us" ? "page" : undefined}>Contact Us</MenuLink>
         </li>
       </ul>
-      <Button link="/project-planning-call" class="hidden md:inline-flex">Book a call</Button>
+      <Button link={headerButtonLink} class="hidden md:inline-flex">Book a call</Button>
       <button data-mobile-dropdown-trigger class="block lg:hidden cursor-pointer" aria-controls="mobile-dropdown-menu" aria-expanded="false">
         <img src="/icons/hamburger-electric.svg" alt="Menu icon" width="34" height="34">
       </button>
@@ -43,8 +45,8 @@ const pageUrl = Astro.url.pathname;
           <img src="/images/webcharged-logo-black.svg" width="222" height="60" alt="Go to WebCharged Home" />
         </a>
         <div class="flex items-center gap-40">
-          <Button link="/project-planning-call" class="hidden md:block">Book a call</Button>
-          <button data-mobile-dropdown-close class="cursor-pointer" aria-controls="mobile-dropdown-menu" aria-expanded="false">
+          <Button link={headerButtonLink} class="menu-book-button hidden md:block">Book a call</Button>
+          <button data-mobile-dropdown-close id="menu-close-button" class="cursor-pointer" aria-controls="mobile-dropdown-menu" aria-expanded="false">
             <img src="/icons/close-black.svg" alt="Close icon" width="34" height="34">
           </button>
         </div>
@@ -69,7 +71,7 @@ const pageUrl = Astro.url.pathname;
         </li>
       </ul>
       <div class="w-[fit-content] pt-32">
-        <Button link="/project-planning-call" class="inline-flex md:hidden">Book a call</Button>
+        <Button link={headerButtonLink} class="menu-book-button inline-flex md:hidden">Book a call</Button>
       </div>
     </nav>
 
