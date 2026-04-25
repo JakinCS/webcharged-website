@@ -14,9 +14,14 @@ const headContent = {
 ---
 
 <MainLayout headContent={headContent}>
+  <link slot="head" rel="preconnect" href="https://embed.termageddon.com" crossorigin />
+  <link slot="head" rel="preconnect" href="https://policies.termageddon.com" crossorigin />
+  <link slot="head" rel="dns-prefetch" href="https://embed.termageddon.com" />
+  <link slot="head" rel="dns-prefetch" href="https://policies.termageddon.com" />
+  
   <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-53 md:py-95 gap-20 md:gap-36">
     <H1 color="blue">Cookie Policy</H1>
-    <div id="embed-container" class="embed-container grow-1 w-full max-w-1281">
+    <div id="embed-container" class="embed-container grow-1 min-h-1000 w-full max-w-1281">
 
       <div id="UWxwQlJFTXZka2t3UkVOb09GRTlQUT09" class="policy_embed_div" width="640" height="480"> 
         Please wait while the policy is loaded. If it does not load, please <a rel="nofollow" href="https://policies.termageddon.com/api/policy/UWxwQlJFTXZka2t3UkVOb09GRTlQUT09" target="_blank">click here</a> to view the policy.
