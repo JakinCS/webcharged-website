@@ -47,6 +47,9 @@ function loadCalEmbed() {
   });
 }
 
+let margin = '200px';
+if (window.location.pathname.includes('website-design')) margin = '1000px'
+
 // Trigger load when the wrapper scrolls into view
 const observer = new IntersectionObserver(
   (entries) => {
@@ -55,7 +58,7 @@ const observer = new IntersectionObserver(
       observer.disconnect();
     }
   },
-  { rootMargin: "1000px" } // start loading 200px before it's visible
+  { rootMargin: margin } // start loading before it's visible
 );
 
 observer.observe(document.querySelector('.cal-facade-wrapper'));
