@@ -1,13 +1,154 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import Text from "../components/text/Text.astro";
+import CTASection from "../components/CTASection.astro";
+import Button from "../components/Button.astro";
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://webchargedsolutions.com/project-planning-call/#webpage",
+      "url": "https://webchargedsolutions.com/project-planning-call",
+      "name": "Book Your Project Planning Call | WebCharged Web Solutions",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Schedule a free, no-obligation 30-minute project planning call with Jakin Stahl to discuss your website goals.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/project-planning-call/#breadcrumb" },
+      "mainEntity": {
+        "@type": "ScheduleAction",
+        "target": "https://webchargedsolutions.com/project-planning-call",
+        "name": "Schedule a Project Planning Call",
+        "description": "A quick 30-minute conversation to understand your goals and figure out if we'd make a good team. No pressure or obligation.",
+        "agent": { "@id": "https://webchargedsolutions.com/#organization" },
+        "object": {
+          "@type": "Service",
+          "name": "Website Strategy Consultation"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/project-planning-call/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project Planning Call"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "telephone": "+1-928-235-2131",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": "https://webchargedsolutions.com/project-planning-call",
+        "name": "Book a Call",
+        "actionStatus": "https://schema.org/PotentialActionStatus"
+      }
+    }
+  ]
+}
 
 const headContent = {
-  metaTitle: "Project Planning Call",
+  metaTitle: "Want to Discuss Your Project? - Schedule a Call with Us",
+  metaDescription: "Schedule a 30 minute call with us to discuss your project. We want to understand your goals. No obligation to work with us.",
+  schemaMarkup,
+  socialMediaImagePath: '/images/social/Project-Planning-Call-Facebook.jpg',
+  socialMediaImageDesc: 'WebCharged. Book a 30 minute call with us to discuss your project',
+  twitterImagePath: '/images/social/Project-Planning-Call-Twitter.jpg',
 }
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-223 lg:py-249">
+    <div class="grow-1 flex flex-col gap-20 md:gap-22 lg:gap-36 max-w-1281">
+      <H1>Book your project planning call!</H1>
+      <div class="flex flex-col gap-9">
+        <Text class="text-parchment max-w-300 md:max-w-350 lg:max-w-400">
+          Ready to get a professional website and start increasing your profits?
+        </Text>
+        <Text class="text-parchment font-semibold">
+          Let’s talk.
+        </Text>
+      </div>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-53 md:py-95">
+    <div class="grow-1 flex flex-col gap-20 md:gap-36 max-w-1281">
+      <H2 class="md:text-center">What's a project planning call?</H2>
+      <div class="flex flex-col gap-20">
+        <Text>
+          <span class="font-semibold">It’s a quick 30 min call.</span> We’ll discuss your project and understand your goals. It’s a opportunity to answer any questions you may have.
+        </Text>
+        <Text>
+          <span class="font-semibold">There’s no pressure or obligation.</span> It’s simply a conversation to figure out if we’d make a good team.
+        </Text>
+      </div>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 pb-53 md:pb-95 pt-12 md:pt-14">
+    <div class="grow-1 flex flex-col gap-20 md:gap-36 max-w-1281">
+      <H2 class="md:text-center">Book a call using the calendar</H2>
+      <Text>
+        Choose a day and a time that works best for you on the booking calendar below. After you book a call, you’ll receive an email with details confirming the call.
+      </Text>
+      <div>
+        <div class="cal-facade-wrapper">
+          <!-- Placeholder shown before the embed loads -->
+          <div id="cal-facade" aria-label="Booking calendar loading area">
+            <div class="cal-placeholder">
+              <p>Loading booking calendar…</p>
+            </div>
+          </div>
+
+          <!-- The actual cal.com container (hidden initially) -->
+          <div 
+            id="my-cal-inline-project-planning-call" 
+            style="width:100%; overflow:scroll; display:none;"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-85 md:py-138 lg:py-154 bg-blue gap-32 md:gap-36">
+    <div class="flex flex-col items-center gap-12 md:gap-14">
+      <H2 color="parchment">Call us to book</H2>
+      <Text class="text-parchment">
+        If you prefer calling instead of using the calendar, you can call at:
+      </Text>
+    </div>
+    <a class="text-33 md:text-47 text-electric underline hover:text-spark active:text-park focus:text-spark focus-visible:text-spark" href="tel:928-235-2131">928-235-2131</a>
+    <Text class='text-parchment'>We look forward to hearing from you!</Text>
+  </section>
+  <CTASection>
+    <div class="flex flex-col gap-20 lg:gap-22">
+      <H2>Got questions for us?</H2>
+      <Text>
+        We’d love to hear from you, so feel free to reach out, and we’ll get back to you!
+      </Text>
+    </div>
+    <Button class="self-start" href="/contact-us">Reach out to us</Button>
+  </CTASection>
+  <script>
+    import '../scripts/load-cal.js';
+  </script>
 </MainLayout>

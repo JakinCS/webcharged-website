@@ -1,0 +1,30 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import Text from "../components/text/Text.astro";
+import Button from "../components/Button.astro";
+
+const headContent = {
+  metaTitle: "Page not found – WebCharged Web Solutions",
+}
+
+---
+
+<MainLayout headContent={headContent}>
+  <meta slot="head" name="robots" content="noindex, nofollow">
+
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-138 md:py-223 lg:py-249">
+    <div class="grow-1 flex flex-col gap-53 md:gap-95 max-w-1281">
+      <div class="flex flex-col md:items-center gap-32 md:gap-22">
+        <H1 class="md:text-center">
+          <span class="flex flex-col gap-12 md:hidden"><span class="text-47">Sorry</span><span class="text-23 text-parchment">We couldn’t find the page you’re looking for.</span></span>
+          <span class="hidden md:inline">Sorry, we couldn’t find <br class="xl:hidden">the page you’re looking for.</span>
+        </H1>
+        <Text class="text-parchment md:text-center">
+          The page probably moved to a different location, or the page you’re looking for no longer exists.
+        </Text>
+      </div>
+      <Button class="self-start md:self-center" href="/">Return to the homepage</Button>
+    </div>
+  </section>
+</MainLayout>

@@ -1,13 +1,36 @@
 ---
+// @ts-nocheck
+
+import '../styles/policy.css'
 import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+
 
 const headContent = {
-  metaTitle: "Privacy Policy",
+  metaTitle: "Privacy Policy - WebCharged Web Solutions",
+  metaDescription: 'We value your privacy very highly. Our Privacy Policy contains information about your privacy. By accessing the Website, you agree to the Privacy Policy.',
 }
+
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <link slot="head" rel="preconnect" href="https://embed.termageddon.com" />
+  <link slot="head" rel="preconnect" href="https://policies.termageddon.com" />
+  <link slot="head" rel="dns-prefetch" href="https://embed.termageddon.com" />
+  <link slot="head" rel="dns-prefetch" href="https://policies.termageddon.com" />
+
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-53 md:py-95 gap-20 md:gap-36">
+    <H1 color="blue">Privacy Policy</H1>
+    <div id="embed-container" class="embed-container grow-1 min-h-1000 w-full max-w-1281">
+
+      <div id="YUdGM1lsUlJhVmRqY0VOR1NVRTlQUT09" class="policy_embed_div" width="640" height="480"> 
+        Please wait while the policy is loaded. If it does not load, please 
+        <a rel="nofollow" href="https://policies.termageddon.com/api/policy/YUdGM1lsUlJhVmRqY0VOR1NVRTlQUT09" target="_blank">click here</a> 
+        to view the policy.
+      </div>
+      <script src="https://policies.termageddon.com/api/embed/YUdGM1lsUlJhVmRqY0VOR1NVRTlQUT09.js"></script>
+
+    </div>
+  </section>
 </MainLayout>
+
