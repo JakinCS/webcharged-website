@@ -1,5 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import Text from "../components/text/Text.astro";
 
 const headContent = {
   metaTitle: "Contact Us",
@@ -8,7 +11,45 @@ const headContent = {
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-154 lg:py-249">
+    <div class="grow-1 flex flex-col gap-20 max-w-1281">
+      <H1>Let's connect!</H1>
+      <Text class="text-parchment max-w-350 md:max-w-425 lg:max-w-475">
+        Don’t hesitate to contact us. We are happy to talk with you and answer any questions you have.
+      </Text>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 py-59 lg:py-95">
+    <div class="grow-1 flex flex-col gap-32 max-w-480 md:max-w-520">
+      <H2 class="text-center">Direct communication</H2>
+      <div class="flex flex-col gap-14">
+        <Text>
+          Feel free to contact us directly via phone or email. 
+          You’ll be talking directly to me (Jakin), the owner.
+        </Text>
+        <Text>
+          <span class="font-semibold">Phone:</span> <a href="tel:928-235-2131" class="underline hover:text-spark focus:text-spark focus-visible:text-spark active:text-spark">928-235-2131</a>
+        </Text>
+        <Text>
+          <span class="font-semibold">Email:</span> <a href="mailto:hello@webchargedsolutions.com" class="underline hover:text-spark focus:text-spark focus-visible:text-spark active:text-spark">hello@webchargedsolutions.com</a>
+        </Text>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 py-59 md:py-95 gap-53 md:gap-59 bg-charcoal">
+    <div class="grow-1 flex flex-col gap-20 md:gap-36 max-w-480 md:max-w-520">
+      <H2 class="text-center" color='electric'>Use the contact form</H2>
+      <div class="flex flex-col gap-20">
+        <Text class="text-parchment">
+          You may use this contact form instead of contacting us directly. When you submit the form, we will receive an email.
+        </Text>
+        <Text class="text-parchment">
+          We typically respond within 1 business day.
+        </Text>
+      </div>
+    </div>
+    <div class="grow-1 flex flex-col max-w-480 md:max-w-520">
+
+    </div>
+  </section>
 </MainLayout>
