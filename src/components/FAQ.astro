@@ -1,22 +1,49 @@
 ---
+// @ts-nocheck
 
-const { title = "Lorem Ipsum" } = Astro.props;
+const { title = "Lorem Ipsum", color = "charcoal" } = Astro.props;
+
+const textMap = {
+  charcoal: 'text-charcoal',
+  electric: 'text-electric',
+  parchment: 'text-parchment',
+  spark: 'text-spark',
+  blue: 'text-blue',
+}
+const borderMap = {
+  charcoal: 'border-charcoal/25',
+  electric: 'border-electric/25',
+  parchment: 'border-parchment/25',
+  spark: 'border-spark/25',
+  blue: 'border-blue/25',
+}
+const colorMap = {
+  charcoal: '#222F2F',
+  electric: '#FF9D0A',
+  parchment: "#FFF7EB",
+  spark: '#DB8300',
+  blue: '#324445',
+}
+
+const textColorClass = textMap[color];
+const borderClass = borderMap[color];
+const colorValue = colorMap[color];
 
 ---
 
 
-<details class="flex flex-col border-b-[1.5px] border-parchment/25">
+<details class={"flex flex-col border-b-[1.5px]" + " " + borderClass}>
   <summary class="flex justify-between items-center gap-12 md:gap-22 lg:gap-34 py-20 cursor-pointer">
-    <p class="text-16 md:text-19 lg:text-21 font-semibold text-parchment">{title}</p>
+    <p class={"text-16 md:text-19 lg:text-21 font-semibold" + (color === 'charcoal' ? ' text-blue' : ' ' + textColorClass)}>{title}</p>
     <svg class="[[open]_&]:hidden w-24 h-24 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 12H24" stroke="#FFF7EB" stroke-width="2.5"/>
-      <path d="M12 0L12 24" stroke="#FFF7EB" stroke-width="2.5"/>
+      <path d="M0 12H24" stroke={colorValue} stroke-width="2.5"/>
+      <path d="M12 0L12 24" stroke={colorValue} stroke-width="2.5"/>
     </svg>
     <svg class="hidden [[open]_&]:block w-24 h-24 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 12H24" stroke="#FFF7EB" stroke-width="2.5"/>
+      <path d="M0 12H24" stroke={colorValue} stroke-width="2.5"/>
     </svg>
   </summary>
-  <div class="flex flex-col pe-32 md:pe-59 pb-20 gap-20 text-parchment">
+  <div class={"flex flex-col pe-32 md:pe-59 pb-20 gap-20" + " " + textColorClass}>
     <slot />
   </div>
 </details>
