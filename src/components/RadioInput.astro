@@ -1,0 +1,91 @@
+---
+// @ts-nocheck
+
+
+const {
+  label = "Label",
+  name = 'name',
+  options = [],
+  placeholder = "Enter value",
+  isRequired = false,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const labelStyles = 'text-parchment text-16'
+const regularStyles = "flex flex-col gap-12 md:gap-9 font-semibold border-[1.5px] border-parchment rounded-md px-20 md:px-22 py-12 md:py-9 bg-blue";
+const inputStyles = regularStyles;
+const radioStyles = "absolute -left-9999"
+const radioLabelStyles = "radio-label text-parchment text-16 grow-1"
+
+---
+
+<div class={"flex flex-col gap-12" + (className ? ' ' + className : '')}>
+  <label for={name} class={labelStyles}>{label}<span class={!isRequired && 'hidden'}> *</span></label>
+
+  <div class={inputStyles}>
+    {
+      options.map((option, index) => (
+        <div class="flex gap-9">
+          <input type="radio" value={option.value} id={name + index.toString()} name={name} class={radioStyles} required={isRequired ? "required" : undefined}>
+          <label for={name + index.toString()} class={radioLabelStyles}>{option.label}</label>
+        </div>
+      ))
+    }
+  </div>
+
+</div>
+
+<style>
+  .radio-label {
+    position: relative;
+    padding-left: 1.4375rem;
+    cursor: pointer;
+  }
+  .radio-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3125rem;
+    width: 0.875rem;
+    height: 0.875rem;
+    border: 1.5px solid #FFF7EB;
+    border-radius: 100%;
+    background: #324445;
+  }
+  input[type="radio"]:focus + label:before, input[type="radio"]:focus-visible + label:before {
+    outline: solid 1.5px #FFF7EB;
+    outline-offset: .25rem;
+  }
+  .radio-label:after {
+    content: '';
+    width: 0.875rem;
+    height: 0.875rem;
+    background: #DB8300;
+    position: absolute;
+    top: 0.3125rem;
+    left: 0;
+    border: solid 1.5px #FFF7EB;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  input[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+</style>

@@ -102,3 +102,7 @@ a {
 .bg-blue-gradient {
     background: radial-gradient(at bottom center, var(--color-blue) 0%, var(--color-charcoal) 69%)
 }
+
+.field-404 {
+  display: none;
+}
