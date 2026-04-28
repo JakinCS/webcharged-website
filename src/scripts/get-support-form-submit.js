@@ -1,6 +1,6 @@
-const form = document.getElementById('contact-form');
+const form = document.getElementById('get-support-form');
 const status = document.getElementById('form-status');
-const submitButton = document.querySelector('#contact-form button');
+const submitButton = document.querySelector('#get-support-form button');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -12,14 +12,13 @@ form.addEventListener('submit', async (e) => {
     email: form.email.value,
     contact_method: form.contact_method.value,
     phone: (form.contact_method.value === 'phone' ? form.phone.value : undefined),
-    contact_reason: form.contact_reason.value,
     message: form.message.value,
     policy_agreement: form.policy_agreement.checked,
     company_name: form.company_name.value,
   };
 
   try {
-    const res = await fetch('https://contact-form-worker.webcharged.workers.dev', {
+    const res = await fetch('https://contact-form-worker.webcharged.workers.dev/get-support', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -28,7 +27,7 @@ form.addEventListener('submit', async (e) => {
     const result = await res.json();
 
     if (result.success) {
-      status.textContent = '✓ Message sent! I\'ll get back to you soon.';
+      status.textContent = '✓ Message sent! We\'ll get back to you soon.';
       form.reset();
       hidePhoneField();
     } else {

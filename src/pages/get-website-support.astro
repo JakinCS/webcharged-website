@@ -1,0 +1,62 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import Text from "../components/text/Text.astro";
+import TextInput from "../components/TextInput.astro";
+import TextArea from "../components/TextArea.astro";
+import RadioInput from "../components/RadioInput.astro";
+import CheckboxInput from "../components/CheckboxInput.astro";
+import HoneypotInput from "../components/HoneypotInput.astro";
+import Button from "../components/Button.astro";
+
+const headContent = {
+  metaTitle: "Protect Your Website - Get Started with Website Support",
+  metaDescription: "Give yourself peace of mind with website support. Fill out the form to get started today. We will reach out as soon as we can!",
+  socialMediaImagePath: '/images/social/Get-Website-Support-Facebook.jpg',
+  socialMediaImageDesc: 'WebCharged. Website support that keeps your website running smoothly and gives you peace of mind.',
+  twitterImagePath: '/images/social/Get-Website-Support-Twitter.jpg',
+}
+
+const radioInput1Options = [
+  {label: "Email", value: "email"}, 
+  {label: "Phone", value: "phone"}, 
+  {label: "No preference", value: "no_preference"},
+]
+
+---
+
+<MainLayout headContent={headContent}>
+  <section class="flex flex-col items-center px-32 py-85 lg:py-154 gap-53 md:gap-59 bg-blue-gradient">
+    <div class="grow-1 flex flex-col items-center gap-32 md:gap-36 max-w-480 md:max-w-full">
+      <H1>Sign up for website support</H1>
+      <div class="flex flex-col md:items-center gap-20">
+        <Text class="text-parchment">
+          Ready to start protecting your website?
+        </Text>
+        <Text class="text-parchment">
+          Fill out the form, and we will connect with you as soon as possible!
+        </Text>
+      </div>
+    </div>
+    <div class="grow-1 flex flex-col w-full max-w-480 md:max-w-520">
+      <form id="get-support-form" class="flex flex-col gap-32 md:gap-36" action="">
+        <TextInput type="text" label="Full Name" name="fullname" placeholder="John Doe" isRequired={true}/>
+        <TextInput type="email" label="Email Address" name="email" placeholder="JohnDoe@mycompany.com" isRequired={true}/>
+        <RadioInput class="peer" label="Preferred Contact Method" name="contact_method" options={radioInput1Options} isRequired={true}/>
+        <TextInput class="hidden peer-has-[input[value='phone']:checked]:block" type="tel" label="Phone Number" name="phone" placeholder="123-456-7890" disabled/>
+        <HoneypotInput label="Company Name" name="company_name" />
+        <TextArea label="Message (optional)" name="message" placeholder="I'd like to mention that..." isRequired={false}/>
+        <CheckboxInput name="policy_agreement" isRequired={true}>I agree to the <a href="/privacy-policy" target="_blank" class="underline hover:text-electric focus:text-electric focus-visible:text-electric">Privacy Policy</a> and <a href="/terms-and-conditions" class="underline hover:text-electric focus:text-electric focus-visible:text-electric" target="_blank">Terms & Conditions</a></CheckboxInput>
+        <Button type="submit" class="self-center md:mt-23">Connect with us</Button>
+      </form>
+      <p id="form-status" class="text-parchment mt-32 -mb-32"></p>
+    </div>
+    <Text class="text-parchment max-w-480 md:max-w-520">
+      If you prefer to call us instead to discuss website support, feel free to call us at <a href="tel:928-235-2131" class="font-semibold underline text-electric hover:text-spark focus:text-spark focus-visible:text-spark">928-235-2131</a>.
+    </Text>
+  </section>
+  <script>
+    import '../scripts/dynamic-form.js';
+    import '../scripts/get-support-form-submit.js';
+  </script>
+</MainLayout>
