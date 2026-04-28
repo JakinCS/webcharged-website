@@ -48,7 +48,7 @@
   --color-blue: #324445;
   --color-cable: #AA4A00;
   --color-parchment: #FFF7EB;
-  --color-mynewcolor: #00FF00;
+  --color-error: #fe6749;
 
   /* Fonts — remember to load these via a <link> in your layout */
   --font-sans: 'Atkinson Hyperlegible Next', primary-fallback, secondary-fallback-android, sans-serif;
