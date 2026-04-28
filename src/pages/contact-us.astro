@@ -3,10 +3,29 @@ import MainLayout from "../layouts/MainLayout.astro";
 import H1 from "../components/text/H1.astro";
 import H2 from "../components/text/H2.astro";
 import Text from "../components/text/Text.astro";
+import TextInput from "../components/TextInput.astro";
+import TextArea from "../components/TextArea.astro";
+import RadioInput from "../components/RadioInput.astro";
+import CheckboxInput from "../components/CheckboxInput.astro";
+import HoneypotInput from "../components/HoneypotInput.astro";
+import Button from "../components/Button.astro";
 
 const headContent = {
   metaTitle: "Contact Us",
 }
+
+const radioInput1Options = [
+  {label: "Email", value: "email"}, 
+  {label: "Phone", value: "phone"}, 
+  {label: "No preference", value: "no_preference"},
+]
+const radioInput2Options = [
+  {label: "A new website", value: "newwebsite"}, 
+  {label: "A website re-design", value: "redesign"}, 
+  {label: "Website maintenance", value: "maintenance"},
+  {label: "General question/email", value: "general"},
+  {label: "Other", value: "other"},
+]
 
 ---
 
@@ -36,7 +55,7 @@ const headContent = {
       </div>
     </div>
   </section>
-  <section class="flex flex-col items-center px-32 py-59 md:py-95 gap-53 md:gap-59 bg-charcoal">
+  <section class="flex flex-col items-center px-32 py-59 md:py-95 gap-53 md:gap-59 bg-blue-gradient">
     <div class="grow-1 flex flex-col gap-20 md:gap-36 max-w-480 md:max-w-520">
       <H2 class="text-center" color='electric'>Use the contact form</H2>
       <div class="flex flex-col gap-20">
@@ -48,8 +67,23 @@ const headContent = {
         </Text>
       </div>
     </div>
-    <div class="grow-1 flex flex-col max-w-480 md:max-w-520">
-
+    <div class="grow-1 flex flex-col w-full max-w-480 md:max-w-520">
+      <form id="contact-form" class="flex flex-col gap-32 md:gap-36" action="">
+        <TextInput type="text" label="Full Name" name="fullname" placeholder="John Doe" isRequired={true}/>
+        <TextInput type="email" label="Email Address" name="email" placeholder="JohnDoe@mycompany.com" isRequired={true}/>
+        <RadioInput class="peer" label="Preferred Contact Method" name="contact_method" options={radioInput1Options} isRequired={true}/>
+        <TextInput class="hidden peer-has-[input[value='phone']:checked]:block" type="tel" label="Phone Number" name="phone" placeholder="123-456-7890" disabled/>
+        <RadioInput label="What are you contacting us about?" name="contact_reason" options={radioInput2Options} isRequired={true}/>
+        <HoneypotInput label="Company Name" name="company_name" />
+        <TextArea label="Message" name="message" placeholder="I'd like to talk about..." isRequired={true}/>
+        <CheckboxInput name="policy_agreement" isRequired={true}>I agree to the <a href="/privacy-policy" target="_blank" class="underline hover:text-electric focus:text-electric focus-visible:text-electric">Privacy Policy</a> and <a href="/terms-and-conditions" class="underline hover:text-electric focus:text-electric focus-visible:text-electric" target="_blank">Terms & Conditions</a></CheckboxInput>
+        <Button type="submit" class="self-center md:mt-23">Start a conversation</Button>
+      </form>
+      <p id="form-status" class="text-parchment mt-32"></p>
     </div>
   </section>
+  <script>
+    import '../scripts/dynamic-form.js';
+    import '../scripts/form-submit.js';
+  </script>
 </MainLayout>

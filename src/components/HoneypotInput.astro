@@ -1,0 +1,16 @@
+---
+// @ts-nocheck
+
+
+const {
+  label = "Label",
+  name = 'name',
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<div class={'field-404' + (className ? ' ' + className : '')} {...rest}>
+  <label for={name}>{label}</label>
+  <input type="text" name={name} id={name}>
+</div>
