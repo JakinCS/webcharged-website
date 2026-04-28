@@ -10,8 +10,70 @@ import CheckboxInput from "../components/CheckboxInput.astro";
 import HoneypotInput from "../components/HoneypotInput.astro";
 import Button from "../components/Button.astro";
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://webchargedsolutions.com/contact-us/#webpage",
+      "url": "https://webchargedsolutions.com/contact-us",
+      "name": "Contact WebCharged Web Solutions | Web Design in Yuma, AZ",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Contact WebCharged Web Solutions for website design, redesigns, or support plans. Reach out directly to Jakin Stahl via phone, email, or our contact form.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/contact-us/#breadcrumb" },
+      "mainEntity": { "@id": "https://webchargedsolutions.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/contact-us/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact Us"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "telephone": "+1-928-235-2131",
+      "email": "hello@webchargedsolutions.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-928-235-2131",
+        "email": "hello@webchargedsolutions.com",
+        "contactType": "customer service",
+        "contactOption": "TollFree",
+        "areaServed": "US",
+        "availableLanguage": "en",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
+          "closes": "15:00"
+        }
+      },
+      "potentialAction": {
+        "@type": "CommunicateAction",
+        "target": "https://webchargedsolutions.com/contact-us",
+        "description": "We typically respond to contact form inquiries within 1 business day."
+      }
+    }
+  ]
+}
+
 const headContent = {
-  metaTitle: "Contact Us",
+  metaTitle: "Contact WebCharged - 24 Hour Average Response Time",
+  metaDescription: "Ask questions or share details about your project. We respond quickly and look forward to connecting and helping you achieve your goal.",
+  schemaMarkup,
 }
 
 const radioInput1Options = [
