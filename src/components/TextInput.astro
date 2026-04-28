@@ -1,0 +1,32 @@
+---
+// @ts-nocheck
+
+
+const {
+  label = "Label",
+  type = "text",
+  name = 'name',
+  placeholder = "Enter value",
+  isRequired = false,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const labelStyles = 'text-parchment text-16 mb-12 block w-full'
+const regularStyles = "block w-full text-parchment font-semibold border-[1.5px] border-parchment rounded-md px-20 md:px-22 py-12 md:py-9 bg-blue";
+const interactiveStyles = "focus:text-electric focus:border-electric focus:outline-[1.5px] focus:outline-electric/75 focus:outline-offset-5 focus:placeholder:text-electric placeholder:text-parchment placeholder:opacity-75"
+const inputStyles = regularStyles + ' ' + interactiveStyles;
+
+---
+
+<div class={(className ? ' ' + className : '')}>
+  <label for={name} class={labelStyles}>{label}<span class={!isRequired && 'hidden'}> *</span></label>
+  <input type={type} name={name} id={name} placeholder={placeholder} class={inputStyles} {...rest} required={isRequired ? "required" : undefined}>
+</div>
+
+<style>
+  input:-webkit-autofill {
+    box-shadow: inset 0 0 20px 20px #CCCAC1;
+    -webkit-text-fill-color: #222F2F;
+  }
+</style>

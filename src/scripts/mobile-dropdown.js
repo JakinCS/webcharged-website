@@ -23,6 +23,7 @@ function closeMobileDropdown(dropdownParent) {
   // Sync ARIA
   trigger?.setAttribute('aria-expanded', 'false');
   trigger2?.setAttribute('aria-expanded', 'false');
+  trigger?.focus();
   menu?.setAttribute('aria-hidden', 'true');
 }
 

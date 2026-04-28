@@ -1,0 +1,109 @@
+---
+// @ts-nocheck
+
+const {
+  name = 'name',
+  isRequired = false,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const baseStyles = 'sr-only'
+const inputStyles = baseStyles + (className ? ' ' + className : '')
+const labelStyles = "checkbox-label flex gap-12 text-parchment cursor-pointer select-none"
+
+---
+
+<div>
+  <label for={name} class={labelStyles}>
+    <input type="checkbox" name={name} id={name} class={inputStyles} required={isRequired ? "required" : undefined} {...rest}>
+    
+    <span class="checkbox-indicator mt-2" aria-hidden="true"></span>
+    <span class="checkbox-text">
+      <slot /><span class={!isRequired && 'hidden'}> *</span>
+    </span>
+  </label>
+</div>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .checkbox-indicator {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--color-parchment);
+    border-radius: var(--radius-md);
+    background: var(--color-blue);
+    transition:
+      background .2s,
+      border-color .2s;
+    position: relative;
+  }
+  .checkbox-indicator::after {
+    content: '';
+    position: absolute;
+    top: 1.5px;
+    left: 6.2px;
+    width: 5px;
+    height: 12px;
+    border-right: 2.5px solid var(--color-parchment);
+    border-bottom: 2.5px solid var(--color-parchment);
+    transform: rotate(45deg) scale(0);
+  }
+
+  .checkbox-label:hover .checkbox-indicator {
+    border-color: #b5ada0;
+  }
+
+  input[type="checkbox"]:checked + .checkbox-indicator::after {
+    transform: rotate(45deg) scale(1);
+  }
+
+  /* FOCUS-VISIBLE — keyboard nav focus ring */
+  input[type="checkbox"]:focus-visible + .checkbox-indicator {
+    outline: 1.5px solid #FF9D0ABF;
+    outline-offset: 0.3125rem;
+    border-color: #FF9D0A;
+    border-radius: var(--radius-md);
+  }
+
+  /* DISABLED state */
+  input[type="checkbox"]:disabled + .checkbox-indicator {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  input[type="checkbox"]:disabled ~ .checkbox-text {
+    opacity: 0.4;
+  }
+
+  .checkbox-label:has(input:disabled) {
+    cursor: not-allowed;
+  }
+
+  /* INDETERMINATE state (useful for "select all" patterns) */
+  input[type="checkbox"]:indeterminate + .checkbox-indicator {
+    background: #FF9D0A;
+    border-color: #FF9D0A;
+  }
+
+  input[type="checkbox"]:indeterminate + .checkbox-indicator::after {
+    top: 50%;
+    left: 3px;
+    width: 10px;
+    height: 0;
+    border-right: none;
+    border-bottom: 2.5px solid white;
+    transform: translateY(-50%) scale(1);
+  }
+</style>

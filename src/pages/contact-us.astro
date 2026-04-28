@@ -1,14 +1,151 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import Text from "../components/text/Text.astro";
+import TextInput from "../components/TextInput.astro";
+import TextArea from "../components/TextArea.astro";
+import RadioInput from "../components/RadioInput.astro";
+import CheckboxInput from "../components/CheckboxInput.astro";
+import HoneypotInput from "../components/HoneypotInput.astro";
+import Button from "../components/Button.astro";
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://webchargedsolutions.com/contact-us/#webpage",
+      "url": "https://webchargedsolutions.com/contact-us",
+      "name": "Contact WebCharged Web Solutions | Web Design in Yuma, AZ",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Contact WebCharged Web Solutions for website design, redesigns, or support plans. Reach out directly to Jakin Stahl via phone, email, or our contact form.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/contact-us/#breadcrumb" },
+      "mainEntity": { "@id": "https://webchargedsolutions.com/#organization" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/contact-us/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact Us"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "telephone": "+1-928-235-2131",
+      "email": "hello@webchargedsolutions.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-928-235-2131",
+        "email": "hello@webchargedsolutions.com",
+        "contactType": "customer service",
+        "contactOption": "TollFree",
+        "areaServed": "US",
+        "availableLanguage": "en",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
+          "closes": "15:00"
+        }
+      },
+      "potentialAction": {
+        "@type": "CommunicateAction",
+        "target": "https://webchargedsolutions.com/contact-us",
+        "description": "We typically respond to contact form inquiries within 1 business day."
+      }
+    }
+  ]
+}
 
 const headContent = {
-  metaTitle: "Contact Us",
+  metaTitle: "Contact WebCharged - 24 Hour Average Response Time",
+  metaDescription: "Ask questions or share details about your project. We respond quickly and look forward to connecting and helping you achieve your goal.",
+  schemaMarkup,
 }
+
+const radioInput1Options = [
+  {label: "Email", value: "email"}, 
+  {label: "Phone", value: "phone"}, 
+  {label: "No preference", value: "no_preference"},
+]
+const radioInput2Options = [
+  {label: "A new website", value: "newwebsite"}, 
+  {label: "A website re-design", value: "redesign"}, 
+  {label: "Website maintenance", value: "maintenance"},
+  {label: "General question/email", value: "general"},
+  {label: "Other", value: "other"},
+]
 
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-154 lg:py-249">
+    <div class="grow-1 flex flex-col gap-20 max-w-1281">
+      <H1>Let's connect!</H1>
+      <Text class="text-parchment max-w-350 md:max-w-425 lg:max-w-475">
+        Don’t hesitate to contact us. We are happy to talk with you and answer any questions you have.
+      </Text>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 py-59 lg:py-95">
+    <div class="grow-1 flex flex-col gap-32 max-w-480 md:max-w-520">
+      <H2 class="text-center">Direct communication</H2>
+      <div class="flex flex-col gap-14">
+        <Text>
+          Feel free to contact us directly via phone or email. 
+          You’ll be talking directly to me (Jakin), the owner.
+        </Text>
+        <Text>
+          <span class="font-semibold">Phone:</span> <a href="tel:928-235-2131" class="underline hover:text-spark focus:text-spark focus-visible:text-spark active:text-spark">928-235-2131</a>
+        </Text>
+        <Text>
+          <span class="font-semibold">Email:</span> <a href="mailto:hello@webchargedsolutions.com" class="underline hover:text-spark focus:text-spark focus-visible:text-spark active:text-spark">hello@webchargedsolutions.com</a>
+        </Text>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 py-59 md:py-95 gap-53 md:gap-59 bg-blue-gradient">
+    <div class="grow-1 flex flex-col gap-20 md:gap-36 max-w-480 md:max-w-520">
+      <H2 class="text-center" color='electric'>Use the contact form</H2>
+      <div class="flex flex-col gap-20">
+        <Text class="text-parchment">
+          You may use this contact form instead of contacting us directly. When you submit the form, we will receive an email.
+        </Text>
+        <Text class="text-parchment">
+          We typically respond within 1 business day.
+        </Text>
+      </div>
+    </div>
+    <div class="grow-1 flex flex-col w-full max-w-480 md:max-w-520">
+      <form id="contact-form" class="flex flex-col gap-32 md:gap-36" action="">
+        <TextInput type="text" label="Full Name" name="fullname" placeholder="John Doe" isRequired={true}/>
+        <TextInput type="email" label="Email Address" name="email" placeholder="JohnDoe@mycompany.com" isRequired={true}/>
+        <RadioInput class="peer" label="Preferred Contact Method" name="contact_method" options={radioInput1Options} isRequired={true}/>
+        <TextInput class="hidden peer-has-[input[value='phone']:checked]:block" type="tel" label="Phone Number" name="phone" placeholder="123-456-7890" disabled/>
+        <RadioInput label="What are you contacting us about?" name="contact_reason" options={radioInput2Options} isRequired={true}/>
+        <HoneypotInput label="Company Name" name="company_name" />
+        <TextArea label="Message" name="message" placeholder="I'd like to talk about..." isRequired={true}/>
+        <CheckboxInput name="policy_agreement" isRequired={true}>I agree to the <a href="/privacy-policy" target="_blank" class="underline hover:text-electric focus:text-electric focus-visible:text-electric">Privacy Policy</a> and <a href="/terms-and-conditions" class="underline hover:text-electric focus:text-electric focus-visible:text-electric" target="_blank">Terms & Conditions</a></CheckboxInput>
+        <Button type="submit" class="self-center md:mt-23">Start a conversation</Button>
+      </form>
+      <p id="form-status" class="text-parchment mt-32"></p>
+    </div>
+  </section>
+  <script>
+    import '../scripts/dynamic-form.js';
+    import '../scripts/form-submit.js';
+  </script>
 </MainLayout>
