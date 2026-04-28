@@ -4,6 +4,7 @@ const submitButton = document.querySelector('#get-support-form button');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  if (status.hasAttribute("data-error")) status.removeAttribute("data-error")
   status.textContent = 'Sending...';
   if (submitButton) submitButton.disabled = true;
 
@@ -32,11 +33,13 @@ form.addEventListener('submit', async (e) => {
       hidePhoneField();
     } else {
       status.textContent = result.error || 'Something went wrong. Please try again.';
+      if (!status.hasAttribute("data-error")) status.setAttribute("data-error", "")
     }
     if (submitButton) submitButton.disabled = false;
   } catch (error) {
     console.error('Error:', error);
     status.textContent = 'Network error. Please try again.';
+    if (!status.hasAttribute("data-error")) status.setAttribute("data-error", "")
     if (submitButton) submitButton.disabled = false;
   }
 });

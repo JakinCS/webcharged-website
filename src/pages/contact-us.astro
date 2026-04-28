@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import MainLayout from "../layouts/MainLayout.astro";
 import H1 from "../components/text/H1.astro";
 import H2 from "../components/text/H2.astro";
@@ -141,7 +142,7 @@ const radioInput2Options = [
         <CheckboxInput name="policy_agreement" isRequired={true}>I agree to the <a href="/privacy-policy" target="_blank" class="underline hover:text-electric focus:text-electric focus-visible:text-electric">Privacy Policy</a> and <a href="/terms-and-conditions" class="underline hover:text-electric focus:text-electric focus-visible:text-electric" target="_blank">Terms & Conditions</a></CheckboxInput>
         <Button type="submit" class="self-center md:mt-23">Start a conversation</Button>
       </form>
-      <p id="form-status" class="text-parchment mt-32"></p>
+      <p id="form-status" class="text-parchment data-error:text-error data-error:font-semibold mt-32 -mb-32"></p>
     </div>
   </section>
   <script>

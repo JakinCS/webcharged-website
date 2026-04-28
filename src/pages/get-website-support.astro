@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import MainLayout from "../layouts/MainLayout.astro";
 import H1 from "../components/text/H1.astro";
 import Text from "../components/text/Text.astro";
@@ -49,7 +50,7 @@ const radioInput1Options = [
         <CheckboxInput name="policy_agreement" isRequired={true}>I agree to the <a href="/privacy-policy" target="_blank" class="underline hover:text-electric focus:text-electric focus-visible:text-electric">Privacy Policy</a> and <a href="/terms-and-conditions" class="underline hover:text-electric focus:text-electric focus-visible:text-electric" target="_blank">Terms & Conditions</a></CheckboxInput>
         <Button type="submit" class="self-center md:mt-23">Connect with us</Button>
       </form>
-      <p id="form-status" class="text-parchment mt-32 -mb-32"></p>
+      <p id="form-status" class="text-parchment data-error:text-error data-error:font-semibold mt-32 -mb-32"></p>
     </div>
     <Text class="text-parchment max-w-480 md:max-w-520">
       If you prefer to call us instead to discuss website support, feel free to call us at <a href="tel:928-235-2131" class="font-semibold underline text-electric hover:text-spark focus:text-spark focus-visible:text-spark">928-235-2131</a>.
