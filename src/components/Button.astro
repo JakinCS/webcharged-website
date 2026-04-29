@@ -1,7 +1,7 @@
 ---
 // @ts-nocheck
 
-const { fixedWidth = {}, mobileWidth, link = undefined, class: className, ...rest } = Astro.props;
+const { color = "spark", fixedWidth = {}, mobileWidth, link = undefined, class: className, ...rest } = Astro.props;
 
 const { isFixed = false, maxWidthClass = 'max-w-300', breakpoint = 'none'} = fixedWidth;
 
@@ -12,8 +12,14 @@ const breakpointWidthMap = {
   'lg':   'w-full lg:w-fit',
   'xl':   'w-full xl:w-fit'
 };
+const bgMap = {
+  'spark': 'bg-spark',
+  'parchment': 'bg-parchment',
+}
 
-const baseStyles = "px-20 md:px-44 lg:px-36 rounded-md bg-spark text-charcoal text-19 lg:text-21 font-semibold py-14 lg:py-9"
+const colorStyles = color === "spark" ? " bg-spark" : ` ${bgMap[color]}`;
+
+const baseStyles = "px-20 md:px-44 lg:px-36 rounded-md text-charcoal text-19 lg:text-21 font-semibold py-14 lg:py-9" + colorStyles;
 
 const type1Styles = (!className?.includes('hidden') ? 'inline-flex ' : "") + 'items-center justify-center max-w-[100%] box-border before:w-24 before:md:w-0 before:min-w-0 before:flex-grow-0 before:flex-shrink-9999 before:flex-basis-24 before:md:flex-basis-0 after:w-24 after:md:w-0 after:min-w-0 after:flex-grow-0 after:flex-shrink-9999 after:flex-basis-24 after:md:flex-basis-0';
 
@@ -46,8 +52,14 @@ const buttonStyles = baseStyles + " " + (isFixed ? " " + type2Styles : " " + typ
 
 <style>
   a, button:not([disabled]) {
-    &:hover, &:focus-visible, &:active {
+    transition: background 0.2s ease-in-out;
+
+    &.bg-spark:hover, &.bg-spark:focus-visible, &.bg-spark:active {
       background: var(--color-spark-400);
+    }
+
+    &.bg-parchment:hover, &.bg-parchment:focus-visible, &.bg-parchment:active {
+      background: var(--color-parchment-400);
     }
   }
 </style>
