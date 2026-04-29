@@ -1,8 +1,145 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#webpage",
+      "url": "https://webchargedsolutions.com/website-support-plans",
+      "name": "Professional Website Support & Maintenance | WebCharged Web Solutions",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Professional website maintenance services to prevent security issues, broken features, and slow loading times. Choose from three support tiers starting at $50/month.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/website-support-plans/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Website Support Plans"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#service",
+      "name": "Website Support and Maintenance",
+      "serviceType": "Managed Web Hosting and Maintenance",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "areaServed": { "@type": "Place", "name": "Worldwide" },
+      "description": "Comprehensive website support including hosting, software updates, daily backups, and security monitoring to ensure high performance and peace of mind.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website Support Tiers",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Bare Minimum Support Plan",
+            "price": "50.00",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "unitCode": "MON",
+              "price": "50.00",
+              "priceCurrency": "USD"
+            },
+            "description": "Includes hosting, software/plugin updates, daily backups, and auto-updating privacy policies."
+          },
+          {
+            "@type": "Offer",
+            "name": "Standard Support Plan",
+            "price": "100.00",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "unitCode": "MON",
+              "price": "100.00",
+              "priceCurrency": "USD"
+            },
+            "description": "Includes all Bare Minimum features plus unlimited content updates and monthly website reports."
+          },
+          {
+            "@type": "Offer",
+            "name": "Professional Support Plan",
+            "price": "150.00",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "unitCode": "MON",
+              "price": "150.00",
+              "priceCurrency": "USD"
+            },
+            "description": "The complete package adding security monitoring and monthly performance analysis to all Standard features."
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast is your response time to content change requests?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Standard and Professional plans, we typically complete requested content changes in 1-2 business days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will you support a website that you didn't originally build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we support websites built by others for a one-time $200 startup fee to perform the required setup and familiarization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I provide my own hosting for my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you may use your own hosting, though we cannot guarantee the same loading speeds as our provided high-performance hosting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my website need website maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Regular maintenance ensures your software is updated for security and speed, prevents broken features, and protects your conversion rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any long-term contracts required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, we do not require long-term contracts. You can cancel your website support plan at any time."
+          }
+        }
+      ]
+    }
+  ]
+}
+
 const headContent = {
-  metaTitle: "Website Support Plans",
+  metaTitle: "Website Support Plans in Yuma - Achieve Peace of Mind",
+  metaDescription: "We provide website support and maintenance plans for Yuma, Arizona. Includes free hosting and privacy law protection.",
+  schemaMarkup,
+  socialMediaImagePath: '/images/social/Support-Plans-Facebook.jpg',
+  socialMediaImageDesc: 'WebCharged. Offering website support that keeps your website running smoothly and gives you peace of mind.',
+  twitterImagePath: '/images/social/Support-Plans-Twitter.jpg',
 }
 ---
 
