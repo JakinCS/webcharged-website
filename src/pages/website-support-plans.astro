@@ -1,13 +1,454 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import H3 from "../components/text/H3.astro";
+import Text from "../components/text/Text.astro";
+import Button from "../components/Button.astro";
+import PricingCardItem from "../components/PricingCardItem.astro";
+import CTASection from "../components/CTASection.astro";
+import FAQ from "../components/FAQ.astro";
+
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#webpage",
+      "url": "https://webchargedsolutions.com/website-support-plans",
+      "name": "Professional Website Support & Maintenance | WebCharged Web Solutions",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Professional website maintenance services to prevent security issues, broken features, and slow loading times. Choose from three support tiers starting at $50/month.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/website-support-plans/#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Website Support Plans"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#service",
+      "name": "Website Support and Maintenance",
+      "serviceType": "Managed Web Hosting and Maintenance",
+      "provider": { "@id": "https://webchargedsolutions.com/#organization" },
+      "areaServed": { "@type": "Place", "name": "Worldwide" },
+      "description": "Comprehensive website support including hosting, software updates, daily backups, and security monitoring to ensure high performance and peace of mind.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website Support Tiers",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Bare Minimum Support Plan",
+            "price": "50.00",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "unitCode": "MON",
+              "price": "50.00",
+              "priceCurrency": "USD"
+            },
+            "description": "Includes hosting, software/plugin updates, daily backups, and auto-updating privacy policies."
+          },
+          {
+            "@type": "Offer",
+            "name": "Standard Support Plan",
+            "price": "100.00",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "unitCode": "MON",
+              "price": "100.00",
+              "priceCurrency": "USD"
+            },
+            "description": "Includes all Bare Minimum features plus unlimited content updates and monthly website reports."
+          },
+          {
+            "@type": "Offer",
+            "name": "Professional Support Plan",
+            "price": "150.00",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "unitCode": "MON",
+              "price": "150.00",
+              "priceCurrency": "USD"
+            },
+            "description": "The complete package adding security monitoring and monthly performance analysis to all Standard features."
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://webchargedsolutions.com/website-support-plans/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast is your response time to content change requests?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For Standard and Professional plans, we typically complete requested content changes in 1-2 business days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will you support a website that you didn't originally build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we support websites built by others for a one-time $200 startup fee to perform the required setup and familiarization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I provide my own hosting for my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you may use your own hosting, though we cannot guarantee the same loading speeds as our provided high-performance hosting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my website need website maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Regular maintenance ensures your software is updated for security and speed, prevents broken features, and protects your conversion rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any long-term contracts required?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, we do not require long-term contracts. You can cancel your website support plan at any time."
+          }
+        }
+      ]
+    }
+  ]
+}
 
 const headContent = {
-  metaTitle: "Website Support Plans",
+  metaTitle: "Website Support Plans in Yuma - Achieve Peace of Mind",
+  metaDescription: "We provide website support and maintenance plans for Yuma, Arizona. Includes free hosting and privacy law protection.",
+  schemaMarkup,
+  socialMediaImagePath: '/images/social/Support-Plans-Facebook.jpg',
+  socialMediaImageDesc: 'WebCharged. Offering website support that keeps your website running smoothly and gives you peace of mind.',
+  twitterImagePath: '/images/social/Support-Plans-Twitter.jpg',
 }
+
+const FAQQuestions = [
+  {
+    title: "How fast is your response time to content change requests?",
+    content: [
+      "The standard and professional support plans include unlimited content changes. \
+      We typically complete these requested changes in 1-2 business days. <br>\
+      The time it takes to complete bigger content changes varies depending on the size of the content change request."       
+    ]
+  },
+  {
+    title: "Will you support a website that you didn't originally build?",
+    content: [
+      "Yes, we will support any website even if we didn’t build it. \
+      But we do require a $200 startup fee for websites that we didn’t create. \
+      This is because it takes some extra time for us to familiarize ourselves \
+      with your website and business and perform the required setup."       
+    ]
+  },
+  {
+    title: "Can I provide my own hosting for my website?",
+    content: [
+      "Yes, you may use your own hosting instead of using our provided hosting. \
+      But if you do, we cannot guarantee the same loading speeds."       
+    ]
+  },
+  {
+    title: "Why does my website need website maintenance?",
+    content: [
+      "Your website requires software updates to stay fast and secure. \
+      If the website is not maintained, it can slow down, which directly impacts conversion rates. \
+      Websites can also develop broken features or get security vulnerabilities when not updated. \
+      None of these things provides a good experience for visitors."       
+    ]
+  },
+  {
+    title: "What happens if I need more support than what’s included in my plan?",
+    content: [
+      "For basic needs, you shouldn’t need to go above the allotted monthly support hours. \
+      But if so, we do additional work at $50/hour. \
+      If you have a more major content update or redesign or you want to add a new feature, \
+      we can do that at $50/hour, too."       
+    ]
+  },
+  {
+    title: "Are there any long-term contracts required?",
+    content: [
+      "We don’t require any long-term contracts for our website support plans. \
+      You can cancel your plan anytime. This allows your business to be flexible as your needs change."       
+    ]
+  },
+]
+
 ---
 
 <MainLayout headContent={headContent}>
-  <div class="p-59">
-    <h1 class="text-blue text-36/[200%]">{headContent.metaTitle}</h1>
-  </div>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-154">
+    <div class="grow-1 flex flex-col gap-53 md:gap-36 max-w-1281">
+      <div class="flex flex-col gap-20 md:gap-36">
+        <H1 class="max-w-500 md:max-w-600 lg:max-w-800">Get peace of mind with professional website support</H1>
+        <Text class="text-parchment max-w-475 md:max-w-575 lg:max-w-650">
+          Our maintenance services prevent broken features, security issues, 
+          and slow loading times from damaging your reputation.
+        </Text>
+      </div>
+      <Button link="/get-website-support" class='self-start'>Protect your website</Button>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-53 md:py-95">
+    <div class="grow-1 flex flex-col md:items-center gap-32 md:gap-36 max-w-1032">
+      <H2>The cost of ignoring website maintenance</H2>
+      <div class="flex flex-col gap-20 md:gap-22">
+        <Text>
+          By ignoring website maintenance, you are susceptible to these risks:
+        </Text>
+        <div class="flex flex-col gap-8">
+          <H3 color="spark">Security</H3>
+          <Text>
+            If your software is outdated, hackers can take advantage of this. 
+            They can steal sensitive data or temporarily shut down your website, disrupting your business.
+          </Text>
+        </div>
+        <div class="flex flex-col gap-8">
+          <H3 color="spark">Customer Trust</H3>
+          <Text>
+            Customer confidence is easily lost. 
+            Outdated software or broken features will cause website visitors 
+            to doubt your business is trustworthy and professional.
+          </Text>
+        </div>
+        <div class="flex flex-col gap-8">
+          <H3 color="spark">Performance</H3>
+          <Text>
+            Over time, unmaintained websites slow down and features break, 
+            leading to a poor visitor experience. 
+            This directly affects conversion rates.
+          </Text>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-start md:items-center px-32 md:px-53 lg:px-59 py-53 md:py-95 gap-32 md:gap-59 bg-charcoal">
+    <H2 color="electric">What you’ll get from our support plans</H2>
+    <div class="grow-1 flex flex-col lg:grid lg:grid-cols-2 gap-20 md:gap-22 p-20 md:p-0 bg-blue md:bg-[initial] rounded-md md:rounded-none border-[1.5px] border-electric md:border-none max-w-840 lg:max-w-1281">
+      <div class="flex flex-col gap-5 md:gap-9 md:p-36 md:bg-blue md:border-[1.5px] md:border-electric md:rounded-md">
+        <H3 color="electric">Peace of Mind<span class="md:hidden">:</span></H3>
+        <Text class="text-parchment">
+          We care for your website as if it were our own, making sure it runs smoothly. 
+          You get peace of mind, while we fix any issues that occur.
+        </Text>
+      </div>
+      <div class="flex flex-col gap-5 md:gap-9 md:p-36 md:bg-blue md:border-[1.5px] md:border-electric md:rounded-md">
+        <H3 color="electric">High-Performance<span class="md:hidden">:</span></H3>
+        <Text class="text-parchment">
+          Your website performance stays top-notch. We fix broken features, perform backups, and update the software. 
+          Plus, your website loads fast with the high-quality website hosting included.
+        </Text>
+      </div>
+      <div class="flex flex-col gap-5 md:gap-9 md:p-36 md:bg-blue md:border-[1.5px] md:border-electric md:rounded-md">
+        <H3 color="electric">Clear Communication<span class="md:hidden">:</span></H3>
+        <Text class="text-parchment">
+          We send you a regular report email about your website. 
+          This includes a detailed performance analysis so you fully understand how your website is doing.
+        </Text>
+      </div>
+      <div class="flex flex-col gap-5 md:gap-9 md:p-36 md:bg-blue md:border-[1.5px] md:border-electric md:rounded-md">
+        <H3 color="electric">Content Updates<span class="md:hidden">:</span></H3>
+        <Text class="text-parchment">
+          Whenever you need something changed on your website, we update it for you. 
+          This makes it easy to keep your website fresh and engaging for your customers.
+        </Text>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-53 md:py-95 gap-36 md:gap-95">
+    <div class="w-full flex flex-col items-center gap-36 md:gap-59 lg:gap-95">
+      <H2>Our support plans</H2>
+      <div class="w-full flex flex-col items-center gap-36 md:gap-59">
+        <div class="container-break-1590 w-full flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-y-36 gap-x-22">
+
+          <div class="w-full flex flex-col xl:justify-between bg-blue gap-53 md:gap-59 px-20 md:px-36 py-32 md:py-36 rounded-md max-w-360 md:max-w-480">
+            <div class="flex flex-col gap-36">
+              <div class="flex flex-col items-center gap-9">
+                <h3 class="text-parchment font-semibold text-23 md:text-28 lg:text-36">Bare Minimum</h3>
+                <p class="text-parchment font-semibold text-19 md:text-21">$50/month</p>
+              </div>
+              <div class="toggle-group flex flex-col gap-14">
+                <PricingCardItem title="Website Hosting" icon="included">
+                  You get high-performing website hosting so your website stays online and loads quickly.
+                </PricingCardItem>
+                <PricingCardItem title="Software & Plugin Updates" icon="included">
+                  We update your website regularly to keep it running smoothly and securely.
+                </PricingCardItem>
+                <PricingCardItem title="Daily Backups" icon="included">
+                  We take daily backups of your website’s data.
+                </PricingCardItem>
+                <PricingCardItem title="Auto-Updating Privacy Policies" icon="included">
+                  You get auto-updating privacy polices to keep your website compliant with official regulations.
+                </PricingCardItem>
+                <PricingCardItem title="Unlimited Content Updates" icon="discluded">
+                  This plan does not include any updates to your website’s content.
+                </PricingCardItem>
+                <PricingCardItem title="Monthly Website Report" icon="discluded">
+                  This plan does not include a monthly website report
+                </PricingCardItem>
+                <PricingCardItem title="Security Monitoring" icon="discluded">
+                  This plan does not include additional security monitoring.
+                </PricingCardItem>
+                <PricingCardItem title="Monthly Performance Analysis" icon="discluded">
+                  This plan does not include a monthly analysis of your website’s performance.
+                </PricingCardItem>
+              </div>
+            </div>
+            <Button link="/get-website-support" color="parchment" class="md:self-center">Get started</Button>
+          </div>
+          <div class="w-full flex flex-col xl:justify-between bg-blue gap-53 md:gap-59 px-20 md:px-36 py-32 md:py-36 rounded-md max-w-360 md:max-w-480">
+            <div class="flex flex-col gap-36">
+              <div class="flex flex-col items-center gap-9">
+                <h3 class="text-parchment font-semibold text-23 md:text-28 lg:text-36">Standard</h3>
+                <p class="text-parchment font-semibold text-19 md:text-21">$100/month</p>
+              </div>
+              <div class="toggle-group flex flex-col gap-14">
+                <PricingCardItem title="Website Hosting" icon="included">
+                  You get high-performing website hosting so your website stays online and loads quickly.
+                </PricingCardItem>
+                <PricingCardItem title="Software & Plugin Updates" icon="included">
+                  We update your website regularly to keep it running smoothly and securely.
+                </PricingCardItem>
+                <PricingCardItem title="Daily Backups" icon="included">
+                  We take daily backups of your website’s data.
+                </PricingCardItem>
+                <PricingCardItem title="Auto-Updating Privacy Policies" icon="included">
+                  You get auto-updating privacy polices to keep your website compliant with official regulations.
+                </PricingCardItem>
+                <PricingCardItem title="Unlimited Content Updates" icon="included">
+                  Anytime you need something updated on your website, we will do it for you. 
+                  (This applies to regular content updates, not major additions or redesigns)
+                </PricingCardItem>
+                <PricingCardItem title="Monthly Website Report" icon="included">
+                  We will send you a detailed monthly report on your website’s traffic, performance and other information.
+                </PricingCardItem>
+                <PricingCardItem title="Security Monitoring" icon="discluded">
+                  This plan does not include additional security monitoring.
+                </PricingCardItem>
+                <PricingCardItem title="Monthly Performance Analysis" icon="discluded">
+                  This plan does not include a monthly analysis of your website’s performance.
+                </PricingCardItem>
+              </div>
+            </div>
+            <Button link="/get-website-support" color="parchment" class="md:self-center">Get started</Button>
+          </div>
+          <div class="w-full flex flex-col xl:justify-between bg-blue gap-53 md:gap-59 px-20 md:px-36 py-32 md:py-36 rounded-md max-w-360 md:max-w-480">
+            <div class="flex flex-col gap-36">
+              <div class="flex flex-col items-center gap-9">
+                <h3 class="text-parchment font-semibold text-23 md:text-28 lg:text-36">Professional</h3>
+                <p class="text-parchment font-semibold text-19 md:text-21">$150/month</p>
+              </div>
+              <div class="toggle-group flex flex-col gap-14">
+                <PricingCardItem title="Website Hosting" icon="included">
+                  You get high-performing website hosting so your website stays online and loads quickly.
+                </PricingCardItem>
+                <PricingCardItem title="Software & Plugin Updates" icon="included">
+                  We update your website regularly to keep it running smoothly and securely.
+                </PricingCardItem>
+                <PricingCardItem title="Daily Backups" icon="included">
+                  We take daily backups of your website’s data.
+                </PricingCardItem>
+                <PricingCardItem title="Auto-Updating Privacy Policies" icon="included">
+                  You get auto-updating privacy polices to keep your website compliant with official regulations.
+                </PricingCardItem>
+                <PricingCardItem title="Unlimited Content Updates" icon="included">
+                  Anytime you need something updated on your website, we will do it for you. 
+                  (This applies to regular content updates, not major additions or redesigns)
+                </PricingCardItem>
+                <PricingCardItem title="Monthly Website Report" icon="included">
+                  We will send you a detailed monthly report on your website’s traffic, performance and other information.
+                </PricingCardItem>
+                <PricingCardItem title="Security Monitoring" icon="included">
+                  We will install a security plugin on your website and monitor your website for security issues.
+                </PricingCardItem>
+                <PricingCardItem title="Monthly Performance Analysis" icon="included">
+                  Every month, we will examine your website and find and fix any performance issues to keep your website high-performing.
+                </PricingCardItem>
+              </div>
+            </div>
+            <Button link="/get-website-support" color="parchment" class="md:self-center">Get started</Button>
+          </div>
+
+        </div>
+        <div class="flex flex-col gap-20 md:gap-14 max-w-840">
+          <Text>
+            Prices may vary depending on your hosting, 
+            the age of your website, and the number of plugins on your website.
+          </Text>
+          <Text>
+            To support websites that we did not build, there is a $200 startup fee.
+          </Text>
+        </div>
+      </div>
+    </div>
+    <div class="grow-1 flex flex-col gap-22 w-full max-w-840">
+      <H3 class="text-center">Additional work</H3>
+      <Text>
+        For large content updates and extra work after the provided support hours, we can help you for <span class="font-semibold">$50/hour.</span>
+      </Text>
+    </div>
+  </section>
+  <CTASection>
+    <div class="flex flex-col gap-20 lg:gap-22">
+      <H2>Got questions for us?</H2>
+      <Text>
+        We’d love to hear from you, so feel free to reach out, and we’ll get back to you!
+      </Text>
+    </div>
+    <Button class="self-start" link="/contact-us">Reach out to us</Button>
+  </CTASection>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-53 md:py-95">
+    <div class="grow-1 flex flex-col gap-32 md:gap-36 max-w-1281">
+      <H2>Frequently asked questions</H2>
+      <div class="toggle-group flex flex-col">
+        {FAQQuestions.map((faq) => (
+          <FAQ title={faq.title} >
+            {faq.content.map((block) => (
+              <p set:html={block} />
+            ))}
+          </FAQ>
+        ))}
+      </div>
+    </div>
+  </section>
+  <script>
+    import '../scripts/toggle-script.js';
+  </script>
 </MainLayout>
+<style>
+  @media screen and (min-width:1400px) and (max-width:1590px) {
+    .container-break-1590 {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
