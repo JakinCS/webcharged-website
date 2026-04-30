@@ -675,8 +675,27 @@ const FAQs = [
           <!-- Placeholder shown before the embed loads -->
           <div id="cal-facade" aria-label="Booking calendar loading area">
             <div class="cal-placeholder">
-              <p>Loading booking calendar…</p>
+              <Text class="font-semibold text-center">Loading booking calendar…</Text>
             </div>
+          </div>
+
+          <!-- For when the calendar can't be loaded (cookie reasons) -->
+          <div id="cal-load-error" class="hidden flex flex-col gap-32 md:gap-36 items-center px-12 md:px-22 py-20 md:py-36 border-[1.5px] border-charcoal rounded-md">
+            <H3>⚠️ The booking calendar failed to load.</H3>
+            <p>Your cookie settings do not allow us to display the booking calendar.</p>
+            <div class="flex flex-col items-center gap-12 md:gap-14">
+              <Text>
+                <a href="#" onclick="if(typeof zaraz !== 'undefined'){zaraz?.showConsentModal();} return false" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">Adjust your cookie settings</a> and <a href="" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">refresh the page</a>.
+              </Text>
+              <Text>OR</Text>
+              <Button link="https://cal.com/jakinstahl/project-planning-call" target='_blank' class="self-center">Open booking page</Button>
+            </div>
+          </div>
+          <!-- For when the calendar can't be loaded (browser or blocker reasons) -->
+          <div id="cal-load-error-2" class="hidden flex flex-col gap-19 md:gap-21 items-center px-12 md:px-22 py-20 md:py-36 border-[1.5px] border-charcoal rounded-md">
+            <H3>⚠️ The booking calendar failed to load.</H3>
+            <p class="mb-15">This could be because of your browser settings or a browser extension (like an ad blocker).</p>
+            <Button link="https://cal.com/jakinstahl/project-planning-call" target='_blank' class="self-center">Open booking page</Button>
           </div>
 
           <!-- The actual cal.com container (hidden initially) -->
