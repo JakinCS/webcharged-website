@@ -69,7 +69,7 @@ const pageUrl = Astro.url.pathname;
         <a href="/cookie-policy" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
           Cookie Policy
         </a>
-        <a href="#" onclick="if(zaraz.showConsentModal){zaraz.showConsentModal();} return false" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
+        <a href="#" onclick="if(typeof zaraz !== 'undefined'){zaraz?.showConsentModal();} return false" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
           Cookie Settings
         </a>
         <a href="/disclaimer" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
