@@ -47,6 +47,26 @@ function loadCalEmbed() {
   });
 }
 
+
+// This function checks whether the users preferences allow the loading of Cal.
+// Then, if all is good, it will run the loadCalEmbed() function.
+const handleLoadCal = () => {
+  if (typeof zaraz !== "undefined") {
+    const consentGiven = zaraz?.consent?.get("wQid");
+    if (consentGiven) {
+      loadCalEmbed();
+      return;
+    } else {
+      document.getElementById('cal-facade')?.remove();
+      document.getElementById("cal-load-error").classList.remove("hidden");
+    }
+  } else {
+    document.getElementById('cal-facade')?.remove();
+    document.getElementById("cal-load-error-2").classList.remove("hidden");
+  }
+}
+
+
 let margin = '0px';
 if (window.location.pathname.includes('website-design')) margin = '1000px'
 
@@ -54,7 +74,7 @@ if (window.location.pathname.includes('website-design')) margin = '1000px'
 const observer = new IntersectionObserver(
   (entries) => {
     if (entries[0].isIntersecting) {
-      loadCalEmbed();
+      handleLoadCal();
       observer.disconnect();
     }
   },
@@ -64,5 +84,5 @@ const observer = new IntersectionObserver(
 observer.observe(document.querySelector('.cal-facade-wrapper'));
 
 setTimeout(() => {
-  loadCalEmbed();
+  handleLoadCal();
 }, 5000);
