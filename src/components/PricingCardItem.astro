@@ -5,7 +5,7 @@ const { icon = 'included', title, class: className, ...rest } = Astro.props;
 ---
 
 <details class="flex flex-col">
-  <summary class="flex gap-9 justify-between items-center cursor-pointer">
+  <summary class="flex gap-9 justify-between items-center cursor-pointer select-none">
     <div class="flex gap-9">
       {icon === 'included' ? 
         <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
