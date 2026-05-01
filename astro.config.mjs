@@ -5,7 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 
-const SITE_URL = process.env.CF_PAGES_URL || 'https://webchargedsolutions.com';
+const isProd = process.env.CF_PAGES_BRANCH === 'main';
+const SITE_URL = isProd
+  ? 'https://webchargedsolutions.com'
+  : (process.env.CF_PAGES_URL || 'https://webchargedsolutions.com');
 
 // https://astro.build/config
 export default defineConfig({
