@@ -7,7 +7,7 @@ import TextureOverlay from "./TextureOverlay.astro"
 
 const pageUrl = Astro.url.pathname;
 
-const {headerButtonLink = '/project-planning-call'} = Astro.props;
+const {headerButtonLink = '/project-planning-call/'} = Astro.props;
 
 ---
 
@@ -22,11 +22,11 @@ const {headerButtonLink = '/project-planning-call'} = Astro.props;
           <MenuLink link="/" class="py-9" aria-current={pageUrl === "/" ? "page" : undefined}>Home</MenuLink>
         </li>
         <li>
-          <MenuLink link="/about-us" class="py-9" aria-current={pageUrl === "/about-us" ? "page" : undefined}>About Us</MenuLink>
+          <MenuLink link="/about-us/" class="py-9" aria-current={pageUrl === "/about-us" ? "page" : undefined}>About Us</MenuLink>
         </li>
         <DropdownItem />
         <li>
-          <MenuLink link="/contact-us" class="py-9" aria-current={pageUrl === "/contact-us" ? "page" : undefined}>Contact Us</MenuLink>
+          <MenuLink link="/contact-us/" class="py-9" aria-current={pageUrl === "/contact-us" ? "page" : undefined}>Contact Us</MenuLink>
         </li>
       </ul>
       <Button link={headerButtonLink} class="hidden md:inline-flex">Book a call</Button>
@@ -58,16 +58,16 @@ const {headerButtonLink = '/project-planning-call'} = Astro.props;
           <MobileMenuLink link="/">Home</MobileMenuLink>
         </li>
         <li>
-          <MobileMenuLink link="/about-us">About Us</MobileMenuLink>
+          <MobileMenuLink link="/about-us/">About Us</MobileMenuLink>
         </li>
         <li>
-          <MobileMenuLink link="/custom-website-design">Website Design & Development</MobileMenuLink>
+          <MobileMenuLink link="/custom-website-design/">Website Design & Development</MobileMenuLink>
         </li>
         <li>
-          <MobileMenuLink link="/website-support-plans">Website Support</MobileMenuLink>
+          <MobileMenuLink link="/website-support-plans/">Website Support</MobileMenuLink>
         </li>
         <li>
-          <MobileMenuLink link="/contact-us">Contact Us</MobileMenuLink>
+          <MobileMenuLink link="/contact-us/">Contact Us</MobileMenuLink>
         </li>
       </ul>
       <div class="w-[fit-content] pt-32">
