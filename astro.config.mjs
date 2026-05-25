@@ -18,5 +18,24 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+
+  markdown: { syntaxHighlight: false },
+
+  security: {
+    csp: {
+      scriptDirective: {
+        resources: [
+          "'self'",
+          "https://app.cal.com",
+        ]
+      },
+      directives: [
+        "connect-src 'self' https://app.cal.com https://cloudflareinsights.com",
+        "img-src 'self' data:",
+        "font-src 'self'",
+      ]
+    }
+  },
+
 });
