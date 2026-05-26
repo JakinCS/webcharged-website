@@ -15,7 +15,10 @@ export default defineConfig({
   site: SITE_URL,
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      inlineScriptsThreshold: 0
+    }
   },
 
   integrations: [sitemap()],
