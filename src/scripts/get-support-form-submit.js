@@ -45,7 +45,7 @@ form.addEventListener('submit', async (e) => {
 });
 
 const hidePhoneField = () => {
-  const phoneField = document.querySelector('div:has(> #phone'); // the wrapper div
+  const phoneField = document.querySelector('div:has(> #phone)'); // the wrapper div
   const phoneInput = document.getElementById('phone');
 
   phoneField.style.display = 'none';

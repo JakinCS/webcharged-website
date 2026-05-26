@@ -1,5 +1,5 @@
 const radioButtons = document.querySelectorAll('input[name="contact_method"]');
-const phoneField = document.querySelector('div:has(> #phone'); // the wrapper div
+const phoneField = document.querySelector('div:has(> #phone)'); // the wrapper div
 const phoneInput = document.getElementById('phone');
 
 radioButtons.forEach(radio => {
