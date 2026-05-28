@@ -464,70 +464,89 @@ const FAQs = [
     <div class="grow-1 flex flex-col items-center gap-59 lg:gap-95 max-w-559 lg:max-w-633">
       <H2 class="text-center text-electric">Custom website design</H2>
       <div class="flex flex-col items-center gap-59">
-        <div class="flex flex-col gap-20 md:gap-36 px-20 md:px-36 py-32 md:py-36 bg-blue border-2 border-electric rounded-md">
-          <p class="text-23 md:text-28 lg:text-36 text-parchment font-semibold text-center">$2995</p>
-          <div class="flex flex-col gap-14">
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Custom, engaging design</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  You get a custom-designed website, not a template. A design created to be engaging and appealing.
-                </p>
-              </div>
+        <div class="flex flex-col items-center gap-36">
+          <div role="radiogroup" aria-label="Payment type" class="switch-wrapper relative inline-flex p-8 rounded-full bg-blue">
+            <input id="monthly" class="absolute -left-9999" type="radio" name="switch" checked>
+            <input id="one-time" class="absolute -left-9999" type="radio" name="switch" >
+            <label for="monthly" class="text-center font-semibold text-14 lg:text-16 z-1 min-w-105 lg:min-w-128 cursor-pointer rounded-full transition-color transition-background ease-out duration-150 py-5 lg:py-9 px-21 lg:px-28 text-parchment hover:bg-charcoal/25">Monthly</label>
+            <label for="one-time" class="text-center font-semibold text-14 lg:text-16 z-1 min-w-105 lg:min-w-128 cursor-pointer rounded-full transition-color transition-background ease-out duration-150 py-5 lg:py-9 px-21 lg:px-28 text-parchment hover:bg-charcoal/25">One-Time</label>
+            <span class="highlighter absolute top-8 left-8 w-[calc(50%-0.5rem)] h-[calc(100%-1rem)] rounded-full bg-parchment transition-transform ease-out duration-150"></span>
+          </div>
+          <div class="flex flex-col gap-20 md:gap-36 px-20 md:px-36 py-32 md:py-36 bg-blue border-2 border-electric rounded-md">
+            <div id="one-time-price" class="hidden flex flex-col items-center gap-8">
+              <p class="text-23 md:text-28 lg:text-36 text-parchment font-semibold">$2995</p>
+              <Text class="text-parchment text-center">(One-time cost)</Text>
             </div>
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Designed to match your business</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  Your design will fit with your business. You don’t get a generic <i>one-design-fits-all</i> solution.
-                </p>
+            <div id="monthly-price" class="flex flex-col items-center gap-8">
+              <div class="flex items-end gap-5 md:gap-8">
+                <p class="text-23 md:text-28 lg:text-36 text-parchment font-semibold">$295</p>
+                <p class="text-16/[120%] md:text-19/[120%] lg:text-23 text-parchment font-semibold pb-2 md:pb-4">/ month</p>
               </div>
+              <Text class="text-parchment text-center">(For 12 months)</Text>
             </div>
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Copywriting</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  We do the copywriting for your website. No need for you to figure out how to word your website correctly.
-                </p>
+            <div class="flex flex-col gap-14">
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Custom, engaging design</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    You get a custom-designed website, not a template. A design created to be engaging and appealing.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Website photos assistance</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  We take charge of finding photos, whether it be your photos, stock photos or taking new ones.
-                </p>
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Designed to match your business</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    Your design will fit with your business. You don’t get a generic <i>one-design-fits-all</i> solution.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Mobile-friendly website</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  Readable, usable and good-looking on small screen sizes.
-                </p>
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Copywriting</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    We do the copywriting for your website. No need for you to figure out how to word your website correctly.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Fast-loading website</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  Your website will load fast because we follow best practices for creating websites with speed.
-                </p>
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Website photos assistance</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    We take charge of finding photos, whether it be your photos, stock photos or taking new ones.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="flex flex-row gap-9">
-              <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-              <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Analytics Setup</h3>
-                <p class="text-parchment text-16 lg:text-19">
-                  We add analytics to your website so you know how many visitors your website gets and which pages perform the best.
-                </p>
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Mobile-friendly website</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    Readable, usable and good-looking on small screen sizes.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Fast-loading website</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    Your website will load fast because we follow best practices for creating websites with speed.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-9">
+                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
+                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Analytics Setup</h3>
+                  <p class="text-parchment text-16 lg:text-19">
+                    We add analytics to your website so you know how many visitors your website gets and which pages perform the best.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -537,23 +556,27 @@ const FAQs = [
       <div class="self-stretch toggle-group flex flex-col gap-20 md:gap-36">
         <ServiceDetailsToggle title="Pricing Details">
           <p>
-            Price may vary. We will only adjust the price if we need to. 
-            It may be that your project is extra complicated or you need a special feature or you need more pages than normal.
+            Price may vary if the project is extra complicated, needs a special feature, or requires more pages than normal.
           </p>
           <p>
-            Price will be determined and set by us, and approved by you before the project starts.
+            After determining your project needs, we set the price. Then you’ll approve it before the project starts. There will be no hidden costs.
           </p>
         </ServiceDetailsToggle>
         <ServiceDetailsToggle title="Hosting and Privacy Policies">
           <p>
-            Our website design service includes free hosting for 12 months. 
-            You also get free auto-updating privacy policies for 12 months.
+            Our website design service <span class="font-semibold">covers all website costs for 12 months</span>: hosting, analytics, auto-updating privacy policies, and more.
           </p>
+          <div>
+            <p class='mb-14'>
+              After that, the costs are simple:
+            </p>
+            <ul class="ms-9 list-disc list-inside">
+              <li><span class="underline">$25/month</span>: hosting + software</li>
+              <li><span class="underline">$10/month</span>: auto-updating policies</li>        
+            </ul>
+          </div>
           <p>
-            After the initial 12 months, the cost is $25/month for the hosting and auto-updating policies.
-          </p>
-          <p>
-            (Both of these are also included in our support plans)
+            (All of this is included in our support plans as well.)
           </p>
         </ServiceDetailsToggle>
       </div>      
@@ -712,6 +735,7 @@ const FAQs = [
     import '../scripts/toggle-script.js';
     import '../scripts/load-cal.js';
     import '../scripts/close-menu.js';
+    import '../scripts/toggle-webdesign-price.js';
   </script>
 </MainLayout>
 
@@ -754,5 +778,34 @@ const FAQs = [
   .number-in-circle {
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
+  }
+
+  .switch-wrapper [type="radio"]:checked#one-time ~ label[for="one-time"],
+  .switch-wrapper [type="radio"]:checked#monthly ~ label[for="monthly"] {
+    color: var(--color-charcoal);
+  }
+  .switch-wrapper [type="radio"]:checked#one-time ~ label[for="one-time"]:hover,
+  .switch-wrapper [type="radio"]:checked#monthly ~ label[for="monthly"]:hover {
+    background: transparent;
+  }
+  .switch-wrapper
+    [type="radio"]:checked#monthly
+    + label[for="one-time"]
+    ~ .highlighter {
+    transform: none;
+  }
+  .switch-wrapper
+    [type="radio"]:checked#one-time
+    + label[for="monthly"]
+    ~ .highlighter {
+    transform: translateX(100%);
+  }
+  .switch-wrapper:has([type="radio"]#monthly:focus) label[for="monthly"] {
+    outline: 2px solid var(--color-electric);
+    outline-offset: .5rem;
+  }
+  .switch-wrapper:has([type="radio"]#one-time:focus) label[for="one-time"] {
+    outline: 2px solid var(--color-electric);
+    outline-offset: .5rem;
   }
 </style>
