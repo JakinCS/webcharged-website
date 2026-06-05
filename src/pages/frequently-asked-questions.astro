@@ -298,7 +298,8 @@ const technicalSEOQuestions = [
   {
     title: "How fast will my website load?",
     content: [
-      "We can’t guarantee a specific loading speed because it can vary. \
+      "Our standard hand-created websites are very fast, usually scoring an impressive 98-100 out of 100 on performance. \
+      If you request a WordPress website, we can’t guarantee a specific loading speed because it can vary. \
       But we optimize all websites for speed as part of our standard service. \
       Fast loading times are crucial since slow websites lead to lost customers. \
       We will make sure that the images are optimized, and we use fast, reliable hosting."       
@@ -309,9 +310,10 @@ const hostingSupport = [
   {
     title: "Where will my website be hosted?",
     content: [
-      "We host our websites on Hetzner servers. Our website design service includes the hosting cost for 1 year. \
-      After the first year, the hosting is $15/month.<br>\
-      You can choose to provide your own hosting. But if you do, we can’t guarantee the same loading speed."       
+      "Our hand-created websites are hosted on CloudFlare pages. Any WordPress websites we create are hosted on Hetzner servers. \
+      Our website design service includes the hosting and software costs for 1 year. \
+      After the first year, the hosting and software costs are $25/month for our regular websites and $40/month for WordPress websites. <br>\
+      You can choose to provide your own hosting for WordPress websites. But if you do, we can’t guarantee the same loading speed."       
     ]
   },
   {
@@ -396,41 +398,25 @@ const sGeneralServiceQuestions = [
   {
     title: "How fast is your response time to website support requests?",
     content: [
-      "The standard and professional support plans include unlimited content changes. \
-      We typically complete these requested changes in 1-2 business days. <br>\
-      The time it takes to complete bigger content changes varies depending on the size of the content change request."       
+      "For regular content updates, we make the changes you want within 1-2 business (although it frequently only takes 24 hours). \
+      If you want a more extensive website update, it can take longer depending on the size of the update request."       
     ]
   },
   {
-    title: "What happens if I need more support than what’s included in my plan?",
+    title: "What happens if I need a major update to my website?",
     content: [
-      "For basic needs, you shouldn’t need to go above the allotted monthly support hours. But if so, we do additional work at $50/hour. \
-      If you have a more major content update or redesign or you want to add a new feature, we can do that at $50/hour, too."       
+      "If you need something more extensive than a regular content update, we handle those at $50/hour. \
+      Examples of more extensive updates include rewriting a full page, adding a new section, or setting up a new integration. \
+      For especially large projects or updates, we'll put together a custom quote so you know exactly what to expect upfront."       
     ]
   },
-]
-const sTechnicalSecurityQuestions = [
-  {
-    title: "How often do you back up my website?",
-    content: [
-      "If you host with us (as included in our support plans), your website will be backed up daily. \
-      We set up daily backups through our hosting at Hetzner."
-    ]
-  },
-  {
-    title: "What software updates do you include in the support plans?",
-    content: [
-      "We will take care of any WordPress software updates and all theme and plugin updates. \
-      All updates are important to maintain security and keep the website up-to-date."       
-    ]
-  }
 ]
 const sReportingCommunicationQuestions = [
   {
     title: "What information is provided in your monthly reports?",
     content: [
       "We will give you a detailed outline of the health of your website and \
-      tell you everything that we did for your website for that quarter/month. \
+      tell you everything that we did for your website for that month. \
       The reports include information on website traffic and performance. \
       We will include details about any content changes that we made or any issues that arose that month. \
       We will also suggest improvements to your website when applicable."
@@ -441,7 +427,7 @@ const sReportingCommunicationQuestions = [
     content: [
       "If there are any urgent website issues, we will tell you right away. \
       We want to keep you informed about the important details because we are your partners.<br> \
-      You’ll receive information about any minor website issues and the fixes we implemented in our monthly/quarterly reports."       
+      You’ll receive information about any minor website issues and the fixes we implemented in our monthly reports."       
     ]
   },
   {
@@ -468,9 +454,10 @@ const sBusinessValueQuestions = [
   {
     title: "What happens if my website gets hacked?",
     content: [
-      "If that were to happen, we would start working on the situation as soon as we hear of it. \
-      We’ll restore your website from the daily backups that are made. \
-      We would also implement any other security measures as necessary."       
+      "Our regular, hand-created websites are practically immune to getting hacked. \
+      But for WordPress websites, there is a small chance. If that were to happen, we would start working on the situation \
+      as soon as we hear of it. \
+      We’ll restore your website from the daily backups that are made. We would also implement any other security measures as necessary."       
     ]
   },
   {
@@ -495,7 +482,7 @@ const sPricingContractQuestions = [
   {
     title: "Why might prices be higher depending the website?",
     content: [
-      "Some websites may be older or more complex. They might have a lot more plugins than normal, too. \
+      "Some websites may be older or more complex. If it is a WordPress website, it might have a lot more plugins than normal, too. \
       These things add complication when we are doing website support. \
       This means we would have to spend more time and charge more to support these websites."       
     ]
@@ -602,18 +589,6 @@ const sPricingContractQuestions = [
         <H3>General Service Questions</H3>
         <div class="toggle-group flex flex-col">
           {sGeneralServiceQuestions.map((faq) => (
-            <FAQ title={faq.title} >
-              {faq.content.map((block) => (
-                <p set:html={block} />
-              ))}
-            </FAQ>
-          ))}
-        </div>
-      </div>
-      <div class="flex flex-col gap-12 md:gap-14">
-        <H3>Technical & Security Questions</H3>
-        <div class="toggle-group flex flex-col">
-          {sTechnicalSecurityQuestions.map((faq) => (
             <FAQ title={faq.title} >
               {faq.content.map((block) => (
                 <p set:html={block} />
