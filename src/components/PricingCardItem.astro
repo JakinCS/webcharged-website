@@ -6,19 +6,8 @@ const { icon = 'included', title, class: className, ...rest } = Astro.props;
 
 <details class="flex flex-col">
   <summary class="flex gap-9 justify-between items-center cursor-pointer select-none">
-    <div class="flex gap-9">
-      {icon === 'included' ? 
-        <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-      :
-        <svg class='shrink-0 h-24 w-24 md:w-32 md:h-32' width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <mask id="mask0_3429_36061" class="mask-type-alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
-          <rect width="32" height="32" fill="#D9D9D9"/>
-          </mask>
-          <g mask="url(#mask0_3429_36061)">
-          <path d="M8.53268 25.3334L6.66602 23.4667L14.1327 16.0001L6.66602 8.53341L8.53268 6.66675L15.9993 14.1334L23.466 6.66675L25.3327 8.53341L17.866 16.0001L25.3327 23.4667L23.466 25.3334L15.9993 17.8667L8.53268 25.3334Z" fill="#FFF7EB"/>
-          </g>
-        </svg>
-      }
+    <div class="flex gap-14">
+      <slot name="icon" />
       <p class="text-electric font-semibold text-16 md:text-21">{title}</p>
     </div>
     <svg class="[[open]_&]:hidden w-24 h-24 shrink-0" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FF9D0A">
@@ -28,7 +17,7 @@ const { icon = 'included', title, class: className, ...rest } = Astro.props;
       <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
     </svg>
   </summary>
-  <div class="flex flex-col ps-33 md:ps-41 pt-9 md:pt-4 pb-9 pe-9 gap-20 text-parchment">
+  <div class="flex flex-col ps-38 md:ps-46 pt-9 md:pt-4 pb-9 pe-9 gap-20 text-parchment">
     <slot />
   </div>
 </details>

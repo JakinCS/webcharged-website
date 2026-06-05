@@ -284,137 +284,122 @@ const FAQQuestions = [
       </div>
     </div>
   </section>
-  <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-53 md:py-95 gap-36 md:gap-95">
-    <div class="w-full flex flex-col items-center gap-36 md:gap-59 lg:gap-95">
-      <H2>Our support plans</H2>
-      <div class="w-full flex flex-col items-center gap-36 md:gap-59">
-        <div class="container-break-1590 w-full flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-y-36 gap-x-22">
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-59 py-53 md:py-95 gap-53 md:gap-95">
+    <div class="flex flex-col items-center gap-36 md:gap-59">
 
-          <div class="w-full flex flex-col xl:justify-between bg-blue gap-53 md:gap-59 px-20 md:px-36 py-32 md:py-36 rounded-md max-w-360 md:max-w-480">
-            <div class="flex flex-col gap-36">
-              <div class="flex flex-col items-center gap-9">
-                <h3 class="text-parchment font-semibold text-23 md:text-28 lg:text-36">Bare Minimum</h3>
-                <p class="text-parchment font-semibold text-19 md:text-21">$50/month</p>
-              </div>
-              <div class="toggle-group flex flex-col gap-14">
-                <PricingCardItem title="Website Hosting" icon="included">
-                  You get high-performing website hosting so your website stays online and loads quickly.
-                </PricingCardItem>
-                <PricingCardItem title="Software & Plugin Updates" icon="included">
-                  We update your website regularly to keep it running smoothly and securely.
-                </PricingCardItem>
-                <PricingCardItem title="Daily Backups" icon="included">
-                  We take daily backups of your website’s data.
-                </PricingCardItem>
-                <PricingCardItem title="Auto-Updating Privacy Policies" icon="included">
-                  You get auto-updating privacy polices to keep your website compliant with official regulations.
-                </PricingCardItem>
-                <PricingCardItem title="Unlimited Content Updates" icon="discluded">
-                  This plan does not include any updates to your website’s content.
-                </PricingCardItem>
-                <PricingCardItem title="Monthly Website Report" icon="discluded">
-                  This plan does not include a monthly website report
-                </PricingCardItem>
-                <PricingCardItem title="Security Monitoring" icon="discluded">
-                  This plan does not include additional security monitoring.
-                </PricingCardItem>
-                <PricingCardItem title="Monthly Performance Analysis" icon="discluded">
-                  This plan does not include a monthly analysis of your website’s performance.
-                </PricingCardItem>
-              </div>
+      <H2>Website support</H2>
+      <Text>We offer two support plans depending on your website’s platform.</Text>
+      <div class="w-full flex flex-col items-center gap-22 md:gap-36">
+        <div class="w-full flex flex-col bg-blue gap-59 px-20 md:px-36 py-36 rounded-md max-w-360 md:max-w-480">
+          <div class="flex flex-col gap-36">
+            <div class="flex flex-col items-center gap-9">
+              <h3 class="text-parchment font-semibold inline-flex items-end">
+                <span class="text-23 md:text-36">$80</span>
+                <span class="text-16/[120%] md:text-23 pb-3 md:pb-4">&nbsp;/ month</span>
+              </h3>
             </div>
-            <Button link="/get-website-support/" color="parchment" class="md:self-center">Get started</Button>
-          </div>
-          <div class="w-full flex flex-col xl:justify-between bg-blue gap-53 md:gap-59 px-20 md:px-36 py-32 md:py-36 rounded-md max-w-360 md:max-w-480">
-            <div class="flex flex-col gap-36">
-              <div class="flex flex-col items-center gap-9">
-                <h3 class="text-parchment font-semibold text-23 md:text-28 lg:text-36">Standard</h3>
-                <p class="text-parchment font-semibold text-19 md:text-21">$100/month</p>
-              </div>
-              <div class="toggle-group flex flex-col gap-14">
-                <PricingCardItem title="Website Hosting" icon="included">
-                  You get high-performing website hosting so your website stays online and loads quickly.
-                </PricingCardItem>
-                <PricingCardItem title="Software & Plugin Updates" icon="included">
-                  We update your website regularly to keep it running smoothly and securely.
-                </PricingCardItem>
-                <PricingCardItem title="Daily Backups" icon="included">
-                  We take daily backups of your website’s data.
-                </PricingCardItem>
-                <PricingCardItem title="Auto-Updating Privacy Policies" icon="included">
-                  You get auto-updating privacy polices to keep your website compliant with official regulations.
-                </PricingCardItem>
-                <PricingCardItem title="Unlimited Content Updates" icon="included">
-                  Anytime you need something updated on your website, we will do it for you. 
-                  (This applies to regular content updates, not major additions or redesigns)
-                </PricingCardItem>
-                <PricingCardItem title="Monthly Website Report" icon="included">
-                  We will send you a detailed monthly report on your website’s traffic, performance and other information.
-                </PricingCardItem>
-                <PricingCardItem title="Security Monitoring" icon="discluded">
-                  This plan does not include additional security monitoring.
-                </PricingCardItem>
-                <PricingCardItem title="Monthly Performance Analysis" icon="discluded">
-                  This plan does not include a monthly analysis of your website’s performance.
-                </PricingCardItem>
-              </div>
+            <div class="toggle-group flex flex-col gap-22 md:gap-32">
+              <PricingCardItem title="Website Hosting">
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3881_14798" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3881_14798)">
+                  <path d="M10 8C9.44444 8 8.97222 8.19444 8.58333 8.58333C8.19444 8.97222 8 9.44444 8 10C8 10.5556 8.19444 11.0278 8.58333 11.4167C8.97222 11.8056 9.44444 12 10 12C10.5556 12 11.0278 11.8056 11.4167 11.4167C11.8056 11.0278 12 10.5556 12 10C12 9.44444 11.8056 8.97222 11.4167 8.58333C11.0278 8.19444 10.5556 8 10 8ZM10 21.3333C9.44444 21.3333 8.97222 21.5278 8.58333 21.9167C8.19444 22.3056 8 22.7778 8 23.3333C8 23.8889 8.19444 24.3611 8.58333 24.75C8.97222 25.1389 9.44444 25.3333 10 25.3333C10.5556 25.3333 11.0278 25.1389 11.4167 24.75C11.8056 24.3611 12 23.8889 12 23.3333C12 22.7778 11.8056 22.3056 11.4167 21.9167C11.0278 21.5278 10.5556 21.3333 10 21.3333ZM5.33333 4H26.6667C27.0444 4 27.3611 4.12778 27.6167 4.38333C27.8722 4.63889 28 4.95556 28 5.33333V14.6667C28 15.0444 27.8722 15.3611 27.6167 15.6167C27.3611 15.8722 27.0444 16 26.6667 16H5.33333C4.95556 16 4.63889 15.8722 4.38333 15.6167C4.12778 15.3611 4 15.0444 4 14.6667V5.33333C4 4.95556 4.12778 4.63889 4.38333 4.38333C4.63889 4.12778 4.95556 4 5.33333 4ZM6.66667 6.66667V13.3333H25.3333V6.66667H6.66667ZM5.33333 17.3333H26.6667C27.0444 17.3333 27.3611 17.4611 27.6167 17.7167C27.8722 17.9722 28 18.2889 28 18.6667V28C28 28.3778 27.8722 28.6944 27.6167 28.95C27.3611 29.2056 27.0444 29.3333 26.6667 29.3333H5.33333C4.95556 29.3333 4.63889 29.2056 4.38333 28.95C4.12778 28.6944 4 28.3778 4 28V18.6667C4 18.2889 4.12778 17.9722 4.38333 17.7167C4.63889 17.4611 4.95556 17.3333 5.33333 17.3333ZM6.66667 20V26.6667H25.3333V20H6.66667Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>
+                You get high-performing website hosting so your website stays online and loads quickly.
+              </PricingCardItem>
+              <PricingCardItem title="Analytics Software">
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3900_16285" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3900_16285)">
+                  <path d="M10.6667 18.2001V8.00008H14.6667V18.2001L12.6667 16.3334L10.6667 18.2001ZM17.3333 20.2001V2.66675H21.3333V16.2001L17.3333 20.2001ZM4 24.8001V13.3334H8V20.8001L4 24.8001ZM4 28.0668L12.6 19.4668L17.3333 23.5334L24.8 16.0667H22.6667V13.4001H29.3333V20.0668H26.6667V17.9334L17.4667 27.1334L12.7333 23.0668L7.73333 28.0668H4Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>
+                We include premium website analytics software so you can monitor your website traffic effectively.
+              </PricingCardItem>
+              <PricingCardItem title="Unlimited Content Updates">
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3900_16290" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3900_16290)">
+                  <path d="M7.33333 23.3334C5.28889 23.3334 3.55556 22.6223 2.13333 21.2001C0.711111 19.7779 0 18.0445 0 16.0001C0 13.9556 0.711111 12.2223 2.13333 10.8001C3.55556 9.37786 5.28889 8.66675 7.33333 8.66675C8.15556 8.66675 8.94444 8.81119 9.7 9.10008C10.4556 9.38897 11.1333 9.80008 11.7333 10.3334L14 12.4001L12 14.2001L9.93333 12.3334C9.57778 12.0223 9.17778 11.7779 8.73333 11.6001C8.28889 11.4223 7.82222 11.3334 7.33333 11.3334C6.04444 11.3334 4.94444 11.789 4.03333 12.7001C3.12222 13.6112 2.66667 14.7112 2.66667 16.0001C2.66667 17.289 3.12222 18.389 4.03333 19.3001C4.94444 20.2112 6.04444 20.6667 7.33333 20.6667C7.82222 20.6667 8.28889 20.5779 8.73333 20.4001C9.17778 20.2223 9.57778 19.9779 9.93333 19.6667L20.2667 10.3334C20.8667 9.80008 21.5444 9.38897 22.3 9.10008C23.0556 8.81119 23.8444 8.66675 24.6667 8.66675C26.7111 8.66675 28.4444 9.37786 29.8667 10.8001C31.2889 12.2223 32 13.9556 32 16.0001C32 18.0445 31.2889 19.7779 29.8667 21.2001C28.4444 22.6223 26.7111 23.3334 24.6667 23.3334C23.8444 23.3334 23.0556 23.189 22.3 22.9001C21.5444 22.6112 20.8667 22.2001 20.2667 21.6667L18 19.6001L20 17.8001L22.0667 19.6667C22.4222 19.9779 22.8222 20.2223 23.2667 20.4001C23.7111 20.5779 24.1778 20.6667 24.6667 20.6667C25.9556 20.6667 27.0556 20.2112 27.9667 19.3001C28.8778 18.389 29.3333 17.289 29.3333 16.0001C29.3333 14.7112 28.8778 13.6112 27.9667 12.7001C27.0556 11.789 25.9556 11.3334 24.6667 11.3334C24.1778 11.3334 23.7111 11.4223 23.2667 11.6001C22.8222 11.7779 22.4222 12.0223 22.0667 12.3334L11.7333 21.6667C11.1333 22.2001 10.4556 22.6112 9.7 22.9001C8.94444 23.189 8.15556 23.3334 7.33333 23.3334Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>
+                We take care of your everyday website updates: text changes, photo swaps, and more. Just let us know, and we'll handle it for you.
+              </PricingCardItem>
+              <PricingCardItem title="Software Updates">
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3900_16295" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3900_16295)">
+                  <path d="M6.80065 21.3999C6.31176 20.5555 5.9451 19.6888 5.70065 18.7999C5.45621 17.911 5.33398 16.9999 5.33398 16.0666C5.33398 13.0888 6.36732 10.5555 8.43398 8.46659C10.5007 6.3777 13.0229 5.33325 16.0007 5.33325H16.234L14.1007 3.19992L15.9673 1.33325L21.3007 6.66659L15.9673 11.9999L14.1007 10.1333L16.234 7.99992H16.0007C13.7784 7.99992 11.8895 8.78325 10.334 10.3499C8.77843 11.9166 8.00065 13.8221 8.00065 16.0666C8.00065 16.6444 8.06732 17.211 8.20065 17.7666C8.33398 18.3221 8.53398 18.8666 8.80065 19.3999L6.80065 21.3999ZM16.034 30.6666L10.7007 25.3333L16.034 19.9999L17.9007 21.8666L15.7673 23.9999H16.0007C18.2229 23.9999 20.1118 23.2166 21.6673 21.6499C23.2229 20.0833 24.0007 18.1777 24.0007 15.9333C24.0007 15.3555 23.934 14.7888 23.8007 14.2333C23.6673 13.6777 23.4673 13.1333 23.2007 12.5999L25.2007 10.5999C25.6895 11.4444 26.0562 12.311 26.3007 13.1999C26.5451 14.0888 26.6673 14.9999 26.6673 15.9333C26.6673 18.911 25.634 21.4444 23.5673 23.5333C21.5007 25.6221 18.9784 26.6666 16.0007 26.6666H15.7673L17.9007 28.7999L16.034 30.6666Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>
+                We update your website regularly to keep it running smoothly and securely.
+              </PricingCardItem>
+              <PricingCardItem title="Website Backups">
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3900_16300" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3900_16300)">
+                  <path d="M13.8007 22.6666L21.334 15.1333L19.4007 13.1999L13.7673 18.8333L10.9673 16.0333L9.06732 17.9333L13.8007 22.6666ZM8.66732 26.6666C6.6451 26.6666 4.91732 25.9666 3.48398 24.5666C2.05065 23.1666 1.33398 21.4555 1.33398 19.4333C1.33398 17.6999 1.85621 16.1555 2.90065 14.7999C3.9451 13.4444 5.31176 12.5777 7.00065 12.1999C7.55621 10.1555 8.66732 8.49992 10.334 7.23325C12.0007 5.96659 13.8895 5.33325 16.0007 5.33325C18.6007 5.33325 20.8062 6.23881 22.6173 8.04992C24.4284 9.86103 25.334 12.0666 25.334 14.6666C26.8673 14.8444 28.1395 15.5055 29.1507 16.6499C30.1618 17.7944 30.6673 19.1333 30.6673 20.6666C30.6673 22.3333 30.084 23.7499 28.9173 24.9166C27.7507 26.0833 26.334 26.6666 24.6673 26.6666H8.66732ZM8.66732 23.9999H24.6673C25.6007 23.9999 26.3895 23.6777 27.034 23.0333C27.6784 22.3888 28.0007 21.5999 28.0007 20.6666C28.0007 19.7333 27.6784 18.9444 27.034 18.2999C26.3895 17.6555 25.6007 17.3333 24.6673 17.3333H22.6673V14.6666C22.6673 12.8221 22.0173 11.2499 20.7173 9.94992C19.4173 8.64992 17.8451 7.99992 16.0007 7.99992C14.1562 7.99992 12.584 8.64992 11.284 9.94992C9.98398 11.2499 9.33398 12.8221 9.33398 14.6666H8.66732C7.37843 14.6666 6.27843 15.1221 5.36732 16.0333C4.45621 16.9444 4.00065 18.0444 4.00065 19.3333C4.00065 20.6221 4.45621 21.7221 5.36732 22.6333C6.27843 23.5444 7.37843 23.9999 8.66732 23.9999Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>                
+                Your website’s data is stored securely on the cloud so nothing is lost.
+              </PricingCardItem>
+              <PricingCardItem title="Auto-Updating Privacy Policies">                
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3900_16305" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3900_16305)">
+                  <path d="M9.33333 22.6667H18.6667V20H9.33333V22.6667ZM9.33333 17.3333H22.6667V14.6667H9.33333V17.3333ZM9.33333 12H22.6667V9.33333H9.33333V12ZM6.66667 28C5.93333 28 5.30556 27.7389 4.78333 27.2167C4.26111 26.6944 4 26.0667 4 25.3333V6.66667C4 5.93333 4.26111 5.30556 4.78333 4.78333C5.30556 4.26111 5.93333 4 6.66667 4H25.3333C26.0667 4 26.6944 4.26111 27.2167 4.78333C27.7389 5.30556 28 5.93333 28 6.66667V25.3333C28 26.0667 27.7389 26.6944 27.2167 27.2167C26.6944 27.7389 26.0667 28 25.3333 28H6.66667ZM6.66667 25.3333H25.3333V6.66667H6.66667V25.3333Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>
+                You get auto-updating privacy policies to keep your website compliant with official regulations.
+              </PricingCardItem>
+              <PricingCardItem title="Monthly Website Report">
+                <svg slot="icon" class="w-24 h-24 md:w-32 md:h-32" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_3900_16310" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                  <rect width="32" height="32" fill="#D9D9D9"/>
+                  </mask>
+                  <g mask="url(#mask0_3900_16310)">
+                  <path d="M6.66667 27.9999C5.93333 27.9999 5.30556 27.7388 4.78333 27.2166C4.26111 26.6944 4 26.0666 4 25.3333V6.66658C4 5.93325 4.26111 5.30547 4.78333 4.78325C5.30556 4.26103 5.93333 3.99992 6.66667 3.99992H12.2333C12.4778 3.22214 12.9556 2.58325 13.6667 2.08325C14.3778 1.58325 15.1556 1.33325 16 1.33325C16.8889 1.33325 17.6833 1.58325 18.3833 2.08325C19.0833 2.58325 19.5556 3.22214 19.8 3.99992H25.3333C26.0667 3.99992 26.6944 4.26103 27.2167 4.78325C27.7389 5.30547 28 5.93325 28 6.66658V25.3333C28 26.0666 27.7389 26.6944 27.2167 27.2166C26.6944 27.7388 26.0667 27.9999 25.3333 27.9999H6.66667ZM6.66667 25.3333H25.3333V6.66658H22.6667V10.6666H9.33333V6.66658H6.66667V25.3333ZM16.95 6.28325C17.2056 6.0277 17.3333 5.71103 17.3333 5.33325C17.3333 4.95547 17.2056 4.63881 16.95 4.38325C16.6944 4.1277 16.3778 3.99992 16 3.99992C15.6222 3.99992 15.3056 4.1277 15.05 4.38325C14.7944 4.63881 14.6667 4.95547 14.6667 5.33325C14.6667 5.71103 14.7944 6.0277 15.05 6.28325C15.3056 6.53881 15.6222 6.66658 16 6.66658C16.3778 6.66658 16.6944 6.53881 16.95 6.28325Z" fill="#FFF7EB"/>
+                  </g>
+                </svg>
+                We will send you a detailed monthly report on your website’s traffic, performance and more.
+              </PricingCardItem>
             </div>
-            <Button link="/get-website-support/" color="parchment" class="md:self-center">Get started</Button>
           </div>
-          <div class="w-full flex flex-col xl:justify-between bg-blue gap-53 md:gap-59 px-20 md:px-36 py-32 md:py-36 rounded-md max-w-360 md:max-w-480">
-            <div class="flex flex-col gap-36">
-              <div class="flex flex-col items-center gap-9">
-                <h3 class="text-parchment font-semibold text-23 md:text-28 lg:text-36">Professional</h3>
-                <p class="text-parchment font-semibold text-19 md:text-21">$150/month</p>
-              </div>
-              <div class="toggle-group flex flex-col gap-14">
-                <PricingCardItem title="Website Hosting" icon="included">
-                  You get high-performing website hosting so your website stays online and loads quickly.
-                </PricingCardItem>
-                <PricingCardItem title="Software & Plugin Updates" icon="included">
-                  We update your website regularly to keep it running smoothly and securely.
-                </PricingCardItem>
-                <PricingCardItem title="Daily Backups" icon="included">
-                  We take daily backups of your website’s data.
-                </PricingCardItem>
-                <PricingCardItem title="Auto-Updating Privacy Policies" icon="included">
-                  You get auto-updating privacy polices to keep your website compliant with official regulations.
-                </PricingCardItem>
-                <PricingCardItem title="Unlimited Content Updates" icon="included">
-                  Anytime you need something updated on your website, we will do it for you. 
-                  (This applies to regular content updates, not major additions or redesigns)
-                </PricingCardItem>
-                <PricingCardItem title="Monthly Website Report" icon="included">
-                  We will send you a detailed monthly report on your website’s traffic, performance and other information.
-                </PricingCardItem>
-                <PricingCardItem title="Security Monitoring" icon="included">
-                  We will install a security plugin on your website and monitor your website for security issues.
-                </PricingCardItem>
-                <PricingCardItem title="Monthly Performance Analysis" icon="included">
-                  Every month, we will examine your website and find and fix any performance issues to keep your website high-performing.
-                </PricingCardItem>
-              </div>
-            </div>
-            <Button link="/get-website-support/" color="parchment" class="md:self-center">Get started</Button>
-          </div>
-
+          <Button link="/get-website-support/" color="parchment" class="md:self-center">Get started</Button>
         </div>
-        <div class="flex flex-col gap-20 md:gap-14 max-w-840">
-          <Text>
-            Prices may vary depending on your hosting, 
-            the age of your website, and the number of plugins on your website.
-          </Text>
-          <Text>
-            To support websites that we did not build, there is a $200 startup fee.
-          </Text>
-        </div>
+        <Text>For custom-built websites</Text>
       </div>
+
     </div>
-    <div class="grow-1 flex flex-col gap-22 w-full max-w-840">
-      <H3 class="text-center">Additional work</H3>
-      <Text>
-        For large content updates and extra work after the provided support hours, we can help you for <span class="font-semibold">$50/hour.</span>
-      </Text>
+    <div class="grow-1 flex flex-col gap-22 md:gap-36 max-w-1032">
+      <H3 class="text-center">Supporting WordPress Websites</H3>
+      <div class="flex flex-col gap-22">
+        <Text>
+          If your website is built with WordPress or another platform, we're glad to support it. 
+          Our support plan for these websites starts at <span class="font-semibold">$125/month</span>. Here's why:
+        </Text>
+        <ul class="list-decimal list-inside text-16 md:text-19 lg:text-21 ms-9">
+          <li>WordPress and similar platforms require more frequent software updates to stay secure and functional.</li>
+          <li>Reliable, fast hosting for these sites is more expensive.</li>
+          <li>We include security and performance monitoring to keep everything running smoothly.</li>
+        </ul>
+        <Text>
+          For websites that are especially large or complex, we'll provide a custom quote.
+        </Text>
+      </div>
     </div>
   </section>
   <CTASection>
