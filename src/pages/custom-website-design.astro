@@ -15,9 +15,9 @@ const schemaMarkup = {
       "@type": "WebPage",
       "@id": "https://webchargedsolutions.com/custom-website-design/#webpage",
       "url": "https://webchargedsolutions.com/custom-website-design",
-      "name": "Custom website design - Increase your revenue today",
+      "name": "Custom Website Design for Small Businesses | WebCharged Web Solutions",
       "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
-      "description": "Web design service for small businesses based in Yuma, AZ. A simple process to build a successful website that increases your profits.",
+      "description": "Get a custom website that increases your revenue through a higher visitor-to-customer conversion rate. Based in Yuma, AZ.",
       "breadcrumb": { "@id": "https://webchargedsolutions.com/custom-website-design/#breadcrumb" }
     },
     {
@@ -45,14 +45,34 @@ const schemaMarkup = {
       "provider": { "@id": "https://webchargedsolutions.com/#organization" },
       "areaServed": { "@type": "Place", "name": "Worldwide" },
       "description": "A professional website built for maximum conversions focusing on content, mobile-friendliness, speed, and captivating design.",
-      "offers": {
-        "@type": "Offer",
-        "price": "2995.00",
-        "priceCurrency": "USD",
-        "url": "https://webchargedsolutions.com/custom-website-design",
-        "description": "Custom website design package including copywriting, photo assistance, and 12 months of support.",
-        "availability": "https://schema.org/InStock"
-      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly Payment Plan",
+          "price": "295.00",
+          "priceCurrency": "USD",
+          "url": "https://webchargedsolutions.com/custom-website-design",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "unitCode": "MON",
+            "price": "295.00",
+            "priceCurrency": "USD",
+            "billingDuration": 12,
+            "billingIncrement": 1
+          },
+          "description": "Custom website design package paid at $295/month for 12 months. Includes copywriting, photo assistance, and 12 months of support.",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "One-Time Payment",
+          "price": "2995.00",
+          "priceCurrency": "USD",
+          "url": "https://webchargedsolutions.com/custom-website-design",
+          "description": "Custom website design package as a single flat-fee payment of $2,995. Includes copywriting, photo assistance, and 12 months of support.",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Custom Website Features",
@@ -71,7 +91,7 @@ const schemaMarkup = {
       "name": "Jakin Stahl",
       "jobTitle": "Owner, Designer, and Developer",
       "worksFor": { "@id": "https://webchargedsolutions.com/#organization" },
-      "image": "https://webchargedsolutions.com/images/headshot-owner-jakin-stahl-674x918.webp"
+      "image": "https://webchargedsolutions.com/wp-content/uploads/2026/02/headshot-owner-jakin-stahl.webp"
     },
     {
       "@type": "FAQPage",
