@@ -17,9 +17,9 @@ const schemaMarkup = {
       "@type": "WebPage",
       "@id": "https://webchargedsolutions.com/website-support-plans/#webpage",
       "url": "https://webchargedsolutions.com/website-support-plans",
-      "name": "Professional Website Support & Maintenance | WebCharged Web Solutions",
+      "name": "Website Support Plans in Yuma - Achieve Peace of Mind",
       "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
-      "description": "Professional website maintenance services to prevent security issues, broken features, and slow loading times. Choose from three support tiers starting at $50/month.",
+      "description": "We provide website support and maintenance plans for Yuma, Arizona. Includes free hosting and privacy law protection.",
       "breadcrumb": { "@id": "https://webchargedsolutions.com/website-support-plans/#breadcrumb" }
     },
     {
@@ -43,52 +43,39 @@ const schemaMarkup = {
       "@type": "Service",
       "@id": "https://webchargedsolutions.com/website-support-plans/#service",
       "name": "Website Support and Maintenance",
-      "serviceType": "Managed Web Hosting and Maintenance",
+      "serviceType": "Managed Website Support and Maintenance",
       "provider": { "@id": "https://webchargedsolutions.com/#organization" },
       "areaServed": { "@type": "Place", "name": "Worldwide" },
-      "description": "Comprehensive website support including hosting, software updates, daily backups, and security monitoring to ensure high performance and peace of mind.",
+      "description": "Professional website support plans including hosting, analytics software, unlimited content updates, software updates, daily backups, auto-updating privacy policies, and monthly website reports. Available for custom-built and WordPress/platform-based websites.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Website Support Tiers",
+        "name": "Website Support Plans",
         "itemListElement": [
           {
             "@type": "Offer",
-            "name": "Bare Minimum Support Plan",
-            "price": "50.00",
+            "name": "Custom-Built Website Support Plan",
+            "price": "80.00",
             "priceCurrency": "USD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
               "unitCode": "MON",
-              "price": "50.00",
+              "price": "80.00",
               "priceCurrency": "USD"
             },
-            "description": "Includes hosting, software/plugin updates, daily backups, and auto-updating privacy policies."
+            "description": "Website support plan for custom-built (hand-coded) websites. Includes high-performance hosting, analytics software, unlimited content updates, software updates, website backups, auto-updating privacy policies, and a monthly website report."
           },
           {
             "@type": "Offer",
-            "name": "Standard Support Plan",
-            "price": "100.00",
+            "name": "WordPress & Platform Website Support Plan",
+            "price": "125.00",
             "priceCurrency": "USD",
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
               "unitCode": "MON",
-              "price": "100.00",
+              "price": "125.00",
               "priceCurrency": "USD"
             },
-            "description": "Includes all Bare Minimum features plus unlimited content updates and monthly website reports."
-          },
-          {
-            "@type": "Offer",
-            "name": "Professional Support Plan",
-            "price": "150.00",
-            "priceCurrency": "USD",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "unitCode": "MON",
-              "price": "150.00",
-              "priceCurrency": "USD"
-            },
-            "description": "The complete package adding security monitoring and monthly performance analysis to all Standard features."
+            "description": "Website support plan for WordPress and other platform-based websites. Includes all standard support features plus more frequent software updates, reliable high-performance hosting for dynamic platforms, and security and performance monitoring. Custom quotes available for especially large or complex sites."
           }
         ]
       }
@@ -99,10 +86,18 @@ const schemaMarkup = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How fast is your response time to content change requests?",
+          "name": "How fast is your response time to website support requests?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For Standard and Professional plans, we typically complete requested content changes in 1-2 business days."
+            "text": "For regular content updates, we make the changes within 1-2 business days, though it frequently only takes 24 hours. More extensive website updates may take longer depending on the size of the request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I need a major update to my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Extensive updates beyond regular content changes are handled at $50/hour. This includes rewriting a full page, adding a new section, or setting up a new integration. For especially large projects, a custom quote is provided upfront."
           }
         },
         {
@@ -110,23 +105,7 @@ const schemaMarkup = {
           "name": "Will you support a website that you didn't originally build?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, we support websites built by others for a one-time $200 startup fee to perform the required setup and familiarization."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I provide my own hosting for my website?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, you may use your own hosting, though we cannot guarantee the same loading speeds as our provided high-performance hosting."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does my website need website maintenance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Regular maintenance ensures your software is updated for security and speed, prevents broken features, and protects your conversion rates."
+            "text": "Yes, we support any website even if we didn't build it. A one-time $200 startup fee applies for websites we didn't create, covering the extra time needed to familiarize ourselves with the website and perform required setup."
           }
         },
         {
@@ -134,7 +113,7 @@ const schemaMarkup = {
           "name": "Are there any long-term contracts required?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, we do not require long-term contracts. You can cancel your website support plan at any time."
+            "text": "No long-term contracts are required for our website support plans. You can cancel your plan at any time, allowing your business to stay flexible as your needs change."
           }
         }
       ]
@@ -155,9 +134,16 @@ const FAQQuestions = [
   {
     title: "How fast is your response time to content change requests?",
     content: [
-      "The standard and professional support plans include unlimited content changes. \
-      We typically complete these requested changes in 1-2 business days. <br>\
-      The time it takes to complete bigger content changes varies depending on the size of the content change request."       
+      "For regular content updates, we make the changes you want within 1-2 business (although it frequently only takes 24 hours). \
+      If you want a more extensive website update, it can take longer depending on the size of the update request."       
+    ]
+  },
+  {
+    title: "What happens if I need a major update to my website?",
+    content: [
+      "If you need something more extensive than a regular content update, we handle those at $50/hour. \
+      Examples of more extensive updates include rewriting a full page, adding a new section, or setting up a new integration. \
+      For especially large projects or updates, we'll put together a custom quote so you know exactly what to expect upfront."       
     ]
   },
   {
@@ -167,31 +153,6 @@ const FAQQuestions = [
       But we do require a $200 startup fee for websites that we didn’t create. \
       This is because it takes some extra time for us to familiarize ourselves \
       with your website and business and perform the required setup."       
-    ]
-  },
-  {
-    title: "Can I provide my own hosting for my website?",
-    content: [
-      "Yes, you may use your own hosting instead of using our provided hosting. \
-      But if you do, we cannot guarantee the same loading speeds."       
-    ]
-  },
-  {
-    title: "Why does my website need website maintenance?",
-    content: [
-      "Your website requires software updates to stay fast and secure. \
-      If the website is not maintained, it can slow down, which directly impacts conversion rates. \
-      Websites can also develop broken features or get security vulnerabilities when not updated. \
-      None of these things provides a good experience for visitors."       
-    ]
-  },
-  {
-    title: "What happens if I need more support than what’s included in my plan?",
-    content: [
-      "For basic needs, you shouldn’t need to go above the allotted monthly support hours. \
-      But if so, we do additional work at $50/hour. \
-      If you have a more major content update or redesign or you want to add a new feature, \
-      we can do that at $50/hour, too."       
     ]
   },
   {
