@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Brandmark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 83.62 97.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff9d0a;
+      }
+
+      .cls-2 {
+        fill: url(#Lighter_Yellow_White);
+      }
+    </style>
+    <radialGradient id="Lighter_Yellow_White" data-name="Lighter Yellow White" cx="42.47" cy="48.93" fx="42.47" fy="48.93" r="48.29" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff7eb"/>
+      <stop offset=".06" stop-color="#fff3e3"/>
+      <stop offset=".16" stop-color="#ffebcd"/>
+      <stop offset=".27" stop-color="#ffdca9"/>
+      <stop offset=".4" stop-color="#ffc877"/>
+      <stop offset=".55" stop-color="#ffaf38"/>
+      <stop offset=".65" stop-color="#ff9d0a"/>
+    </radialGradient>
+  </defs>
+  <polygon class="cls-2" points="39.91 52.87 20.87 52.87 45.05 14.61 45.05 45.01 64.08 45.01 39.91 83.26 39.91 52.87"/>
+  <path class="cls-1" d="M70.6,41.25h-21.81V.88L14.35,56.61h21.8v40.37l34.45-55.73ZM22.42,52.11l.24-.38,21.17-34.26.46-.75v29.03h18.24l-.24.38-21.17,34.26-.47.75v-29.03h-18.23Z"/>
+  <polygon class="cls-1" points="59.06 25.54 59.06 31 76.93 31 74.03 35.62 54.43 35.62 54.43 20.91 83.17 20.91 80.31 25.54 59.06 25.54"/>
+  <polygon class="cls-1" points="30.52 62.25 30.52 78.17 .45 78.17 10.3 62.23 15.73 62.24 8.99 73.16 8.75 73.54 17.22 73.54 17.22 62.26 21.85 62.26 21.85 73.54 25.9 73.54 25.9 62.25 30.52 62.25"/>
+</svg>

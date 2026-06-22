@@ -1,0 +1,22 @@
+---
+
+import Button from "./Button.astro"
+import TextureOverlay from "./TextureOverlay.astro";
+
+const {headerButtonLink = '/project-planning-call/'} = Astro.props;
+
+---
+
+<header class="sticky top-0 flex justify-center bg-charcoal px-32 md:px-53 lg:px-59 py-20 lg:py-22 z-500">
+  <TextureOverlay />
+  <nav class="grow-1 flex justify-between items-center gap-40 max-w-1281">
+    <a href="#" class="shrink-0 block md:hidden">
+      <img fetchpriority="high" src="/images/webcharged-icon-yellow.svg" alt="Go to Page Top" width="51" height="60"/>
+    </a>
+    <a href="#" class="hidden md:block w-222">
+      <img fetchpriority="high" src="/images/webcharged-logo.svg" alt="Go to Page Top" width="222" height="60"/>
+    </a>
+    <Button link={headerButtonLink} class="inline-flex">Book a call</Button>
+  </nav>  
+</header>
+
