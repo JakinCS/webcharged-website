@@ -1,8 +1,16 @@
 let calLoaded = false;
+let handleFunctionRan = false;
 
 function loadCalEmbed() {
-  if (calLoaded) return;
+  console.log("running the load cal embed function")
+  console.log("calLoaded variable is:", calLoaded)
+  if (calLoaded) {
+    console.log("exiting!")
+    return
+  };
   calLoaded = true;
+
+  console.log("proceeding to un-hide and load the calendar")
 
   document.getElementById('cal-facade')?.remove();
   document.getElementById('my-cal-inline-project-planning-call').style.display = 'block';
@@ -51,16 +59,26 @@ function loadCalEmbed() {
 // This function checks whether the users preferences allow the loading of Cal.
 // Then, if all is good, it will run the loadCalEmbed() function.
 const handleLoadCal = () => {
+  console.log("running handle load cal function")
+  console.log("value of handleFunctionRan variable:", handleFunctionRan);
+  // if (handleFunctionRan == true) {console.log("exiting handle function"); return;}
+  handleFunctionRan = true;
+
   if (typeof zaraz !== "undefined") {
+    console.log("zaraz is good (not undefined)")
     const consentGiven = zaraz?.consent?.get("wQid");
+    console.log("Here is the value of the Zaraz consent:", consentGiven)
     if (consentGiven) {
+      console.log("consent is good. Running load function")
       loadCalEmbed();
       return;
     } else {
+      console.log("no consent. un-hiding cookie error")
       document.getElementById('cal-facade')?.remove();
       document.getElementById("cal-load-error").classList.remove("hidden");
     }
   } else {
+    console.log("zaraz is undefined. un-hiding error message")
     document.getElementById('cal-facade')?.remove();
     document.getElementById("cal-load-error-2").classList.remove("hidden");
   }
@@ -74,6 +92,7 @@ if (window.location.pathname.includes('website-design')) margin = '1000px'
 const observer = new IntersectionObserver(
   (entries) => {
     if (entries[0].isIntersecting) {
+      console.log("firing handle function - is visible")
       handleLoadCal();
       observer.disconnect();
     }
@@ -84,5 +103,6 @@ const observer = new IntersectionObserver(
 observer.observe(document.querySelector('.cal-facade-wrapper'));
 
 setTimeout(() => {
+  console.log("firing handle function after 5s")
   handleLoadCal();
 }, 5000);
