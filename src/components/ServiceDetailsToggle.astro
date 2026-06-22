@@ -18,3 +18,9 @@ const { title = "Lorem Ipsum" } = Astro.props
     <slot />
   </div>
 </details>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
