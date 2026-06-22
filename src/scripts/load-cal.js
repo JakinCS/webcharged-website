@@ -68,6 +68,13 @@ const handleLoadCal = () => {
     console.log("zaraz is good (not undefined)")
     const consentGiven = zaraz?.consent?.get("wQid");
     console.log("Here is the value of the Zaraz consent:", consentGiven)
+    if (consentGiven === undefined) {
+      console.log("Zaraz consent is undefined. Running handle function again in 1s")
+      setTimeout(() => {
+        handleLoadCal();
+      }, 1000);
+      return;
+    }
     if (consentGiven) {
       console.log("consent is good. Running load function")
       loadCalEmbed();
