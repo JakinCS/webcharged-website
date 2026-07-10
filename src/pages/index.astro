@@ -102,21 +102,22 @@ const headContent ={
       <Button class="self-start" link="/project-planning-call/">Start your project today</Button>
     </div>
     <div class="absolute -top-100 md:-top-147 lg:-top-181 right-0 pointer-events-none">
+
       <picture class="block lightning-graphic">
-        <!-- Mobile: loads on screens 750px and under -->
+        <!-- Deskop: loads on screens 750px and above -->
         <source
-          srcset="/images/yellow-lightning-bolt-360.png"
-          media="(max-width: 750px)"
+          srcset="/images/yellow-lightning-bolt.png"
+          media="(min-width: 750px)"
           type="image/png"
-          width="360"
-          height="674"
-        >
-        <!-- Desktop: default fallback -->
-        <img
-          src="/images/yellow-lightning-bolt.png"
-          alt=""
           width="615"
           height="1152"
+        >
+        <!-- Mobile: default for under 750px -->
+        <img
+          src="/images/yellow-lightning-bolt-360.png"
+          alt=""
+          width="360"
+          height="674"
           fetchpriority="high"
           decoding="sync"
         >
@@ -308,7 +309,7 @@ const headContent ={
 
 
 <style>
-  @media screen and (max-width: 750px) {
+  @media screen and (width < 46.875rem) {
     .lightning-graphic {
       position: relative;
       right: max(-222px, calc(-1 * (222px + (68.292px - 18.97vw))));
@@ -316,7 +317,7 @@ const headContent ={
     }
   }
   /* For Tablet Landscape */
-  @media screen and (min-width: 751px) and (max-width: 1150px) {
+  @media screen and (46.875rem <= width < 71.875rem) {
     .lightning-graphic {
       position: relative;
       left: calc(160px + (150.2px - 20vw));
@@ -324,14 +325,14 @@ const headContent ={
     }
   }
   /* For Laptop */
-  @media screen and (min-width: 1151px) and (max-width: 1400px) {
+  @media screen and (71.875rem <= width < 87.5rem) {
     .lightning-graphic {
       position: relative;
       left: calc(306px + (763.6px - 66.4vw));
     }
   }
   /* For Desktop */
-  @media screen and (min-width: 1401px) {
+  @media screen and (87.5rem <= width) {
     .lightning-graphic {
       position: relative;
       left: max(27px, calc(140px + (518.7px - 37.05vw)));
