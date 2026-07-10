@@ -4,4 +4,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://contact-form-worker.webcharged.workers.dev https://app.cal.com https://policies.termageddon.com https://embed.termageddon.com https://ph.webchargedsolutions.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://app.cal.com https://cloudflareinsights.com https://embed.termageddon.com https://ph.webchargedsolutions.com; img-src 'self' data:; font-src 'self'; frame-src https://app.cal.com;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://app.cal.com https://policies.termageddon.com https://embed.termageddon.com https://ph.webchargedsolutions.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://contact-form-worker.webcharged.workers.dev https://app.cal.com https://cloudflareinsights.com https://embed.termageddon.com https://ph.webchargedsolutions.com; img-src 'self' data:; font-src 'self'; frame-src https://app.cal.com;
