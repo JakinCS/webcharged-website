@@ -1,5 +1,6 @@
 let calLoaded = false;
 let handleFunctionRan = false;
+let handleFunctionNeedsToRun = true;
 
 function loadCalEmbed() {
   if (calLoaded) {
@@ -54,13 +55,14 @@ function loadCalEmbed() {
 // This function checks whether the users preferences allow the loading of Cal.
 // Then, if all is good, it will run the loadCalEmbed() function.
 const handleLoadCal = () => {
-  if (handleFunctionRan == true) return;
-  handleFunctionRan = true;
+  if (handleFunctionNeedsToRun === false) return;
+  handleFunctionNeedsToRun = false;
 
   if (typeof zaraz !== "undefined") {
     const consentGiven = zaraz?.consent?.get("wQid");
     if (consentGiven === undefined) {
       console.log("Zaraz consent is undefined. Running handle function again in 1s")
+      handleFunctionNeedsToRun = true;
       setTimeout(() => {
         handleLoadCal();
       }, 1000);
