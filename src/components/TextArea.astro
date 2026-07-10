@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 
 const labelStyles = 'text-parchment text-16'
-const regularStyles = "text-parchment font-semibold border-[1.5px] border-parchment rounded-md px-20 md:px-22 py-12 md:py-9 bg-blue";
+const regularStyles = "peer text-parchment font-semibold border-[1.5px] border-parchment rounded-md px-20 md:px-22 py-12 md:py-9 bg-blue";
 const interactiveStyles = "focus:text-electric focus:border-electric focus:outline-[1.5px] focus:outline-electric/75 focus:outline-offset-5 focus:placeholder:text-electric placeholder:text-parchment placeholder:opacity-75"
 const inputStyles = regularStyles + ' ' + interactiveStyles + ' ' + (className ? ' ' + className : '')
 
@@ -21,4 +21,16 @@ const inputStyles = regularStyles + ' ' + interactiveStyles + ' ' + (className ?
 <div class="flex flex-col gap-12">
   <label for={name} class={labelStyles}>{label}<span class={!isRequired && 'hidden'}> *</span></label>
   <textarea name={name} id={name} rows="4" placeholder={placeholder} class={inputStyles} required={isRequired ? "required" : undefined} {...rest}></textarea>
+  <p class="hidden peer-user-invalid:block text-error font-semibold text-16">This field is required.</p>
 </div>
+
+<style>
+  textarea:user-invalid {
+    outline-color: var(--color-error);
+    outline-width: 0.125rem;
+    border-color: var(--color-error);
+    &::placeholder {
+      color: var(--color-error);      
+    }
+  }
+</style>

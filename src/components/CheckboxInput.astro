@@ -14,7 +14,7 @@ const labelStyles = "checkbox-label flex gap-12 text-parchment cursor-pointer se
 
 ---
 
-<div>
+<div class="group">
   <label for={name} class={labelStyles}>
     <input type="checkbox" name={name} id={name} class={inputStyles} required={isRequired ? "required" : undefined} {...rest}>
     
@@ -23,6 +23,9 @@ const labelStyles = "checkbox-label flex gap-12 text-parchment cursor-pointer se
       <slot /><span class={!isRequired && 'hidden'}> *</span>
     </span>
   </label>
+
+  <p class="hidden group-has-[input:user-invalid]:block text-error font-semibold text-16 mt-4">Required</p>
+  
 </div>
 
 <style>
@@ -49,6 +52,9 @@ const labelStyles = "checkbox-label flex gap-12 text-parchment cursor-pointer se
       border-color .2s;
     position: relative;
   }
+  input:user-invalid + .checkbox-indicator {
+    border-color: var(--color-error);
+  }
   .checkbox-indicator::after {
     content: '';
     position: absolute;
@@ -64,6 +70,10 @@ const labelStyles = "checkbox-label flex gap-12 text-parchment cursor-pointer se
   .checkbox-label:hover .checkbox-indicator {
     border-color: #b5ada0;
   }
+  .checkbox-label:hover:has(input:user-invalid) .checkbox-indicator {
+    border-color: var(--color-error);
+    opacity: .8;
+  }
 
   input[type="checkbox"]:checked + .checkbox-indicator::after {
     transform: rotate(45deg) scale(1);
@@ -75,6 +85,10 @@ const labelStyles = "checkbox-label flex gap-12 text-parchment cursor-pointer se
     outline-offset: 0.3125rem;
     border-color: #FF9D0A;
     border-radius: var(--radius-md);
+  }
+  input[type="checkbox"]:focus-visible:user-invalid + .checkbox-indicator {
+    border-color: var(--color-error);
+    outline-color: #fe6749BF;
   }
 
   /* DISABLED state */

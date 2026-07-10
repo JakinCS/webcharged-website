@@ -13,14 +13,14 @@ const {
 } = Astro.props;
 
 const labelStyles = 'text-parchment text-16'
-const regularStyles = "flex flex-col gap-12 md:gap-9 font-semibold border-[1.5px] border-parchment rounded-md px-20 md:px-22 py-12 md:py-9 bg-blue";
+const regularStyles = "input-container flex flex-col gap-12 md:gap-9 font-semibold border-[1.5px] border-parchment rounded-md px-20 md:px-22 py-12 md:py-9 bg-blue";
 const inputStyles = regularStyles;
-const radioStyles = "absolute -left-9999"
+const radioStyles = "peer absolute -left-9999"
 const radioLabelStyles = "radio-label text-parchment text-16 grow-1"
 
 ---
 
-<div class={"flex flex-col gap-12" + (className ? ' ' + className : '')}>
+<div class={"group flex flex-col gap-12" + (className ? ' ' + className : '')}>
   <label for={name} class={labelStyles}>{label}<span class={!isRequired && 'hidden'}> *</span></label>
 
   <div class={inputStyles}>
@@ -34,9 +34,15 @@ const radioLabelStyles = "radio-label text-parchment text-16 grow-1"
     }
   </div>
 
+  <p class="hidden group-has-[input:user-invalid]:block text-error font-semibold text-16">This field is required.</p>
+
 </div>
 
 <style>
+  .input-container:has(input:user-invalid) {
+    border-color: var(--color-error);
+    /* transform: rotateZ(12deg); */
+  }
   .radio-label {
     position: relative;
     padding-left: 1.4375rem;
