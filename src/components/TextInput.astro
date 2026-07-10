@@ -22,11 +22,20 @@ const inputStyles = regularStyles + ' ' + interactiveStyles;
 <div class={"group" + (className ? ' ' + className : '')}>
   <label for={name} class={labelStyles}>{label}<span class="group-has-[input[required]]:inline hidden"> *</span></label>
   <input type={type} name={name} id={name} placeholder={placeholder} class={inputStyles} {...rest} required={isRequired ? "required" : undefined}>
+  <p class="hidden peer-user-invalid:block text-error font-semibold text-16 mt-8">This field is required.</p>
 </div>
 
 <style>
   input:-webkit-autofill {
     box-shadow: inset 0 0 20px 20px #CCCAC1;
     -webkit-text-fill-color: #222F2F;
+  }
+  input:user-invalid {
+    outline-color: var(--color-error);
+    outline-width: 0.125rem;
+    border-color: var(--color-error);
+    &::placeholder {
+      color: var(--color-error);      
+    }
   }
 </style>
