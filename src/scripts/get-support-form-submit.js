@@ -15,6 +15,7 @@ form.addEventListener('submit', async (e) => {
     phone: (form.contact_method.value === 'phone' ? form.phone.value : undefined),
     message: form.message.value,
     policy_agreement: form.policy_agreement.checked,
+    sms_agreement: form.sms_agreement.checked,
     company_name: form.company_name.value,
   };
 
