@@ -193,7 +193,7 @@ const FAQs = [
           Get a website that increases your revenue by having a higher website conversion rate.
         </Text>
       </div>
-      <Button link="#schedule-call-section" class='self-start'>Expand your profits today</Button>
+      <Button link="#schedule-call-section" class='self-start' data-umami-event="hero-cta-btn">Expand your profits today</Button>
     </div>
   </section>
   <section class="flex justify-center lg:px-95 overflow-hidden">
@@ -395,7 +395,7 @@ const FAQs = [
           </div>
 
         </div>
-        <Button class="self-center lg:self-start" link="#schedule-call-section">Get started</Button>
+        <Button class="self-center lg:self-start" link="#schedule-call-section" data-umami-event="middle-section-btn-1">Get started</Button>
       </div>
     </div>
   </section>
@@ -478,7 +478,7 @@ const FAQs = [
         </div>
       </div>
     </div>
-    <Button class="self-center" link="#schedule-call-section">Get started</Button>
+    <Button class="self-center" link="#schedule-call-section" data-umami-event="middle-section-btn-2">Get started</Button>
   </section>
   <section class="flex flex-col items-center px-32 md:px-53 py-95 gap-95 bg-charcoal">
     <div class="grow-1 flex flex-col items-center gap-59 lg:gap-95 max-w-559 lg:max-w-633">
@@ -571,7 +571,7 @@ const FAQs = [
             </div>
           </div>
         </div>
-        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-287' }} link="#schedule-call-section">Get started</Button>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-287' }} link="#schedule-call-section" data-umami-event="middle-section-btn-3">Get started</Button>
       </div>
       <div class="self-stretch toggle-group flex flex-col gap-20 md:gap-36">
         <ServiceDetailsToggle title="Pricing Details">
@@ -635,7 +635,7 @@ const FAQs = [
             you can cancel the project before the development begins and get your money back.
           </Text>
         </div>
-        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md' }} link="#schedule-call-section">Schedule a call</Button>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md' }} link="#schedule-call-section" data-umami-event="middle-section-btn-4">Schedule a call</Button>
       </div>
     </div>
   </section>
@@ -649,18 +649,18 @@ const FAQs = [
         </Text>
         <Text class="text-parchment">
           <span>Call us: </span> <br class="md:hidden">
-          <a href="tel:928-235-2121" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline">
+          <a href="tel:928-235-2121" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline" data-umami-event="phone-link">
             928-235-2131
           </a>
         </Text>
         <Text class="text-parchment">
           <span>Email us: </span><br class="md:hidden">
-          <a href="mailto:hello@webchargedsolutions.com" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline">
+          <a href="mailto:hello@webchargedsolutions.com" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline" data-umami-event="email-link">
             hello@webchargedsolutions.com
           </a>
         </Text>
       </div>
-      <Button link="/contact-us" fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-296', breakpoint: 'md' }}>Contact us now</Button>
+      <Button link="/contact-us" fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-296', breakpoint: 'md' }} data-umami-event="middle-section-btn-5">Contact us now</Button>
     </div>
     <picture class="lightning-graphic absolute right-0 md:w-425 lg:w-615">
       <!-- Mobile: loads on screens 750px and under -->
@@ -731,14 +731,14 @@ const FAQs = [
                 <a href="#" onclick="if(typeof zaraz !== 'undefined'){zaraz?.showConsentModal();} return false" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">Adjust your cookie settings</a> and <a href="" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">refresh the page</a>.
               </Text>
               <Text>OR</Text>
-              <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center">Open booking page</Button>
+              <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center" data-umami-event="external-booking-btn">Open booking page</Button>
             </div>
           </div>
           <!-- For when the calendar can't be loaded (browser or blocker reasons) -->
           <div id="cal-load-error-2" class="hidden flex flex-col gap-19 md:gap-21 items-center px-12 md:px-22 py-20 md:py-36 border-[1.5px] border-charcoal rounded-md">
             <H3>⚠️ The booking calendar failed to load.</H3>
             <p class="mb-15">This could be because of your browser settings or a browser extension (like an ad blocker).</p>
-            <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center">Open booking page</Button>
+            <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center" data-umami-event="external-booking-btn">Open booking page</Button>
           </div>
 
           <!-- The actual cal.com container (hidden initially) -->

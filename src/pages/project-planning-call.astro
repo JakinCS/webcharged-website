@@ -129,14 +129,14 @@ const headContent = {
                 <a href="#" onclick="if(typeof zaraz !== 'undefined'){zaraz?.showConsentModal();} return false" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">Adjust your cookie settings</a> and <a href="" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">refresh the page</a>.
               </Text>
               <Text>OR</Text>
-              <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center">Open booking page</Button>
+              <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center" data-umami-event="external-booking-btn">Open booking page</Button>
             </div>
           </div>
           <!-- For when the calendar can't be loaded (browser or blocker reasons) -->
           <div id="cal-load-error-2" class="hidden flex flex-col gap-19 md:gap-21 items-center px-12 md:px-22 py-20 md:py-36 border-[1.5px] border-charcoal rounded-md">
             <H3>⚠️ The booking calendar failed to load.</H3>
             <p class="mb-15">This could be because of your browser settings or a browser extension (like an ad blocker).</p>
-            <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center">Open booking page</Button>
+            <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center" data-umami-event="external-booking-btn">Open booking page</Button>
           </div>
 
           <!-- The actual cal.com container (hidden initially) -->
@@ -156,7 +156,7 @@ const headContent = {
         If you prefer calling instead of using the calendar, you can call at:
       </Text>
     </div>
-    <a class="text-33 md:text-47 text-electric underline hover:text-spark active:text-park focus:text-spark focus-visible:text-spark" href="tel:928-235-2131">928-235-2131</a>
+    <a class="text-33 md:text-47 text-electric underline hover:text-spark active:text-park focus:text-spark focus-visible:text-spark" href="tel:928-235-2131" data-umami-event="phone-link">928-235-2131</a>
     <Text class='text-parchment'>We look forward to hearing from you!</Text>
   </section>
   <CTASection>
@@ -166,7 +166,7 @@ const headContent = {
         We’d love to hear from you, so feel free to reach out, and we’ll get back to you!
       </Text>
     </div>
-    <Button class="self-start" href="/contact-us/">Reach out to us</Button>
+    <Button class="self-start" href="/contact-us/" data-umami-event="page-bottom-cta-btn">Reach out to us</Button>
   </CTASection>
   <script>
     import '../scripts/load-cal.js';
