@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css'
 import HeaderStripped from '../components/HeaderStripped.astro'
-import Footer from '../components/Footer.astro'
 import FooterStripped from '../components/FooterStripped.astro';
 import TextureOverlay from '../components/TextureOverlay.astro';
 
@@ -69,9 +68,5 @@ const twitterImageURL = new URL(twitterImagePath, Astro.site);
 			<slot />
 		</main>
     <FooterStripped />
-		<script>
-			import '../scripts/dropdown.js';
-			import '../scripts/mobile-dropdown.js';
-		</script>
 	</body>
 </html>
