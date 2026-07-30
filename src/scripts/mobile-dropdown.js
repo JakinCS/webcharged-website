@@ -62,30 +62,3 @@ document.querySelectorAll('[data-mobile-dropdown-parent]').forEach(dropdownParen
     }
   });
 });
-
-
-
-
-
-// document.querySelectorAll('[data-mobile-dropdown-menu]').forEach(dropdown => {
-//   const trigger = dropdown.querySelector('[data-mobile-dropdown-trigger]');
-
-//   // Toggle on click (for touch devices)
-//   trigger?.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     const isOpen = dropdown.hasAttribute('data-open');
-//     // Close all other open dropdowns first
-//     document.querySelectorAll('[data-mobile-dropdown-menu][data-open]').forEach(d => d.removeAttribute('data-open'));
-//     if (!isOpen) dropdown.setAttribute('data-open', '');
-//   });
-
-//   // Close on Escape key
-//   dropdown.addEventListener('keydown', (e) => {
-//     if (e.key === 'Escape') dropdown.removeAttribute('data-open');
-//   });
-// });
-
-// // Close when clicking the close button
-// document.querySelector('[data-mobile-dropdown-close]')?.addEventListener('click', (e) => {
-//     document.querySelectorAll('[data-mobile-dropdown-menu][data-open]').forEach(d => d.removeAttribute('data-open'));
-// })
