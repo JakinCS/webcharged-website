@@ -43,7 +43,7 @@ const FAQs = [
   {
     title: "What happens if I make a late payment?",
     content: [
-      "We understand that certain circumstances can cause late payments. So we give a 5 business day grace period to complete the payment. After that, we charge a $50 fee."       
+      "We understand that certain circumstances can cause late payments. So we give a grace period of 7 days to complete the payment. After that, we add a 10% fee to the amount due."       
     ]
   },
 ]
@@ -66,7 +66,7 @@ const FAQs = [
           Get a website that actually convinces people to work with you instead of pushing them away.
         </Text>
       </div>
-      <Button link="#schedule-call-section" class='self-start'>Book a call today</Button>
+      <Button link="#schedule-call-section" class='self-start' data-umami-event="hero-cta-btn">Book a call today</Button>
     </div>
   </section>
   <section class="flex justify-center lg:px-95 overflow-hidden">
@@ -204,7 +204,7 @@ const FAQs = [
           </div>
 
         </div>
-        <Button class="self-center lg:self-start" link="#schedule-call-section">Get started</Button>
+        <Button class="self-center lg:self-start" link="#schedule-call-section" data-umami-event="middle-section-btn-1">Get started</Button>
       </div>
     </div>
   </section>
@@ -268,7 +268,7 @@ const FAQs = [
             class="w-220 md:w-360 z-101 relative"
           >
         </picture>
-        <a href="https://fcpyuma.org" target="_blank" class="underline underline-offset-2 hover:no-underline text-16/[200%] md:text-19/[200%]">View the live site</a>
+        <a href="https://fcpyuma.org" target="_blank" class="underline underline-offset-2 hover:no-underline text-16/[200%] md:text-19/[200%]" data-umami-event="fcp-link">View the live site</a>
       </div>
       <div class="flex flex-col gap-22 max-w-559 md:max-w-617 lg:max-w-none md:w-430 grow-1 md:shrink-0">
         <Text>
@@ -392,7 +392,7 @@ const FAQs = [
           </Text>
         </div>
 
-        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-287' }} link="#schedule-call-section">Get started</Button>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-287' }} link="#schedule-call-section" data-umami-event="middle-section-btn-2">Get started</Button>
       </div>
       <div class="self-stretch toggle-group flex flex-col gap-20 md:gap-36">
         <ServiceDetailsToggle title="Pricing Details">
@@ -456,7 +456,7 @@ const FAQs = [
             you can cancel the project before the development begins and get your money back.
           </Text>
         </div>
-        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md' }} link="#schedule-call-section">Schedule a call</Button>
+        <Button fixedWidth={{ isFixed: true, maxWidthClass: 'max-w-320', breakpoint: 'md' }} link="#schedule-call-section" data-umami-event="middle-section-btn-3">Schedule a call</Button>
       </div>
     </div>
   </section>
@@ -469,14 +469,14 @@ const FAQs = [
           We are happy to answer any questions you have. 
         </Text>
         <Text class="text-parchment">
-          <span>Call us: </span> <br class="md:hidden">
-          <a href="tel:928-235-2121" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline">
+          <span>Call or text us: </span> <br class="md:hidden">
+          <a href="tel:928-235-2121" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline" data-umami-event="phone-link">
             928-235-2131
           </a>
         </Text>
         <Text class="text-parchment">
           <span>Email us: </span><br class="md:hidden">
-          <a href="mailto:hello@webchargedsolutions.com" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline">
+          <a href="mailto:hello@webchargedsolutions.com" class="font-semibold text-electric hover:underline active:underline focus:underline focus-visible:underline" data-umami-event="email-link">
             hello@webchargedsolutions.com
           </a>
         </Text>
@@ -552,14 +552,14 @@ const FAQs = [
                 <a href="#" onclick="if(typeof zaraz !== 'undefined'){zaraz?.showConsentModal();} return false" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">Adjust your cookie settings</a> and <a href="" class="underline hover:text-spark active:text-spark focus:text-spark focus-visible:text-spark">refresh the page</a>.
               </Text>
               <Text>OR</Text>
-              <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center">Open booking page</Button>
+              <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center" data-umami-event="external-booking-btn">Open booking page</Button>
             </div>
           </div>
           <!-- For when the calendar can't be loaded (browser or blocker reasons) -->
           <div id="cal-load-error-2" class="hidden flex flex-col gap-19 md:gap-21 items-center px-12 md:px-22 py-20 md:py-36 border-[1.5px] border-charcoal rounded-md">
             <H3>⚠️ The booking calendar failed to load.</H3>
             <p class="mb-15">This could be because of your browser settings or a browser extension (like an ad blocker).</p>
-            <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center">Open booking page</Button>
+            <Button link="https://cal.com/jakinstahl/project-planning-call/" target='_blank' class="self-center" data-umami-event="external-booking-btn">Open booking page</Button>
           </div>
 
           <!-- The actual cal.com container (hidden initially) -->

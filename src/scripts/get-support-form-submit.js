@@ -32,6 +32,7 @@ form.addEventListener('submit', async (e) => {
       status.textContent = '✓ Message sent! We\'ll get back to you soon.';
       form.reset();
       hidePhoneField();
+      umami.track('get-support-form-submitted');
     } else {
       status.textContent = result.error || 'Something went wrong. Please try again.';
       if (!status.hasAttribute("data-error")) status.setAttribute("data-error", "")
