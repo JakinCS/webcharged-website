@@ -40,7 +40,7 @@ function loadCalEmbed() {
     config: { 
       layout: "month_view", 
       useSlotsViewOnSmallScreen: "true",
-      "marketing-consent": String(zaraz?.consent?.get("NtIl") ?? false)
+      marketingconsent: String(zaraz?.consent?.get("NtIl") ?? false)
     },
     calLink: "jakinstahl/project-planning-call",
   });
