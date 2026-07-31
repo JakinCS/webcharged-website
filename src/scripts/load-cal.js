@@ -37,7 +37,13 @@ function loadCalEmbed() {
 
   Cal.ns["project-planning-call"]("inline", {
     elementOrSelector: "#my-cal-inline-project-planning-call",
-    config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+    config: { 
+      layout: "month_view", 
+      useSlotsViewOnSmallScreen: "true",
+      metadata: {
+        marketingConsent: zaraz?.consent?.get("NtIl") ?? false
+      } 
+    },
     calLink: "jakinstahl/project-planning-call",
   });
 
