@@ -1,0 +1,235 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import H3 from "../components/text/H3.astro";
+import Text from "../components/text/Text.astro";
+
+
+const headContent ={
+  metaTitle: "Our Process | The formula we use to build custom websites",
+  metaDescription: "We have a 4-step formula to create high-performing websites for small businesses, websites that actually bring you more clients.",
+}
+
+---
+
+<MainLayout headContent={headContent}>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-223 lg:py-249">
+    <div class="grow-1 flex flex-col gap-20 lg:gap-22 max-w-1281">
+      <H1 class="max-w-350 md:max-w-400 lg:max-w-580">Our Process for Designing a Custom Website</H1>
+      <Text class="text-parchment max-w-440 md:max-w-530 lg:max-w-600">
+        We use a formula to create high-performing business websites.
+        See what happens when we work with you. 
+      </Text>
+    </div>
+  </section>
+  <section class="flex justify-center px-32 md:px-53 lg:px-59 py-53 md:py-95">
+    <div class="grow-1 flex flex-col items-center gap-53 md:gap-59 max-w-1032">
+      <H2>Here is the situation for most websites</H2>
+
+      <div class="flex flex-col gap-36">
+        <div class="flex flex-col gap-22">
+          <H3>When people visit your website</H3>
+          <div class="flex flex-col gap-14">
+            <div class="flex gap-18 ps-5 md:ps-8">
+              <div class="w-24">
+                <p class="text-spark text-27 font-semibold">1.</p>
+              </div>
+              <Text>They look for answers to their questions about you and your services.</Text>
+            </div>
+            <div class="flex gap-18 ps-5 md:ps-8">
+              <div class="w-24">
+                <p class="text-spark text-27 font-semibold">2.</p>
+              </div>
+              <Text>They get a feel of your business and make judgments about the trustworthiness of your business.</Text>
+            </div>
+            <div class="flex gap-18 ps-5 md:ps-8">
+              <div class="w-24">
+                <p class="text-spark text-27 font-semibold">3.</p>
+              </div>
+              <Text>Based on what they feel about your business and your services, they will choose between you and a competitor.</Text>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-22">
+          <H3>When a website doesn’t do its job</H3>
+          <div class="flex flex-col gap-14">
+            <div class="flex gap-18 ps-5 md:ps-8">
+              <div class="w-24">
+                <p class="text-spark text-27 font-semibold">1.</p>
+              </div>
+              <Text>Visitors can’t find the right information and are confused about what services you provide.</Text>
+            </div>
+            <div class="flex gap-18 ps-5 md:ps-8">
+              <div class="w-24">
+                <p class="text-spark text-27 font-semibold">2.</p>
+              </div>
+              <Text>People don’t understand the value of your services clearly and don’t know why they should choose you.</Text>
+            </div>
+            <div class="flex gap-18 ps-5 md:ps-8">
+              <div class="w-24">
+                <p class="text-spark text-27 font-semibold">3.</p>
+              </div>
+              <Text>Visitors get a bad first impression of your business because of your website and don’t feel like they can trust you.</Text>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-23/[150%] md:text-28/[150%] lg:text-36/[150%] italic">How do you fix this?</p>
+    </div>
+  </section>
+  <section class="flex flex-col items-center bg-charcoal px-32 md:px-59 py-53 lg:py-95 gap-36">
+    <H2 color="electric text-center">The formula for a perfect website</H2>
+    <Text class="text-parchment">A professional website, one that turns visitors in clients, is created by focusing on these four things:</Text>
+    <div class="grow-1 flex flex-col items-center md:items-start justify-center md:flex-row gap-59 max-w-559 md:max-w-630 lg:max-w-1281 lg:w-full">
+      <div class="flex flex-col gap-36 lg:gap-0 lg:w-full">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-one-electric.svg" alt="Number one" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Content</H3> 
+            <Text class="text-parchment">
+              Good copy convinces. The right photos engage. 
+              Using effective button text makes people more likely to take action. 
+            </Text>
+            <Text class="text-parchment">
+              Your website content is the #1 important thing to get right. 
+              Without it, visitors leave your website unconvinced.
+            </Text>
+          </div>
+        </div>
+        <div class="lg:self-end flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630 lg:-mt-10 xl:-mt-70">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-two-electric.svg" alt="Number two" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Mobile-friendliness</H3> 
+            <Text class="text-parchment">
+              Roughly 50% of website visitors use their phones. 
+              These visitors expect your website work perfectly on their device. 
+              If not, they are very likely to go somewhere else. 
+            </Text>
+            <Text class="text-parchment">
+              Having a non-mobile-friendly website gives them a negative impression of your business.
+            </Text>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630 lg:-mt-10 xl:-mt-70">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-three-electric.svg" alt="Number three" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Fast load speeds</H3> 
+            <Text class="text-parchment">
+              People will leave your website if it loads too slowly. 
+              It annoys them. They lose patience. 
+            </Text>
+            <Text class="text-parchment">
+              On the other hand, if your website is faster than average, it shows that it is <i>high-quality</i>. 
+              And people will notice and think well of your business.
+            </Text>
+          </div>
+        </div>
+        <div class="lg:self-end flex flex-col md:flex-row items-center md:items-start gap-28 py-20 md:py-36 md:px-36 lg:w-630 lg:-mt-10 xl:-mt-70">
+          <img class="w-52 lg:w-72 pt-8" src="/icons/big-number-four-electric.svg" alt="Number four" width="72" height="84"/>
+          <div class="flex flex-col items-center md:items-start gap-9">
+            <H3 color='electric'>Captivating design</H3> 
+            <Text class="text-parchment">
+              Your website’s design is the first thing that visitors notice. 
+              It either captivates them or pushes them away.  
+            </Text>
+            <Text class="text-parchment">
+              The design is a reflection of your business. 
+              When the design is good, you become more trustable.
+            </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col items-center px-32 md:px-53 lg:px-95 py-59 gap-53 md:gap-59">
+    <H2 class="text-center">Our website-building process</H2>
+    <div class="relative grow-1 flex flex-col gap-53 md:gap-95 md:py-36 max-w-559 md:max-w-750 lg:max-w-960 xl:max-w-1145">
+      <div class='game-plan-line absolute -z-1 w-3 md:w-5 bg-spark translate-x-[1.59375rem] md:translate-x-[2.5625rem] lg:translate-x-[2.96875rem]'></div>
+      <div class="flex flex-row gap-20 md:gap-59">
+        <div class="shrink-0 flex items-center justify-center h-54 md:h-87 lg:h-100 w-54 md:w-87 lg:w-100 border-3 md:border-5 border-spark rounded-full bg-parchment">
+          <p class="number-in-circle text-21 md:text-40/[150%] lg:text-61/[150%] font-semibold text-spark">1</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <H3>We plan</H3>
+          <Text>
+            We start with meeting together to get a plan for your website. 
+            We get in agreement about the direction of the website. 
+            Once we understand your goals, we can work to achieve the exact results you are looking for.
+          </Text>
+        </div>
+      </div>
+      <div class="flex flex-row gap-20 md:gap-59">
+        <div class="shrink-0 flex items-center justify-center h-54 md:h-87 lg:h-100 w-54 md:w-87 lg:w-100 border-3 md:border-5 border-spark rounded-full bg-parchment">
+          <p class="number-in-circle text-21 md:text-40/[150%] lg:text-61/[150%] font-semibold text-spark">2</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <H3>We build</H3>
+          <Text>
+            Using our 4-step formula, we create you a high-performing website. 
+            We start by designing a prototype of your website. 
+            Then we use this prototype to build your website with custom code.
+          </Text>
+        </div>
+      </div>
+      <div class="flex flex-row gap-20 md:gap-59 bg-parchment">
+        <div class="shrink-0 flex items-center justify-center h-54 md:h-87 lg:h-100 w-54 md:w-87 lg:w-100 border-3 md:border-5 border-spark rounded-full">
+          <p class="number-in-circle text-21 md:text-40/[150%] lg:text-61/[150%] font-semibold text-spark">3</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <H3>You get results</H3>
+          <Text>
+            Now your website is complete! People who visit your website are now much more likely to 
+            choose you over your competitors. 
+            Now you can be proud of the website you have.
+          </Text>
+        </div>
+      </div>
+    </div>
+    <Button class="self-center" link="/project-planning-call/" data-umami-event="middle-section-btn-2">Get started</Button>
+  </section>
+  <section class="flex justify-center bg-blue py-59 px-32 md:px-95">
+    <div class="grow-1 flex flex-col md:flex-row-reverse md:flex-wrap justify-between justify-center items-center md:items-start gap-59 max-w-559 md:max-w-1281">
+      <img 
+        class="rounded-md" 
+        src="/images/headshot-2-owner-jakin-stahl-480x600.webp" 
+        alt="Headshot of the owner Jakin Stahl" 
+        width="240" 
+        height="300" 
+        loading="lazy"
+      >
+      <div class="md:w-360 grow-1 shrink-0 flex flex-col items-center md:items-start gap-36">
+        <H2 color="parchment">Get started with a custom website</H2>
+        <div class="flex flex-col gap-14 max-w-640">
+          <Text class="text-parchment">
+            The first step is to schedule a call with Jakin, the owner. On this call, we can answer any questions you may have.
+          </Text>
+          <Text class="text-parchment">
+            We want to understand your business better and see if getting a custom website is right for you.
+          </Text>
+        </div>
+        <Button class="self-center md:self-start" link="/project-planning-call/" data-umami-event="middle-section-btn-2">Book a call</Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  @media screen and (width < 46.875rem) {
+    .game-plan-line {
+      height: 90%;
+    }
+  }
+  @media screen and (min-width: 46.875rem) {
+    .game-plan-line {
+      height: calc(90% - 4.5rem);
+    }
+  }
+  .number-in-circle {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+</style>
