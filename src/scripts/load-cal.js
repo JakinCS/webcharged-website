@@ -57,7 +57,7 @@ function loadCalEmbed() {
   // Listen for successful booking and fire Zaraz tracking
   // This is originally implemented and used for the Google Ads integration
   Cal.ns["project-planning-call"]("on", {
-    action: "bookingSuccessful",
+    action: "bookingSuccessfulV2",
     callback: (e) => {
       zaraz?.track("client_cal_booking");
     }
