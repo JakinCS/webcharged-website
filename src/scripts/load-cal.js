@@ -53,6 +53,16 @@ function loadCalEmbed() {
     hideEventTypeDetails: true,
     layout: "month_view"
   });
+
+  // Listen for successful booking and fire Zaraz tracking
+  // This is originally implemented and used for the Google Ads integration
+  Cal.ns["project-planning-call"]("on", {
+    action: "bookingSuccessful",
+    callback: (e) => {
+      zaraz?.track("client_cal_booking");
+    }
+  });
+
 }
 
 
