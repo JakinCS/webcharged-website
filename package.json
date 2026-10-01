@@ -12,12 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.5",
+    "astro": "^7.3.5",
     "tailwindcss": "^4.2.2"
-  },
-  "overrides": {
-    "vite": "^7"
   }
 }
