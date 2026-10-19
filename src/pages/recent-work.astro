@@ -8,12 +8,109 @@ import Text from "../components/text/Text.astro";
 
 
 const schemaMarkup = {
-
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://webchargedsolutions.com/recent-work/#webpage",
+      "url": "https://webchargedsolutions.com/recent-work",
+      "name": "Recent Work | Custom Web Design Case Studies | WebCharged Web Solutions",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Explore custom websites built by WebCharged Web Solutions. Review our recent case studies in custom Shopify development and multi-page school web design.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/recent-work/#breadcrumb" },
+      "mainEntity": { "@id": "https://webchargedsolutions.com/recent-work/#portfolio" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/recent-work/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Recent Work"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://webchargedsolutions.com/recent-work/#portfolio",
+      "name": "Recent Web Design and Development Projects",
+      "description": "Featured custom website builds and redesigns completed by WebCharged Web Solutions.",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "RSKI Riders Website Redesign",
+            "headline": "RSKI Riders Website Redesign — 2026",
+            "dateCreated": "2026",
+            "creator": { "@id": "https://webchargedsolutions.com/#organization" },
+            "description": "Custom Shopify e-commerce redesign built with hand-written Liquid code, dynamic product spec templates, and integrated review collection for an aftermarket powersports manufacturer.",
+            "about": {
+              "@type": "Organization",
+              "name": "RSKI Riders",
+              "description": "Custom aftermarket parts manufacturer for jet skis and motorcycles."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Freedom Christian Preschool Website",
+            "headline": "Freedom Christian Preschool New Website — 2026",
+            "dateCreated": "2026",
+            "creator": { "@id": "https://webchargedsolutions.com/#organization" },
+            "description": "Two-phase custom website project delivering an initial 12-day rapid-launch landing page followed by an expanded 7-page site driving enrollment and tour bookings.",
+            "about": {
+              "@type": "EducationalOrganization",
+              "name": "Freedom Christian Preschool",
+              "description": "Christian preschool in Yuma, AZ and ministry of Freedom Baptist Church.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Yuma",
+                "addressRegion": "AZ",
+                "addressCountry": "US"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "telephone": "+1-928-235-2131",
+      "email": "hello@webchargedsolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": "https://webchargedsolutions.com/project-planning-call",
+        "name": "Book a Call",
+        "actionStatus": "https://schema.org/PotentialActionStatus"
+      }
+    }
+  ]
 }
 
 const headContent ={
-  metaTitle: "About WebCharged | Yuma Web Agency for Small Businesses",
-  metaDescription: "We believe in honesty and fairness. We want to partner with small businesses to help them grow. Your success is our success.",
+  metaTitle: "Recent Work | Custom Web Design Case Studies | WebCharged Web Solutions",
+  metaDescription: "Explore custom websites built by WebCharged Web Solutions. Review our recent case studies in custom Shopify development and multi-page school web design.",
   schemaMarkup,
 }
 
@@ -25,7 +122,7 @@ const headContent ={
       <H1>Recent Work</H1>
       <Text class="text-parchment max-w-450 md:max-w-550 lg:max-w-600">
         Check out the custom websites we have built recently. 
-        For each project, we dedicated many hours to get the exact website the client wanted.
+        For each project, we invested many hours to deliver the exact website the client wanted.
       </Text> 
     </div>
   </section> 
@@ -48,7 +145,7 @@ const headContent ={
             class="w-full"
           >
 
-          <div class="flex flex-row gap-5 items-center">
+          <div class="flex flex-row gap-5 items-center hidden">
             <a href="https://rskiriders.com" target="_blank" class="text-16/[175%] font-semibold text-electric hover:underline focus:underline focus-visible:underline">Visit the live website</a>
 
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,11 +169,11 @@ const headContent ={
             </p>
             <p class="text-parchment text-16 xl:text-19">
               They found problems with the parts on their jet skis. 
-              And what was their solution? Make their own parts!
+              And what was their solution? Make their own!
             </p>
             <p class="text-parchment text-16 xl:text-19">
               One of their most popular products is their custom-engineered jet ski throttle. 
-              Hours and hours of time was invested to make this throttle perfect for jet ski riding.
+              Hours and hours of time were invested to make this throttle perfect for jet ski riding.
             </p>
           </div>
         </div>
@@ -90,31 +187,34 @@ const headContent ={
           <H3>The Challenge</H3>
           <p class="text-16">
             RSKI Riders had some problems with their old website. 
-            They built it themselves using Wix, and it was mostly accomplishing everything they wanted — 
-            but it wasn’t quite perfect.
+            They built it themselves using Wix, 
+            and it was mostly accomplishing everything they wanted — but it wasn’t quite perfect.
           </p>
           <div class="flex flex-col gap-5">
             <div class="flex gap-6 ps-6">
               <span class="shrink-0 font-semibold text-cable-shade-2">1.</span>
               <p>
-                <span class="font-semibold text-cable-shade-2">The homepage.</span> One of the RSKI guys built the homepage the best he could. He had an idea of what he wanted, 
-                but he wasn’t able to replicate that vision. As a result, the homepage was not being used for its best potential.
+                <span class="font-semibold text-cable-shade-2">The homepage.</span> One of the RSKI team built the homepage the best he could. 
+                He had an idea of what he wanted, but he wasn’t able to replicate that vision. 
+                As a result, the homepage was not reaching its full potential.
               </p>
             </div>
             <div class="flex gap-6 ps-6">
               <span class="shrink-0 font-semibold text-cable-shade-2">2.</span>
               <p>
-                <span class="font-semibold text-cable-shade-2">Reviews.</span> Their current website wasn’t collecting or displaying any reviews at all. 
-                Wix did give them this functionality, but they weren’t happy with it so they removed the reviews-collecting feature.
+                <span class="font-semibold text-cable-shade-2">Reviews.</span> Their previous website wasn’t collecting or displaying any reviews at all. 
+                Wix did give them this functionality, 
+                but they weren’t happy with it so they removed the reviews-collecting feature.
               </p>
             </div>
             <div class="flex gap-6 ps-6">
               <span class="shrink-0 font-semibold text-cable-shade-2">3.</span>
               <p>
-                <span class="font-semibold text-cable-shade-2">Product Pages.</span> They needed to add more detail to their product pages (especially for the jet ski throttle). 
-                They wanted to highlight different features of each product, showing images with descriptive text. 
-                But Wix didn’t let them do this. So they created a complicated work-around to get what they wanted. 
-                But it was a pain to create product pages like that.
+                <span class="font-semibold text-cable-shade-2">Product Pages.</span> They needed to add more detail to their product pages 
+                (especially for the jet ski throttle). They wanted to highlight different features of each product, 
+                showing images with descriptive text. But Wix didn’t let them do this. 
+                So they created a complicated workaround to get what they wanted. 
+                But this workaround was inefficient and time-consuming.
               </p>
             </div>
           </div>
@@ -135,22 +235,22 @@ const headContent ={
             <div class="flex gap-6 ps-6">
               <span class="shrink-0 font-semibold text-cable-shade-2">2.</span>
               <p>
-                Then we took a starter Shopify theme, and modified it with custom, hand-written Liquid code. 
-                This allowed us to match the website prototype we created perfectly.  
+                Then we took a starter Shopify theme and modified it with custom, hand-written Liquid code. 
+                This allowed us to match the website prototype we created perfectly. 
               </p>
             </div>
             <div class="flex gap-6 ps-6">
               <span class="shrink-0 font-semibold text-cable-shade-2">3.</span>
               <p>
                 We modified the default product page template to fit their vision. 
-                So now the RSKI guys can <span class="font-semibold text-cable-shade-2">easily</span> add extended descriptions for the features of their products.
+                So now the RSKI team can <span class="font-semibold text-cable-shade-2">easily</span> add extended descriptions for the features of their products.
               </p>
             </div>
             <div class="flex gap-6 ps-6">
               <span class="shrink-0 font-semibold text-cable-shade-2">4.</span>
               <p>
                 We also installed a Shopify app for collecting and displaying reviews. 
-                It works great and fits well with the website design.
+                It integrates smoothly and fits well with the website design.
               </p>
             </div>
           </div>
@@ -159,9 +259,8 @@ const headContent ={
           <H3>The Results</H3>
           <p class="text-16">
             RSKI Riders now has a professional website <span class="font-semibold text-cable-shade-2">that they can be proud of</span>. 
-            Now people get a great first impression of RSKI when they visit the website. 
-            The design communicates that RSKI is a serious business that sells valuable products. 
-            Their website is helping to equip their business for growth.
+            With the new website, visitors get a great first impression of RSKI. The new design gives RSKI credibility, 
+            showing riders that their parts are top-notch, not cheap replacements. This equips their business for growth.
           </p>
         </div>
       </div>
@@ -176,7 +275,7 @@ const headContent ={
           class="w-full"
         >
 
-        <div class="flex flex-col gap-14">
+        <div class="flex flex-col gap-14 hidden">
           <p class="italic text-16 md:text-21">
             “This is a great spot for a quote or a review if applicable. 
             Larger words. Italics. Says something fantastic about the website or about working with WebCharged.”
@@ -227,7 +326,7 @@ const headContent ={
               Freedom Christian Preschool is a new Christian preschool in Yuma, AZ and is a ministry of Freedom Baptist Church.
             </p>
             <p class="text-parchment text-16 xl:text-19">
-              Freedom Christian Preschool is committed to providing excellent care for the children in their preschool. 
+              Freedom Christian Preschool is committed to providing excellent care for the children in their care. 
               Their goal is that each child develops a love for learning to prepare them for kindergarten.
             </p>
             <p class="text-parchment text-16 xl:text-19">
@@ -244,11 +343,11 @@ const headContent ={
         <div class="flex flex-col gap-14">
           <H3>The Challenge</H3>
           <p class="text-16">
-            Freedom Christian Preschool was just starting up. So they needed a website to promote themselves. 
-            Since they were new, they needed a website that stood out, one that rivaled their competitors’ websites.
+            Freedom Christian Preschool was just starting up, so they needed a website to promote themselves. 
+            Since they were new, they needed a site that stood out, one that rivaled their competitors’ websites.
           </p>
           <p class="text-16">
-            Additionally, they were on a tight schedule and needed to start promoting the preschool on billboards and fliers right away. 
+            Additionally, they were on a tight schedule and needed to start promoting themselves on billboards and fliers right away. 
             They needed a website <span class="font-semibold text-cable-shade-2">as soon as possible</span> so 
             that parents could learn more about the preschool and interested families could get started.
           </p>
@@ -264,7 +363,7 @@ const headContent ={
               <span class="shrink-0 font-semibold text-cable-shade-2">1.</span>
               <p>
                 First, we built them a simple but well-designed, 
-                one-page website that gave visitors all the most important information. 
+                one-page webpage that gave visitors all the most important information. 
                 We completed this preliminary version <span class="font-semibold text-cable-shade-2">in just 12 days</span>.
               </p>
             </div>
@@ -272,9 +371,9 @@ const headContent ={
               <span class="shrink-0 font-semibold text-cable-shade-2">2.</span>
               <p>
                 Then, we started the process of creating a full, 7-page version of the website. 
-                We created a custom design for the website, one that was <span class="font-semibold text-cable-shade-2">perfect for a preschool</span>. 
-                We wanted to make sure that parents would feel comfortable with the preschool on their first website visit. 
-                Additionally, we tailored the content to direct visitors to take action and schedule a tour of the preschool.  
+                We created a custom design, one that was <span class="font-semibold text-cable-shade-2">perfect for a preschool</span>. 
+                 We wanted to make sure parents felt comfortable sending their children there just by the first impression they got online. 
+                 Additionally, we tailored the content to direct visitors to take action and schedule a tour of the facilities.  
               </p>
             </div>
           </div>
@@ -282,8 +381,8 @@ const headContent ={
         <div class="flex flex-col gap-14">
           <H3>The Results</H3>
           <p class="text-16">
-            At the end, Freedom Christian Preschool got a website that represents them professionally, 
-            one that is <span class="font-semibold text-cable-shade-2">better designed than their competitors</span>. 
+            In the end, Freedom Christian Preschool got a website that represents them professionally, 
+            one that is <span class="font-semibold text-cable-shade-2">better designed than their competitors’ websites</span>. 
             They put the web address on their billboards, fliers, and ads. 
             Everything points back to it. It <span class="font-semibold text-cable-shade-2">plays a critical role</span> in getting interested families to enroll.
           </p>
@@ -328,7 +427,7 @@ const headContent ={
             On this call, you can learn more about what we do, and we’ll answer your questions.
           </Text>
           <Text class="text-parchment">
-            We want to understand your business better. By doing so, we can help you figure out the solution to your problems. 
+            We take the time to understand your business goals so we can build the right solution for you. 
           </Text>
         </div>
         <Button class="self-center md:self-start" link="/project-planning-call/" data-umami-event="middle-section-btn-2">Book a call</Button>
