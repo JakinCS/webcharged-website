@@ -19,14 +19,14 @@ const {headerButtonLink = '/project-planning-call/'} = Astro.props;
     <div class="flex items-center gap-40">
       <ul class="hidden lg:flex items-center gap-36">
         <li>
-          <MenuLink link="/" class="py-9" aria-current={pageUrl === "/" ? "page" : undefined}>Home</MenuLink>
-        </li>
-        <li>
-          <MenuLink link="/about-us/" class="py-9" aria-current={pageUrl === "/about-us/" ? "page" : undefined}>About Us</MenuLink>
-        </li>
+          <MenuLink link="/recent-work" class="py-9" aria-current={pageUrl === "/recent-work/" ? "page" : undefined}>Work</MenuLink>
+        </li> 
         <DropdownItem />
         <li>
-          <MenuLink link="/contact-us/" class="py-9" aria-current={pageUrl === "/contact-us/" ? "page" : undefined}>Contact Us</MenuLink>
+          <MenuLink link="/our-design-process/" class="py-9" aria-current={pageUrl === "/our-design-process/" ? "page" : undefined}>Design Process</MenuLink>
+        </li>
+        <li>
+          <MenuLink link="/about-us/" class="py-9" aria-current={pageUrl === "/about-us/" ? "page" : undefined}>About</MenuLink>
         </li>
       </ul>
       <Button link={headerButtonLink} class="hidden md:inline-flex" data-umami-event="header-cta-btn">Book a call</Button>
@@ -55,19 +55,19 @@ const {headerButtonLink = '/project-planning-call/'} = Astro.props;
     <nav class="px-32 md:px-53 py-32 flex flex-col flex-grow-1 justify-between">
       <ul class="flex flex-col gap-20">
         <li>
-          <MobileMenuLink link="/">Home</MobileMenuLink>
+          <MobileMenuLink link="/recent-work/">Work</MobileMenuLink>
         </li>
         <li>
-          <MobileMenuLink link="/about-us/">About Us</MobileMenuLink>
-        </li>
-        <li>
-          <MobileMenuLink link="/custom-website-design/">Website Design & Development</MobileMenuLink>
+          <MobileMenuLink link="/custom-website-design/">Website Design</MobileMenuLink>
         </li>
         <li>
           <MobileMenuLink link="/website-support-plans/">Website Support</MobileMenuLink>
         </li>
         <li>
-          <MobileMenuLink link="/contact-us/">Contact Us</MobileMenuLink>
+          <MobileMenuLink link="/our-design-process/">Design Process</MobileMenuLink>
+        </li>
+        <li>
+          <MobileMenuLink link="/about-us/">About</MobileMenuLink>
         </li>
       </ul>
       <div class="w-[fit-content] pt-32">
