@@ -13,13 +13,17 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
       "@id": "https://webchargedsolutions.com/#organization",
       "name": "WebCharged Web Solutions",
       "url": "https://webchargedsolutions.com",
       "logo": "https://webchargedsolutions.com/images/webcharged-logo-black.svg",
       "telephone": "+1-928-235-2131",
       "email": "hello@webchargedsolutions.com",
+	  "sameAs": [
+		"https://www.linkedin.com/company/webcharged-web-solutions/",
+		"https://www.facebook.com/webcharged"
+	  ],
 	  "contactPoint": {
 		  "@type": "ContactPoint",
 		  "telephone": "+1-928-235-2131",
@@ -31,7 +35,6 @@ const schemaMarkup = {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "", 
         "addressLocality": "Yuma",
         "addressRegion": "AZ",
         "postalCode": "85365",
