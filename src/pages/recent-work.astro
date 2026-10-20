@@ -1,0 +1,438 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import H1 from "../components/text/H1.astro";
+import H2 from "../components/text/H2.astro";
+import H3 from "../components/text/H3.astro";
+import Text from "../components/text/Text.astro";
+
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://webchargedsolutions.com/recent-work/#webpage",
+      "url": "https://webchargedsolutions.com/recent-work",
+      "name": "Recent Work | Custom Web Design Case Studies | WebCharged Web Solutions",
+      "isPartOf": { "@id": "https://webchargedsolutions.com/#organization" },
+      "description": "Explore custom websites built by WebCharged Web Solutions. Review our recent case studies in custom Shopify development and multi-page school web design.",
+      "breadcrumb": { "@id": "https://webchargedsolutions.com/recent-work/#breadcrumb" },
+      "mainEntity": { "@id": "https://webchargedsolutions.com/recent-work/#portfolio" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://webchargedsolutions.com/recent-work/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://webchargedsolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Recent Work"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://webchargedsolutions.com/recent-work/#portfolio",
+      "name": "Recent Web Design and Development Projects",
+      "description": "Featured custom website builds and redesigns completed by WebCharged Web Solutions.",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "RSKI Riders Website Redesign",
+            "headline": "RSKI Riders Website Redesign — 2026",
+            "dateCreated": "2026",
+            "creator": { "@id": "https://webchargedsolutions.com/#organization" },
+            "description": "Custom Shopify e-commerce redesign built with hand-written Liquid code, dynamic product spec templates, and integrated review collection for an aftermarket powersports manufacturer.",
+            "about": {
+              "@type": "Organization",
+              "name": "RSKI Riders",
+              "description": "Custom aftermarket parts manufacturer for jet skis and motorcycles."
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Freedom Christian Preschool Website",
+            "headline": "Freedom Christian Preschool New Website — 2026",
+            "dateCreated": "2026",
+            "creator": { "@id": "https://webchargedsolutions.com/#organization" },
+            "description": "Two-phase custom website project delivering an initial 12-day rapid-launch landing page followed by an expanded 7-page site driving enrollment and tour bookings.",
+            "about": {
+              "@type": "EducationalOrganization",
+              "name": "Freedom Christian Preschool",
+              "description": "Christian preschool in Yuma, AZ and ministry of Freedom Baptist Church.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Yuma",
+                "addressRegion": "AZ",
+                "addressCountry": "US"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://webchargedsolutions.com/#organization",
+      "name": "WebCharged Web Solutions",
+      "telephone": "+1-928-235-2131",
+      "email": "hello@webchargedsolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yuma",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": "https://webchargedsolutions.com/project-planning-call",
+        "name": "Book a Call",
+        "actionStatus": "https://schema.org/PotentialActionStatus"
+      }
+    }
+  ]
+}
+
+const headContent ={
+  metaTitle: "Recent Work | Custom Web Design Case Studies | WebCharged Web Solutions",
+  metaDescription: "Explore custom websites built by WebCharged Web Solutions. Review our recent case studies in custom Shopify development and multi-page school web design.",
+  schemaMarkup,
+}
+
+---
+
+<MainLayout headContent={headContent}>
+  <section class="flex justify-center bg-blue-gradient px-32 md:px-53 lg:px-59 py-85 md:py-223 lg:py-249">
+    <div class="grow-1 flex flex-col gap-20 lg:gap-22 max-w-1281">
+      <H1>Recent Work</H1>
+      <Text class="text-parchment max-w-450 md:max-w-550 lg:max-w-600">
+        Check out the custom websites we have built recently. 
+        For each project, we invested many hours to deliver the exact website the client wanted.
+      </Text> 
+    </div>
+  </section> 
+  <section id="project1-section1" class="flex justify-center px-32 md:px-53 lg:px-59 py-59 md:py-95 bg-charcoal">
+    <div class="grow-1 flex flex-col items-center gap-59 max-w-559 md:max-w-1032 xl:max-w-1281">
+      <div class="flex flex-col gap-14 items-center">
+        <H2 color="electric" class='text-center'>RSKI Riders</H2>
+        <p class="font-semibold text-parchment">Website Redesign — 2026</p>
+      </div>
+
+      <div class="w-full flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-start gap-x-36 gap-y-59">
+
+        <div class="flex flex-col items-center gap-14 w-full md:w-400 lg:w-500 grow lg:grow-0 shrink-0 md:max-w-500">
+          <img
+            src="/images/rski-website-on-laptop.webp" 
+            alt="Image of the RSKI Riders website on a laptop screen" 
+            width="500" 
+            height="288" 
+            loading="eager"
+            fetchpriority="high"
+            class="w-full z-100"
+          >
+
+          <div class="flex flex-row gap-5 items-center hidden">
+            <a href="https://rskiriders.com" target="_blank" class="text-16/[175%] font-semibold text-electric hover:underline focus:underline focus-visible:underline">Visit the live website</a>
+
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_4470_14251" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+              <rect width="14" height="14" fill="#D9D9D9"/>
+              </mask>
+              <g mask="url(#mask0_4470_14251)">
+              <path d="M3.01458 12.5303C2.58389 12.5303 2.21858 12.3803 1.91865 12.0804C1.61872 11.7805 1.46875 11.4152 1.46875 10.9845V3.01556C1.46875 2.58487 1.61872 2.21955 1.91865 1.91962C2.21858 1.61969 2.58389 1.46973 3.01458 1.46973H6.99904V3.01556H3.01458V10.9845H10.9835V7.00002H12.5293V10.9845C12.5293 11.4152 12.3794 11.7805 12.0794 12.0804C11.7795 12.3803 11.4142 12.5303 10.9835 12.5303H3.01458ZM5.91287 9.15835L4.84071 8.08618L9.91119 3.01556H8.16571V1.46973H12.5293V5.83335H10.9835V4.08787L5.91287 9.15835Z" fill="#FF9D0A"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-22 md:w-364 grow shrink-0 max-w-644 lg:max-w-none">
+          <H3 color="parchment">About RSKI Riders</H3>
+
+          <div class="flex flex-col gap-14">
+            <p class="text-parchment text-16 xl:text-19">
+              RSKI Riders makes custom aftermarket parts for jet skis and motorcycles. 
+              RSKI was started by two engineers with a passion for jet ski riding.
+            </p>
+            <p class="text-parchment text-16 xl:text-19">
+              They found problems with the parts on their jet skis. 
+              And what was their solution? Make their own!
+            </p>
+            <p class="text-parchment text-16 xl:text-19">
+              One of their most popular products is their custom-engineered jet ski throttle. 
+              Hours and hours of time were invested to make this throttle perfect for jet ski riding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="project1-section2" class="flex justify-center px-32 md:px-53 lg:px-59 py-59 md:py-95">
+    <div class="grow-1 flex flex-col-reverse md:flex-row md:flex-wrap-reverse justify-center items-center md:items-end gap-95 max-w-559 md:max-w-1281">
+      <div class="flex flex-col gap-36 w-full md:w-349 md:grow md:shrink-0 md:max-w-644 lg:max-w-none">
+        <div class="flex flex-col gap-14">
+          <H3>The Challenge</H3>
+          <p class="text-16">
+            RSKI Riders had some problems with their old website. 
+            They built it themselves using Wix, 
+            and it was mostly accomplishing everything they wanted — but it wasn’t quite perfect.
+          </p>
+          <div class="flex flex-col gap-5">
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">1.</span>
+              <p>
+                <span class="font-semibold text-cable-shade-2">The homepage.</span> One of the RSKI team built the homepage the best he could. 
+                He had an idea of what he wanted, but he wasn’t able to replicate that vision. 
+                As a result, the homepage was not reaching its full potential.
+              </p>
+            </div>
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">2.</span>
+              <p>
+                <span class="font-semibold text-cable-shade-2">Reviews.</span> Their previous website wasn’t collecting or displaying any reviews at all. 
+                Wix did give them this functionality, 
+                but they weren’t happy with it so they removed the reviews-collecting feature.
+              </p>
+            </div>
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">3.</span>
+              <p>
+                <span class="font-semibold text-cable-shade-2">Product Pages.</span> They needed to add more detail to their product pages 
+                (especially for the jet ski throttle). They wanted to highlight different features of each product, 
+                showing images with descriptive text. But Wix didn’t let them do this. 
+                So they created a complicated workaround to get what they wanted. 
+                But this workaround was inefficient and time-consuming.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-14">
+          <H3>The Solution</H3>
+          <p class="text-16">
+            To solve their problems, we built RSKI Riders a custom website using Shopify.
+          </p>
+          <div class="flex flex-col gap-5">
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">1.</span>
+              <p>
+                First, we created a detailed website prototype 
+                and planned out exactly what the homepage, category, and product pages would look like.
+              </p>
+            </div>
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">2.</span>
+              <p>
+                Then we took a starter Shopify theme and modified it with custom, hand-written Liquid code. 
+                This allowed us to match the website prototype we created perfectly. 
+              </p>
+            </div>
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">3.</span>
+              <p>
+                We modified the default product page template to fit their vision. 
+                So now the RSKI team can <span class="font-semibold text-cable-shade-2">easily</span> add extended descriptions for the features of their products.
+              </p>
+            </div>
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">4.</span>
+              <p>
+                We also installed a Shopify app for collecting and displaying reviews. 
+                It integrates smoothly and fits well with the website design.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-14">
+          <H3>The Results</H3>
+          <p class="text-16">
+            RSKI Riders now has a professional website <span class="font-semibold text-cable-shade-2">that they can be proud of</span>. 
+            With the new website, visitors get a great first impression of RSKI. The new design gives RSKI credibility, 
+            showing riders that their parts are top-notch, not cheap replacements. This equips their business for growth.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-59 w-full max-w-300 shrink-0">
+        <img
+          src="/images/rski-website-on-mobile.webp" 
+          alt="Image of the RSKI Riders website on a mobile phone screen" 
+          width="300" 
+          height="604" 
+          loading="lazy"
+          class="w-full z-100"
+        >
+
+        <div class="flex flex-col gap-14 hidden">
+          <p class="italic text-16 md:text-21">
+            “This is a great spot for a quote or a review if applicable. 
+            Larger words. Italics. Says something fantastic about the website or about working with WebCharged.”
+          </p>
+          <p class="font-semibold text-16 md:text-21">— John Smith</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="project2-section1" class="flex justify-center px-32 md:px-53 lg:px-59 py-59 md:py-95 bg-charcoal">
+    <div class="grow-1 flex flex-col items-center gap-59 max-w-559 md:max-w-1032 xl:max-w-1281">
+      <div class="flex flex-col gap-14 items-center">
+        <H2 color="electric" class='text-center'>Freedom Christian Preschool</H2>
+        <p class="font-semibold text-parchment">New Website — 2026</p>
+      </div>
+
+      <div class="w-full flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-center items-center md:items-start gap-x-36 gap-y-59">
+
+        <div class="flex flex-col items-center gap-14 w-full md:w-400 lg:w-500 grow lg:grow-0 shrink-0 md:max-w-500">
+          <img
+            src="/images/fcp-website-on-laptop.webp" 
+            alt="Image of the Freedom Christian Preschool website on a laptop screen" 
+            width="500" 
+            height="288" 
+            loading="lazy"
+            class="w-full z-100"
+          >
+
+          <div class="flex flex-row gap-5 items-center">
+            <a href="https://fcpyuma.org" target="_blank" class="text-16/[175%] font-semibold text-electric hover:underline focus:underline focus-visible:underline">Visit the live website</a>
+
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_4470_14251" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+              <rect width="14" height="14" fill="#D9D9D9"/>
+              </mask>
+              <g mask="url(#mask0_4470_14251)">
+              <path d="M3.01458 12.5303C2.58389 12.5303 2.21858 12.3803 1.91865 12.0804C1.61872 11.7805 1.46875 11.4152 1.46875 10.9845V3.01556C1.46875 2.58487 1.61872 2.21955 1.91865 1.91962C2.21858 1.61969 2.58389 1.46973 3.01458 1.46973H6.99904V3.01556H3.01458V10.9845H10.9835V7.00002H12.5293V10.9845C12.5293 11.4152 12.3794 11.7805 12.0794 12.0804C11.7795 12.3803 11.4142 12.5303 10.9835 12.5303H3.01458ZM5.91287 9.15835L4.84071 8.08618L9.91119 3.01556H8.16571V1.46973H12.5293V5.83335H10.9835V4.08787L5.91287 9.15835Z" fill="#FF9D0A"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-22 md:w-364 grow shrink-0 max-w-644 lg:max-w-none">
+          <H3 color="parchment">About</H3>
+
+          <div class="flex flex-col gap-14">
+            <p class="text-parchment text-16 xl:text-19">
+              Freedom Christian Preschool is a new Christian preschool in Yuma, AZ and is a ministry of Freedom Baptist Church.
+            </p>
+            <p class="text-parchment text-16 xl:text-19">
+              Freedom Christian Preschool is committed to providing excellent care for the children in their care. 
+              Their goal is that each child develops a love for learning to prepare them for kindergarten.
+            </p>
+            <p class="text-parchment text-16 xl:text-19">
+              But most importantly, the preschool gives the children a strong foundation of faith through a Christ-centered curriculum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="project2-section2" class="flex justify-center px-32 md:px-53 lg:px-59 py-59 md:py-95">
+    <div class="grow-1 flex flex-col-reverse md:flex-row md:flex-wrap-reverse justify-center items-center md:items-end gap-95 max-w-559 md:max-w-1281">
+      <div class="flex flex-col gap-36 w-full md:w-349 md:grow md:shrink-0 md:max-w-644 lg:max-w-none">
+        <div class="flex flex-col gap-14">
+          <H3>The Challenge</H3>
+          <p class="text-16">
+            Freedom Christian Preschool was just starting up, so they needed a website to promote themselves. 
+            Since they were new, they needed a site that stood out, one that rivaled their competitors’ websites.
+          </p>
+          <p class="text-16">
+            Additionally, they were on a tight schedule and needed to start promoting themselves on billboards and fliers right away. 
+            They needed a website <span class="font-semibold text-cable-shade-2">as soon as possible</span> so 
+            that parents could learn more about the preschool and interested families could get started.
+          </p>
+          
+        </div>
+        <div class="flex flex-col gap-14">
+          <H3>The Solution</H3>
+          <p class="text-16">
+            To solve this, we gave them a two-step solution.
+          </p>
+          <div class="flex flex-col gap-5">
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">1.</span>
+              <p>
+                First, we built them a simple but well-designed, 
+                one-page webpage that gave visitors all the most important information. 
+                We completed this preliminary version <span class="font-semibold text-cable-shade-2">in just 12 days</span>.
+              </p>
+            </div>
+            <div class="flex gap-6 ps-6">
+              <span class="shrink-0 font-semibold text-cable-shade-2">2.</span>
+              <p>
+                Then, we started the process of creating a full, 7-page version of the website. 
+                We created a custom design, one that was <span class="font-semibold text-cable-shade-2">perfect for a preschool</span>. 
+                 We wanted to make sure parents felt comfortable sending their children there just by the first impression they got online. 
+                 Additionally, we tailored the content to direct visitors to take action and schedule a tour of the facilities.  
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-14">
+          <H3>The Results</H3>
+          <p class="text-16">
+            In the end, Freedom Christian Preschool got a website that represents them professionally, 
+            one that is <span class="font-semibold text-cable-shade-2">better designed than their competitors’ websites</span>. 
+            They put the web address on their billboards, fliers, and ads. 
+            Everything points back to it. It <span class="font-semibold text-cable-shade-2">plays a critical role</span> in getting interested families to enroll.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-59 w-full max-w-300 shrink-0">
+        <img
+          src="/images/fcp-website-on-mobile.webp" 
+          alt="Image of the Freedom Christian Preschool Riders website on a mobile phone screen" 
+          width="300" 
+          height="604" 
+          loading="lazy"
+          class="w-full z-100"
+        >
+
+        <div class="flex flex-col gap-14 hidden">
+          <p class="italic text-16 md:text-21">
+            “This is a great spot for a quote or a review if applicable. 
+            Larger words. Italics. Says something fantastic about the website or about working with WebCharged.”
+          </p>
+          <p class="font-semibold text-16 md:text-21">— John Smith</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex justify-center bg-blue py-59 px-32 md:px-95">
+    <div class="grow-1 flex flex-col md:flex-row md:flex-wrap justify-between justify-center items-center md:items-start gap-59 max-w-559 md:max-w-1281">
+      <img 
+        class="rounded-md" 
+        src="/images/headshot-2-owner-jakin-stahl-480x600.webp" 
+        alt="Headshot of the owner Jakin Stahl" 
+        width="240" 
+        height="300" 
+        loading="lazy"
+      >
+      <div class="md:w-360 grow-1 shrink-0 flex flex-col items-center md:items-start gap-36">
+        <H2 color="parchment">Ready to Start Your Own Project?</H2>
+        <div class="flex flex-col gap-14 max-w-700">
+          <Text class="text-parchment">
+            The first step is to schedule a call with Jakin, the owner. 
+            On this call, you can learn more about what we do, and we’ll answer your questions.
+          </Text>
+          <Text class="text-parchment">
+            We take the time to understand your business goals so we can build the right solution for you. 
+          </Text>
+        </div>
+        <Button class="self-center md:self-start" link="/project-planning-call/" data-umami-event="middle-section-btn-2">Book a call</Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>

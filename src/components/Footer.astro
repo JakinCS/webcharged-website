@@ -32,19 +32,18 @@ const pageUrl = Astro.url.pathname;
 
       <nav class="flex flex-col xl:flex-row gap-22 md:gap-5 xl:gap-59">
         <div class="flex flex-col gap-5 xl:gap-9">
-          <FooterMenuLink aria-current={pageUrl === "/" ? "page" : undefined} link="/">Home</FooterMenuLink>
-          <FooterMenuLink aria-current={pageUrl === "/about-us/" ? "page" : undefined} link="/about-us/">About Us</FooterMenuLink>
-          <FooterMenuLink aria-current={pageUrl === "/contact-us/" ? "page" : undefined} link="/contact-us/">Contact Us</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/recent-work/" ? "page" : undefined} link="/recent-work/">Work</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/custom-website-design/" ? "page" : undefined} link="/custom-website-design/">Website Design</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/website-support-plans/" ? "page" : undefined} link="/website-support-plans/">Website Support</FooterMenuLink>
         </div>
         <div class="flex flex-col gap-5 xl:gap-9">
-          <FooterMenuLink aria-current={pageUrl === "/custom-website-design/" ? "page" : undefined} link="/custom-website-design/">Website Design & Development</FooterMenuLink>
-          <FooterMenuLink aria-current={pageUrl === "/website-support-plans/" ? "page" : undefined} link="/website-support-plans/">Website Support</FooterMenuLink>
-          <FooterMenuLink link="https://g.page/r/CXHisG7xbBjDEAE/review" target="_blank">Review Us</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/our-design-process/" ? "page" : undefined} link="/our-design-process/">Design Process</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/about-us/" ? "page" : undefined} link="/about-us/">About</FooterMenuLink>
+          <FooterMenuLink aria-current={pageUrl === "/contact-us/" ? "page" : undefined} link="/contact-us/">Contact</FooterMenuLink>
         </div>
         <div class="flex flex-col gap-5 xl:gap-9">
           <FooterMenuLink aria-current={pageUrl === "/frequently-asked-questions/" ? "page" : undefined} link="/frequently-asked-questions/">FAQ</FooterMenuLink>
-          <FooterMenuLink aria-current={pageUrl === "/privacy-policy/" ? "page" : undefined} link="/privacy-policy/">Privacy Policy</FooterMenuLink>
-          <FooterMenuLink aria-current={pageUrl === "/terms-and-conditions/" ? "page" : undefined} link="/terms-and-conditions/">Terms & Conditions</FooterMenuLink>
+          <FooterMenuLink link="https://g.page/r/CXHisG7xbBjDEAE/review" target="_blank">Review Us</FooterMenuLink>
         </div>
       </nav>
 
@@ -66,13 +65,19 @@ const pageUrl = Astro.url.pathname;
         <p class="font-semibold text-center">2026 WebCharged Web Solutions LLC — All rights reserved.</p>
       </div>
       <div class="flex flex-col md:flex-row gap-9 md:gap-22 items-center">
-        <a href="/cookie-policy/" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
-          Cookie Policy
-        </a>
-        <a href="#" id="cookie-settings-link" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
+        <a href="#" id="cookie-settings-link" class="text-12 font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
           Cookie Settings
         </a>
-        <a href="/disclaimer/" class="font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
+        <a href="/privacy-policy/" class="text-12 font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
+          Privacy Policy
+        </a>
+        <a href="/terms-and-conditions/" class="text-12 font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
+          Terms & Conditions
+        </a>
+        <a href="/cookie-policy/" class="text-12 font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
+          Cookie Policy
+        </a>
+        <a href="/disclaimer/" class="text-12 font-semibold underline leading-[175%] hover:no-underline focus:no-underline focus-visible:no-underline active:no-underline">
           Disclaimer
         </a>
       </div>
