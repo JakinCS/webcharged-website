@@ -49,12 +49,12 @@ The website is built to be fast. And since it is a static website, it produces e
 
 | Layer | Technology |
 |-------|------------|
-| **Framework** | [Astro](https://astro.build) v6.1.5 |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com) v4 |
+| **Framework** | [Astro](https://astro.build) |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com) |
 | **Scripting** | Vanilla JavaScript (no frontend framework) |
 | **Form Handling** | Custom-built forms → [Cloudflare Worker](https://workers.cloudflare.com) (separate repo) |
 | **Call Booking** | [Cal.com](https://cal.com) embed |
-| **Analytics** | [PostHog](https://posthog.com) |
+| **Analytics** | [Umami](https://umami.is/) |
 | **Hosting** | [Cloudflare Pages](https://pages.cloudflare.com) |
 
 ***
