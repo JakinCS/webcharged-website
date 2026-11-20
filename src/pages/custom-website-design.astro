@@ -115,20 +115,28 @@ const schemaMarkup = {
         },
         {
           "@type": "Question",
-          "name": "What if I change my mind?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer a zero-risk guarantee. You can cancel before the project starts for a 100% refund, or before development begins if the mockup is unsatisfactory."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "What forms of payment do you accept?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "We accept credit cards and bank transfers."
           }
-        }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I change my mind?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you change your mind, you can cancel the project, and we’ll refund you 100% of your money. Just make sure you cancel at least 2 weeks before the project starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I make a late payment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We understand that certain circumstances can cause late payments. So we give a grace period of 7 days to complete the payment. After that, we add a 10% fee to the amount due."
+          }
+        },
       ]
     }
   ]
@@ -167,7 +175,7 @@ const FAQs = [
   {
     title: "What if I change my mind?",
     content: [
-      "If you change your mind, you can cancel the project, and we’ll refund you 100% of your money. And if you dislike the website design, you can request a refund anytime before the website design is finalized."       
+      "If you change your mind, you can cancel the project, and we’ll refund you 100% of your money. Just make sure you cancel at least 2 weeks before the project starts."       
     ]
   },
   {
@@ -323,7 +331,7 @@ const FAQs = [
               <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">High-quality, engaging designs</h3>
               <Text class="text-parchment">
                 You will have a custom design that fits your company. 
-                Your design will start captivating visitors, making them want to keep browsing on your website.
+                Your design will start engaging visitors, making them want to keep browsing on your website.
               </Text>
             </div>
             <div class="flex flex-col p-9 ps-36 gap-8 border-s-8 border-parchment rounded-md">
@@ -357,7 +365,7 @@ const FAQs = [
     <H2 color="parchment">A new website with <span class="text-electric">little effort</span></H2>
     <div class="grow-1 flex flex-col gap-22 max-w-559 md:max-w-617">
       <Text class="text-parchment">
-        When you sign up for our website design service, you can get a new website <span class='text-electric font-semibold'>easy</span>.
+        When you sign up for our website design service, you can get a new website with a <span class='text-electric font-semibold'>painless experience</span>.
       </Text>
       <div class="flex flex-col gap-14">
         <div class="flex gap-18 ps-18">
@@ -366,7 +374,7 @@ const FAQs = [
               <circle cx="4" cy="4" r="4" fill="#FFF7EB"/>
             </svg>
           </div>
-          <Text class='text-parchment'>We don’t make you write the content.</Text>
+          <Text class='text-parchment text-pretty'>We provide a structured workbook to gather the website content.</Text>
         </div>
         <div class="flex gap-18 ps-18">
           <div class="pt-8 md:pt-11 lg:pt-12">
@@ -374,7 +382,7 @@ const FAQs = [
               <circle cx="4" cy="4" r="4" fill="#FFF7EB"/>
             </svg>
           </div>
-          <Text class='text-parchment'>We take the responsibility of choosing the right photos. (either using yours or getting them ourselves)</Text>
+          <Text class='text-parchment text-pretty'>We edit and refine the content to align with website best practices.</Text>
         </div>
         <div class="flex gap-18 ps-18">
           <div class="pt-8 md:pt-11 lg:pt-12">
@@ -382,11 +390,11 @@ const FAQs = [
               <circle cx="4" cy="4" r="4" fill="#FFF7EB"/>
             </svg>
           </div>
-          <Text class='text-parchment'>We brainstorm how to put the content into an engaging design.</Text>
+          <Text class='text-parchment text-pretty'>We arrange the content in an engaging and effective way.</Text>
         </div>
       </div>
       <Text class="text-parchment">
-        And for any small tasks you may need to complete, we will be there to help you.
+        And for any small tasks you need to complete, we will be there to help you.
       </Text>
     </div>
   </section>
@@ -456,40 +464,22 @@ const FAQs = [
               </div>
               <Text class="text-parchment text-center">(For 12 months)</Text>
             </div>
-            <div class="flex flex-col gap-14">
+            <div class="flex flex-col gap-21">
               <div class="flex flex-row gap-9">
                 <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                 <div class="flex flex-col gap-2 md:py-1 lg:py-0">
                   <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Custom, engaging design</h3>
                   <p class="text-parchment text-16 lg:text-19">
-                    You get a custom-designed website, not a template. A design created to be engaging and appealing.
+                    You get a custom-designed website, not a generic template. The design will fit your business and work to get you more clients.
                   </p>
                 </div>
               </div>
               <div class="flex flex-row gap-9">
                 <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
                 <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Designed to match your business</h3>
+                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Copy Optimization</h3>
                   <p class="text-parchment text-16 lg:text-19">
-                    Your design will fit with your business. You don’t get a generic <i>one-design-fits-all</i> solution.
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-row gap-9">
-                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Copywriting</h3>
-                  <p class="text-parchment text-16 lg:text-19">
-                    We do the copywriting for your website. No need for you to figure out how to word your website correctly.
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-row gap-9">
-                <svg class='shrink-0 md:w-32 md:h-32' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF7EB"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-                <div class="flex flex-col gap-2 md:py-1 lg:py-0">
-                  <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Website photos assistance</h3>
-                  <p class="text-parchment text-16 lg:text-19">
-                    We take charge of finding photos, whether it be your photos, stock photos or taking new ones.
+                    We refine and edit the content you provide for clarity and tailor it to get visitors to call you.
                   </p>
                 </div>
               </div>
@@ -498,7 +488,7 @@ const FAQs = [
                 <div class="flex flex-col gap-2 md:py-1 lg:py-0">
                   <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Mobile-friendly website</h3>
                   <p class="text-parchment text-16 lg:text-19">
-                    Readable, usable and good-looking on small screen sizes.
+                    We ensure your website is readable, usable and good-looking on small screen sizes.
                   </p>
                 </div>
               </div>
@@ -507,7 +497,7 @@ const FAQs = [
                 <div class="flex flex-col gap-2 md:py-1 lg:py-0">
                   <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Fast-loading website</h3>
                   <p class="text-parchment text-16 lg:text-19">
-                    Your website will load fast because we follow best practices for creating websites with speed.
+                    We build your website with custom code that makes your website load super fast.
                   </p>
                 </div>
               </div>
@@ -516,7 +506,7 @@ const FAQs = [
                 <div class="flex flex-col gap-2 md:py-1 lg:py-0">
                   <h3 class="text-16 md:text-19 lg:text-21 font-semibold text-electric">Analytics Setup</h3>
                   <p class="text-parchment text-16 lg:text-19">
-                    We add analytics to your website so you know how many visitors your website gets and which pages perform the best.
+                    We add analytics to your website so you know how many visitors the website gets and which pages perform the best.
                   </p>
                 </div>
               </div>
@@ -534,18 +524,14 @@ const FAQs = [
             After determining your project needs, we set the price. Then you’ll approve it before the project starts. There will be no hidden costs.
           </p>
         </ServiceDetailsToggle>
-        <ServiceDetailsToggle title="Hosting and Privacy Policies">
+        <ServiceDetailsToggle title="Hosting and Software Costs">
           <p>
-            Our website design service <span class="font-semibold">covers all website costs for 1 month</span>: hosting, analytics, auto-updating privacy policies, and more.
+            Our website design service <span class="font-semibold">covers all website costs for 1 month</span>: primarly hosting and other software (like analytics).
           </p>
           <div>
             <p class='mb-14'>
-              After that, the costs are simple:
+              After that, the costs are simple: <span class="underline">$25/month</span>: hosting + software
             </p>
-            <ul class="ms-9 list-disc list-inside">
-              <li><span class="underline">$25/month</span>: hosting + software</li>
-              <li><span class="underline">$10/month</span>: auto-updating policies</li>        
-            </ul>
           </div>
           <p>
             (All of this is included in <a href="/website-support-plans/" class="underline hover:no-underline focus:no-underline focus-visible:no-underline" data-umami-event="support-link-1">our website support service</a> as well.)
@@ -586,7 +572,7 @@ const FAQs = [
       <div class="md:basis-488 shrink-0 grow-1 flex flex-col items-center md:items-start gap-22">
         <H2><span class="text-spark">Zero-risk</span> guarantee</H2>
         <div class="flex flex-col gap-20">
-          <Text>If you wish to cancel before the project starts, we will give you a 100% refund.</Text>
+          <Text>If you wish to cancel before the project starts, we will give you a 100% refund. Just make sure you tell us at least 2 weeks before the scheduled start date.</Text>
           <Text>
             We aim to give you the best value. 
             But if the initial website mockup is unsatisfactory, 
